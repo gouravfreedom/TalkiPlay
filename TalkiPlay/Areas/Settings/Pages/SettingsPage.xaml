@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<tp:TabViewBase
+    x:TypeArguments="tps:SettingsPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tp="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:tps="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    x:Class="TalkiPlay.SettingsPage" BackgroundColor="Transparent"
+    x:DataType="tps:SettingsItemGroup">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="NavRow" Height="Auto"/> 
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <tp:NavigationView Grid.Row="0" x:Name="NavigationView" IsVisible="False" ShowLeftButton="false" ShowRightButton="false"/>
+        <Grid Grid.Row="1" Padding="0" >
+            <CollectionView x:Name="SettingsItemList" BackgroundColor="Transparent" SelectionMode="None"  IsGrouped="True" Margin="0">
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <!--<VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup Name="CommonStates">                        
+                                    <VisualState Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="Transparent" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>-->
+                            <ui:ExtendedLabel Text="{Binding Title}" CustomFont="{Static tp:Fonts.HeroTitleFont}" Padding="20, 30, 5, 15" VerticalOptions="Center"/>
+                        </StackLayout>                    
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+                <CollectionView.Footer>
+                    <Frame HasShadow="True" BackgroundColor="Transparent" Margin="0" Padding="20, 5" HorizontalOptions="Fill" VerticalOptions="Center" >
+                        <tp:AnimatedButtonEx x:Name="LogoutButton" Text="Sign out" HorizontalOptions="Fill" VerticalOptions="Center"/>
+                    </Frame>
+                </CollectionView.Footer>
+            </CollectionView>
+        </Grid>        
+    </Grid>
+</tp:TabViewBase>

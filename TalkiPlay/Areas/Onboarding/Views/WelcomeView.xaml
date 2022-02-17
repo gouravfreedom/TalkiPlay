@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tp="clr-namespace:TalkiPlay"
+             xmlns:tps="clr-namespace:TalkiPlay.Shared"
+             xmlns:cmu="clr-namespace:ChilliSource.Mobile.UI"
+             xmlns:ff="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="TalkiPlay.WelcomeView" BackgroundColor="LightGray">
+    <Grid>
+        <StackLayout Padding="20, 0" Spacing="40">
+            <Grid>
+                <cmu:ExtendedLabel HorizontalOptions="Center" VerticalOptions="Center" CustomFont="{x:Static tp:Fonts.ButtonTextFontBoldBig}" Text="Welcome to" />
+            </Grid>
+
+            <Grid>
+                <ff:SvgCachedImage HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFit" Source="{x:Static tps:Images.LogoWhite}" />
+            </Grid>
+
+            <Grid>
+                <StackLayout HorizontalOptions="Center" Spacing="0">
+                    <cmu:ExtendedLabel HorizontalOptions="Center" VerticalOptions="Center" CustomFont="{x:Static tp:Fonts.ButtonTextFontBoldBig}" Text="We're excited" />
+                    <cmu:ExtendedLabel HorizontalOptions="Center" VerticalOptions="Center" CustomFont="{x:Static tp:Fonts.ButtonTextFontBoldBig}" Text="you've joined" />
+                </StackLayout>
+            </Grid>
+
+            <Grid>
+                <cmu:ExtendedLabel HorizontalOptions="Center" VerticalOptions="Center" CustomFont="{x:Static tp:Fonts.ButtonTextFontBoldBig}" Text="Let's Talk &amp; Play!" />
+            </Grid>
+        </StackLayout>
+    </Grid>
+</ContentView>

@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<talkiPlay:BasePage
+    x:TypeArguments="shared:AcceptInvitePageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    x:Class="TalkiPlay.AcceptInvitePage"
+    x:DataType="shared:AcceptInvitePageViewModel"
+    BackgroundColor="{x:Static shared:Colors.TealColor}">
+    <ContentPage.Content>
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    x:Name="NavRow" />
+                <RowDefinition
+                    x:Name="MainRow"
+                    Height="*" />
+            </Grid.RowDefinitions>
+            <talkiPlay:NavigationView
+                x:Name="NavigationView"
+               
+                ShowLeftButton="false"
+                ShowRightButton="false"
+                
+                Grid.Row="0"
+                Grid.Column="0" />
+
+            <ScrollView
+                x:Name="ScrollView"
+                Grid.Row="1"
+                Grid.Column="0">
+                <StackLayout
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    BackgroundColor="Transparent"
+                    Margin="20,20,20,0">
+                    <forms:SvgCachedImage
+                        HorizontalOptions="Center"
+                        Source="{x:Static shared:Images.LogoWhite}"
+                        HeightRequest="100" />
+                    <StackLayout
+                        Spacing="10">
+                        <StackLayout>
+                            <ui:ExtendedLabel
+                                Text="Email address"
+                                CustomFont="{x:Static talkiPlay:Fonts.MetaLinkWhiteFont}"
+                                HorizontalOptions="FillAndExpand" />
+                            <Frame
+                                x:Name="EmailEntryFrame"
+                                HeightRequest="60"
+                                Padding="1"
+                                HasShadow="false"
+                                CornerRadius="4"
+                                BorderColor="White">
+                                <ui:ExtendedEntry
+                                    CustomFont="{x:Static talkiPlay:Fonts.BodyFont}"
+                                    CustomPlaceholderFont="{x:Static talkiPlay:Fonts.BodyPlaceHolderFont}"
+                                    Placeholder="Email address..."
+                                    Keyboard="Email"
+                                    KeyboardReturnType="Next"
+                                    x:Name="EmailEntry"
+                                    HorizontalContentPadding="10"
+                                    ErrorBackgroundColor="White"
+                                    IsEnabled="false"
+                                    HasBorder="false" />
+                            </Frame>
+                            <ui:ValidationErrorsView
+                                ValidationMessageFont="{x:Static talkiPlay:Fonts.MetaErrorFont}"
+                                x:Name="EmailErrorView" />
+                        </StackLayout>
+                        <Grid
+                            ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition
+                                    Width="*" />
+                                <ColumnDefinition
+                                    Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout
+                                Grid.Row="0"
+                                Grid.Column="0">
+                                <ui:ExtendedLabel
+                                    Text="First name"
+                                    CustomFont="{x:Static talkiPlay:Fonts.MetaLinkWhiteFont}"
+                                    HorizontalOptions="FillAndExpand" />
+                                <Frame
+                                    x:Name="FirstNameEntryFrame"
+                                    HeightRequest="60"
+                                    Padding="1"
+                                    HasShadow="false"
+                                    CornerRadius="4"
+                                    BorderColor="White">
+                                    <ui:ExtendedEntry
+                                        CustomFont="{x:Static talkiPlay:Fonts.BodyFont}"
+                                        CustomPlaceholderFont="{x:Static talkiPlay:Fonts.BodyPlaceHolderFont}"
+                                        Placeholder="First name..."
+                                        Keyboard="Email"
+                                        KeyboardReturnType="Next"
+                                        x:Name="FirstNameEntry"
+                                        HorizontalContentPadding="10"
+                                        ErrorBackgroundColor="White"
+                                        HasBorder="false" />
+                                </Frame>
+                                <ui:ValidationErrorsView
+                                    ValidationMessageFont="{x:Static talkiPlay:Fonts.MetaErrorFont}"
+                                    x:Name="FirstNameErrorView" />
+                            </StackLayout>
+                            <StackLayout
+                                Grid.Row="0"
+                                Grid.Column="1">
+                                <ui:ExtendedLabel
+                                    Text="Last name"
+                                    CustomFont="{x:Static talkiPlay:Fonts.MetaLinkWhiteFont}"
+                                    HorizontalOptions="FillAndExpand" />
+                                <Frame
+                                    x:Name="LastNameEntryFrame"
+                                    HeightRequest="60"
+                                    Padding="1"
+                                    HasShadow="false"
+                                    CornerRadius="4"
+                                    BorderColor="White">
+                                    <ui:ExtendedEntry
+                                        CustomFont="{x:Static talkiPlay:Fonts.BodyFont}"
+                                        CustomPlaceholderFont="{x:Static talkiPlay:Fonts.BodyPlaceHolderFont}"
+                                        Placeholder="Last name..."
+                                        Keyboard="Email"
+                                        KeyboardReturnType="Next"
+                                        x:Name="LastNameEntry"
+                                        HorizontalContentPadding="10"
+                                        ErrorBackgroundColor="White"
+                                        HasBorder="false" />
+                                </Frame>
+                                <ui:ValidationErrorsView
+                                    ValidationMessageFont="{x:Static talkiPlay:Fonts.MetaErrorFont}"
+                                    x:Name="LastNameErrorView" />
+                            </StackLayout>
+                        </Grid>
+                        <StackLayout>
+                            <ui:ExtendedLabel
+                                Text="Password"
+                                CustomFont="{x:Static talkiPlay:Fonts.MetaLinkWhiteFont}"
+                                HorizontalOptions="FillAndExpand" />
+                            <Frame
+                                x:Name="PasswordEntryFrame"
+                                HeightRequest="60"
+                                Padding="1"
+                                HasShadow="false"
+                                CornerRadius="4"
+                                BorderColor="White">
+                                <ui:ExtendedEntry
+                                    CustomFont="{x:Static talkiPlay:Fonts.BodyFont}"
+                                    CustomPlaceholderFont="{x:Static talkiPlay:Fonts.BodyPlaceHolderFont}"
+                                    Placeholder="Password..."
+                                    IsPassword="True"
+                                    KeyboardReturnType="Next"
+                                    x:Name="PasswordEntry"
+                                    HorizontalContentPadding="10"
+                                    ErrorBackgroundColor="White"
+                                    HasBorder="false" />
+                            </Frame>
+                            <ui:ValidationErrorsView
+                                ValidationMessageFont="{x:Static talkiPlay:Fonts.MetaErrorFont}"
+                                x:Name="PasswordErrorView" />
+                        </StackLayout>
+                        <StackLayout>
+                            <ui:ExtendedLabel
+                                Text="Confirm password"
+                                CustomFont="{x:Static talkiPlay:Fonts.MetaLinkWhiteFont}"
+                                HorizontalOptions="FillAndExpand" />
+                            <Frame
+                                x:Name="ConfirmPasswordEntryFrame"
+                                HeightRequest="60"
+                                Padding="1"
+                                HasShadow="false"
+                                CornerRadius="4"
+                                BorderColor="White">
+                                <ui:ExtendedEntry
+                                    CustomFont="{x:Static talkiPlay:Fonts.BodyFont}"
+                                    CustomPlaceholderFont="{x:Static talkiPlay:Fonts.BodyPlaceHolderFont}"
+                                    Placeholder="Confirm password..."
+                                    IsPassword="True"
+                                    KeyboardReturnType="Go"
+                                    x:Name="ConfirmPasswordEntry"
+                                    HorizontalContentPadding="10"
+                                    ErrorBackgroundColor="White"
+                                    HasBorder="false" />
+                            </Frame>
+                            <ui:ValidationErrorsView
+                                ValidationMessageFont="{x:Static talkiPlay:Fonts.MetaErrorFont}"
+                                x:Name="ConfirmPasswordErrorView" />
+                        </StackLayout>
+                    </StackLayout>
+                    <talkiPlay:AnimatedButton
+                        x:Name="SignupButton"
+                        Margin="0,10,0,80"
+                        Animation="{x:Static shared:Images.LoadingAnimation}"
+                        ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}"
+                        ButtonHeightRequest="60"
+                        Text="Sign up"
+                        ButtonColor="{x:Static shared:Colors.Fuschia}"
+                        CornerRadius="5"
+                        AnimationHeightRequest="80"
+                        AnimationWidthRequest="80"
+                        BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+
+    </ContentPage.Content>
+</talkiPlay:BasePage>

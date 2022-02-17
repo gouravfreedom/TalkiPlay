@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<talkiPlay:BasePage
+    x:TypeArguments="shared:TestBleRequestPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    x:Class="TalkiPlay.TestBleRequestSelectionPage">
+    <ContentPage.Content>
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    x:Name="NavRow"/>
+                <RowDefinition
+                    x:Name="MainRow"
+                    Height="*" />
+                <RowDefinition
+                    x:Name="ButtonRow"
+                    Height="160" />
+            </Grid.RowDefinitions>
+            <talkiPlay:NavigationView
+                x:Name="NavigationView"
+               
+                ShowLeftButton="true"
+                ShowRightButton="true"
+                
+                
+                Grid.Row="0"
+                Grid.Column="0" />
+
+
+            <ListView
+                RowHeight="60"
+                x:Name="UploadTypeList"
+                ItemsSource="{Binding Data}"
+                HasUnevenRows="False"
+                BackgroundColor="White"
+                SelectionMode="Single"
+                CachingStrategy="RecycleElement"                
+                Grid.Row="1"
+                Grid.Column="0">
+
+            </ListView>
+
+            <Grid
+                Grid.Row="2"
+                Grid.Column="0"
+                x:Name="Grid"
+                BackgroundColor="White"
+                ColumnSpacing="10"
+                RowSpacing="10" Margin="0,10,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition
+                        Height="60" />
+                    <RowDefinition
+                        Height="60" />
+                </Grid.RowDefinitions>
+
+                <talkiPlay:AnimatedButton
+                    Margin="10, 0, 0, 0"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    x:Name="SelectJsonFileButton"
+                    Animation="{x:Static shared:Images.LoadingAnimation}"
+                    ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}"
+                    ButtonHeightRequest="60"
+                    Text="Select Json file"
+                    ButtonColor="{x:Static shared:Colors.TealColor}"
+                    CornerRadius="5"
+                    AnimationHeightRequest="80"
+                    AnimationWidthRequest="80"
+                    BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+                <talkiPlay:AnimatedButton
+                    Margin="0, 0, 10, 0"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    x:Name="SelectFileButton"
+                    Animation="{x:Static shared:Images.LoadingAnimation}"
+                    ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}"
+                    ButtonHeightRequest="60"
+                    Text="Select file"
+                    ButtonColor="{x:Static shared:Colors.TealColor}"
+                    CornerRadius="5"
+                    AnimationHeightRequest="80"
+                    AnimationWidthRequest="80"
+                    BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+                <talkiPlay:AnimatedButton
+                    Margin="10, 0, 10, 0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    x:Name="SendButton"
+                    Animation="{x:Static shared:Images.LoadingAnimation}"
+                    ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}"
+                    ButtonHeightRequest="60"
+                    Text="Send"
+                    ButtonColor="{x:Static shared:Colors.TealColor}"
+                    CornerRadius="5"
+                    AnimationHeightRequest="80"
+                    AnimationWidthRequest="80"
+                    BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</talkiPlay:BasePage>

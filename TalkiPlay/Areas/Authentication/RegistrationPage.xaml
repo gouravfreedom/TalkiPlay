@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TalkiPlay.RegistrationPage">
+    <ContentPage.Content>
+
+         <RelativeLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="MainLayout">
+            <Image HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Source="{x:Static shared:Images.HuntBg}" Aspect="AspectFill" x:Name="BackgroundView"/>
+             <StackLayout BackgroundColor="Transparent" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="Layout">
+             <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                 <StackLayout HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Transparent">
+                     <forms:SvgCachedImage HorizontalOptions="Center" Source="{x:Static shared:Images.TalkiIcon}" HeightRequest="150" VerticalOptions="CenterAndExpand"/>
+                     <StackLayout Spacing="25" Padding="20">
+                                    <StackLayout >
+                                        <ui:ExtendedLabel Text="Email address" CustomFont="{x:Static talkiPlay:Fonts.MetaLinkWhiteFont}" HorizontalOptions="FillAndExpand"/>
+                                        <Frame x:Name="EmailEntryFrame" HeightRequest="60" Padding="1" HasShadow="false" CornerRadius="4" BorderColor="White">
+                                            <ui:ExtendedEntry CustomFont="{x:Static talkiPlay:Fonts.BodyFont}" CustomPlaceholderFont="{x:Static talkiPlay:Fonts.BodyPlaceHolderFont}" Placeholder="Email address..." Keyboard="Email" KeyboardReturnType="Next" x:Name="EmailEntry"  HorizontalContentPadding="10"
+                                                              ErrorBackgroundColor="White"
+                                                              HasBorder="false"
+                                            />
+                                        </Frame>
+                                        <ui:ValidationErrorsView ValidationMessageFont="{x:Static talkiPlay:Fonts.MetaErrorFont}" x:Name="EmailErrorView"/>
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <ui:ExtendedLabel Text="Password" CustomFont="{x:Static talkiPlay:Fonts.MetaLinkWhiteFont}" HorizontalOptions="FillAndExpand" />
+                                        <Frame x:Name="PasswordEntryFrame" HeightRequest="60" Padding="1" HasShadow="false" CornerRadius="4" BorderColor="White">
+                                            <ui:ExtendedEntry CustomFont="{x:Static talkiPlay:Fonts.BodyFont}" CustomPlaceholderFont="{x:Static talkiPlay:Fonts.BodyPlaceHolderFont}" Placeholder="Password..." IsPassword="True" KeyboardReturnType="Go" x:Name="PasswordEntry" HorizontalContentPadding="10" 
+                                                 ErrorBackgroundColor="White"
+                                               HasBorder="false"
+                                                              />
+                                        </Frame>
+
+                                        <ui:ValidationErrorsView ValidationMessageFont="{x:Static talkiPlay:Fonts.MetaErrorFont}" x:Name="PasswordErrorView"/>
+                                    </StackLayout>
+                                </StackLayout>
+                     <talkiPlay:AnimatedButton x:Name="LoginButton" Margin="20,20,20,20" Animation="{x:Static shared:Images.LoadingAnimation}" ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}" ButtonHeightRequest="60" Text="Sign in" ButtonColor="{x:Static talkiPlay:Colors.GreenyBlue}" CornerRadius="8" AnimationHeightRequest="80" AnimationWidthRequest="80" BusyButtonColor="{x:Static talkiPlay:Colors.WarmGrey}" />
+                     <StackLayout HorizontalOptions="Center" Spacing="14" BackgroundColor="Transparent" x:Name="ForgotPasswordLayout">
+                         <ui:ExtendedLabel Text="Forgot password?" CustomFont="{x:Static talkiPlay:Fonts.MetaLinkWhiteFont}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" x:Name="ForgotPassword"/>
+                     </StackLayout>
+                 </StackLayout>
+             </ScrollView>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

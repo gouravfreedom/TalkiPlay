@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<talkiPlay:BasePage x:TypeArguments="shared:ChildDetailsPageViewModel"
+                    xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+                    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+                    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+                    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+                    x:Class="TalkiPlay.ChildDetailsPage"
+                    x:DataType="shared:ChildDetailsPageViewModel">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="NavRow" />
+                <RowDefinition x:Name="MainRow"
+                               Height="*" />
+            </Grid.RowDefinitions>
+            <talkiPlay:NavigationView x:Name="NavigationView"
+                                     
+                                      ShowLeftButton="true"
+                                      ShowRightButton="false"
+                                      
+                                      
+                                      Grid.Row="0"
+                                      Grid.Column="0" />
+
+            <ScrollView x:Name="ScrollView"
+                        Grid.Row="1"
+                        Grid.Column="0">
+                <StackLayout HorizontalOptions="CenterAndExpand"
+                             VerticalOptions="CenterAndExpand"
+                             BackgroundColor="Transparent"
+                             Margin="20">
+                    <Grid HorizontalOptions="CenterAndExpand"
+                          ColumnSpacing="20"
+                          RowSpacing="20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <forms:SvgCachedImage x:Name="Avatar"
+                                              Source="{Binding AvatarImage}"
+                                              Grid.ColumnSpan="2"
+                                              Grid.Column="0"
+                                              Grid.Row="0"
+                                              Aspect="AspectFit"
+                                              WidthRequest="60"
+                                              HeightRequest="60" />
+                        <ui:ExtendedLabel Grid.Column="0"
+                                          Grid.Row="1"
+                                          Text="Name:"
+                                          VerticalOptions="Center"
+                                          CustomFont="{x:Static talkiPlay:Fonts.BodyLinkFont}"
+                                          HorizontalTextAlignment="End" />
+                        <ui:ExtendedLabel Grid.Column="0"
+                                          Grid.Row="2"
+                                          Text="Age:"
+                                          VerticalOptions="Center"
+                                          CustomFont="{x:Static talkiPlay:Fonts.BodyLinkFont}"
+                                          HorizontalTextAlignment="End" />
+                        <ui:ExtendedLabel x:Name="Name"
+                                          Grid.Column="1"
+                                          Grid.Row="1"
+                                          Text="{Binding Name}"
+                                          VerticalOptions="Center"
+                                          CustomFont="{x:Static talkiPlay:Fonts.BodyFont}" />
+                        <ui:ExtendedLabel x:Name="Age"
+                                          Grid.Column="1"
+                                          Grid.Row="2"
+                                          Text="{Binding Age}"
+                                          VerticalOptions="Center"
+                                          CustomFont="{x:Static talkiPlay:Fonts.BodyFont}" />
+                    </Grid>
+                    <talkiPlay:AnimatedButton x:Name="ChangeButton"
+                                              Margin="0,20,0,0"
+                                              Animation="{x:Static shared:Images.LoadingAnimation}"
+                                              ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}"
+                                              Text="Change"
+                                              ButtonHeightRequest="60"
+                                              ButtonColor="{x:Static shared:Colors.TealColor}"
+                                              CornerRadius="5"
+                                              AnimationHeightRequest="80"
+                                              AnimationWidthRequest="80"
+                                              BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+                    <talkiPlay:AnimatedButton x:Name="CancelButton"
+                                              Margin="0,30,0,60"
+                                              Animation="{x:Static shared:Images.LoadingAnimation}"
+                                              ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextDarkGreyFont}"
+                                              Text="Cancel"
+                                              ButtonHeightRequest="60"
+                                              ButtonColor="{x:Static shared:Colors.WhiteColor}"
+                                              CornerRadius="5"
+                                              AnimationHeightRequest="80"
+                                              AnimationWidthRequest="80"
+                                              BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</talkiPlay:BasePage>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<talkiPlay1:ReactiveBaseViewCell x:TypeArguments="shared:ItemSelectionViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:talkiPlay1="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    x:Class="TalkiPlay.ItemSelectionCell"
+    x:DataType="shared:ItemSelectionViewModel">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="24"/>
+        </Grid.ColumnDefinitions>
+        <ui:ExtendedLabel x:Name="Label" CustomFont="{x:Static talkiPlay1:Fonts.LabelBlackFont}" Text="{Binding Label}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0" />
+        <forms:SvgCachedImage Source="{x:Static shared:Images.ArrowIcon}" WidthRequest="24" HeightRequest="24" Grid.Row="0" Grid.Column="1" HorizontalOptions="End"/>
+    </Grid>
+</talkiPlay1:ReactiveBaseViewCell>

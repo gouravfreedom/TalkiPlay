@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tp:BasePopupPage
+    x:TypeArguments="tps:ChestPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tp="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:tps="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:lf="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    x:Class="TalkiPlay.ChestPage"
+    x:DataType="tps:ChestPageViewModel">
+    <Frame HasShadow="False" CornerRadius="0" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="20" Padding="0">
+        <Grid RowSpacing="8" Padding="8" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="64" />
+            </Grid.RowDefinitions>
+            <ui:ExtendedLabel Grid.Row="0" x:Name="RewardInstruction" Text="{Binding RewardInstruction}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" CustomFont="{x:Static tp:Fonts.Header1BlackFont}"/>
+            <forms:SvgCachedImage Grid.Row="1" x:Name="Image" Source="{Binding RewardEgg}" Aspect="AspectFit" DownsampleToViewSize="True" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="240"/>
+            <lf:AnimationView Grid.Row="1" x:Name="Anim" Animation="{x:Static tps:Images.EggWiggle}" Scale="1.1"  Loop="False" AutoPlay="False" IsPlaying="False"
+                                  OnFinish="OnWiggleAnimFinish" ClickedCommand="{Binding CrackEggCommand}" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="240"/>
+
+             <Grid  Grid.Row="2" WidthRequest="140">
+                <Frame HasShadow="True" BackgroundColor="Transparent" Padding="0" Margin="0" VerticalOptions="End" >
+                    <ui:ExtendedButtonEx x:Name="CloseButton" HorizontalOptions="Fill" VerticalOptions="Center"
+                                            Text="Done" Margin="0, 8, 0, 0" />
+                </Frame>
+            </Grid>
+        </Grid>
+    </Frame>
+</tp:BasePopupPage>

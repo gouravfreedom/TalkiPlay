@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    x:Class="TalkiPlay.NavigationView">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition
+            Width="24"
+            x:Name="LeftNavColumn"/>
+        <ColumnDefinition
+            Width="*"></ColumnDefinition>
+        <ColumnDefinition
+            Width="24"
+            x:Name="RightNavColumn"/>
+    </Grid.ColumnDefinitions>
+
+    <talkiPlay:ImageButtonView
+        x:Name="LeftNavButton"
+        x:FieldModifier="public"
+        Grid.Column="0"
+        Grid.Row="0"/>
+    <ui:ExtendedLabel
+        x:Name="NavTitle"
+        CustomFont="{x:Static talkiPlay:Fonts.NavigationTitleFont}"
+        Grid.Column="1"
+        Grid.Row="0"
+        HorizontalTextAlignment="Center"
+        VerticalTextAlignment="Center"
+        MaxLines="1"
+        LineBreakMode="TailTruncation" />
+    <talkiPlay:ImageButtonView
+        x:Name="RightNavButton"
+        x:FieldModifier="public"
+        Grid.Column="2"
+        Grid.Row="0" />
+</Grid>

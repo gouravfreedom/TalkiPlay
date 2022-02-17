@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xamForms:ReactiveContentView
+    x:TypeArguments="shared:AvatarItemViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    x:Class="TalkiPlay.AvatarItem"
+    IsVisible="{Binding IsVisible}"
+    BackgroundColor="Transparent"
+    x:DataType="shared:AvatarItemViewModel">
+    <ContentView.Content>               
+            <shared:ExtendedFrame
+                IsClippedToBounds="false"
+                HasShadow="false"
+                Margin="0,0,1,0"
+                Padding="0"
+                BackgroundColor="White"
+                CornerRadius="4"
+                BorderWidth="2"
+                BorderColor="{Binding IsSelected, Converter={x:Static talkiPlay:Converters.BooleanToAvatarSelectionColorConverter}}">
+                <forms:SvgCachedImage
+                    Margin="10"
+                    Source="{Binding AvatarImage}"
+                    LoadingPlaceholder="{x:Static shared:Images.LoadingIndicator}"
+                    ErrorPlaceholder="{x:Static shared:Images.PlaceHolder}"
+                    WidthRequest="60"
+                    HeightRequest="60" 
+                    Aspect="AspectFit" />
+            </shared:ExtendedFrame>
+        
+    </ContentView.Content>
+</xamForms:ReactiveContentView>

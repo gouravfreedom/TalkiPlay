@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xamForms:ReactiveContentView x:TypeArguments="shared:GameViewModel"
+                              xmlns="http://xamarin.com/schemas/2014/forms"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                              xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+                              xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+                              xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+                              xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+                              xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+                              x:Class="TalkiPlay.GameView"
+                              x:DataType="shared:GameViewModel">
+
+    <ContentView.Content>
+        <ScrollView>
+            <Grid x:Name="SubLayout"
+                  Margin="20,0,20,20"
+                  RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <forms:SvgCachedImage Grid.Column="0"
+                                      Grid.Row="0"
+                                      x:Name="BackgroundImage"
+                                      Source="{Binding BackgroundImage}"
+                                      HorizontalOptions="FillAndExpand"
+                                      VerticalOptions="FillAndExpand"
+                                      Aspect="AspectFill"
+                                      LoadingPlaceholder="{x:Static shared:Images.LoadingIndicator}"
+                                      ErrorPlaceholder="{x:Static shared:Images.PlaceHolder}" />
+
+                <!-- <forms1:AnimationView -->
+                <!--     x:Name="AnimationView" -->
+                <!--     Grid.Column="0" -->
+                <!--     Grid.Row="0" -->
+                <!--     IsPlaying="True" -->
+                <!--     Loop="true" -->
+                <!-- -->
+                <!--     WidthRequest="355" -->
+                <!--     HeightRequest="200" -->
+                <!--     Animation="{x:Static shared:Images.TestAnimation}" -->
+                <!--     HorizontalOptions="FillAndExpand" -->
+                <!--     VerticalOptions="FillAndExpand" -->
+                <!-- -->
+                <!--     /> -->
+                <forms:SvgCachedImage Grid.Column="0"
+                                      Grid.Row="0"
+                                      x:Name="LockImage"
+                                      Source="{x:Static shared:Images.LockImage}"
+                                      HeightRequest="150"
+                                      HorizontalOptions="Center"
+                                      VerticalOptions="Center"
+                                      Margin="10"
+                                      IsVisible="{Binding IsLocked}"
+                                      InputTransparent="true"
+                                      Aspect="AspectFit" />
+                <StackLayout InputTransparent="True"
+                             Grid.Column="0"
+                             Grid.Row="0"
+                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="Center">
+                    <ui:ExtendedLabel InputTransparent="True"
+                                      Text="{Binding Title}"
+                                      CustomFont="{x:Static talkiPlay:Fonts.HeroTitleFont}"
+                                      HorizontalOptions="FillAndExpand"
+                                      HorizontalTextAlignment="Center" />
+                    <ui:ExtendedLabel InputTransparent="True"
+                                      CustomFont="{x:Static talkiPlay:Fonts.HeaderFont}"
+                                      Text="{Binding ShortDescription}"
+                                      IsVisible="{Binding IsLocked}"
+                                      HorizontalOptions="FillAndExpand"
+                                      HorizontalTextAlignment="Center" />
+                </StackLayout>
+                <StackLayout Grid.Column="0"
+                             Grid.Row="1">
+                    <ui:ExtendedLabel Text="{Binding GameType}"
+                                      CustomFont="{x:Static talkiPlay:Fonts.Header1Font}"
+                                      HorizontalOptions="FillAndExpand"
+                                      Margin="0,20,0,10" />
+
+                    <ui:ExtendedLabel Text="{Binding RecommendationText}"
+                                      CustomFont="{x:Static talkiPlay:Fonts.Header2Font}"
+                                      HorizontalOptions="Start"
+                                      IsVisible="{Binding HasRecommendationText}"
+                                      Margin="0,0,0,10" />
+
+                    <ui:ExtendedLabel Margin="0,0,0,10"
+                                      Text="{Binding Description}"
+                                      CustomFont="{x:Static talkiPlay:Fonts.BodyWhiteFont}"
+                                      HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Grid.Column="0"
+                             Grid.Row="2"
+                             Spacing="10"
+                             Margin="0,0,0,10">
+                    <talkiPlay:ImageButtonView WidthRequest="300"
+                                               Command="{Binding GuideCommand}"
+                                               IsVisible="{Binding ShowGuideButton}"
+                                               DefaultSource="{x:Static shared:Images.StartGuideButtonImage}" />
+                    
+                </StackLayout>
+
+
+            </Grid>
+
+        </ScrollView>
+    </ContentView.Content>
+</xamForms:ReactiveContentView>

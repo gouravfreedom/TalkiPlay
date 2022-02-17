@@ -1,0 +1,109 @@
+﻿<tp:BasePage
+    x:TypeArguments="tps:DeviceSetupPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tp="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:tps="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ff="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:cmu="clr-namespace:ChilliSource.Mobile.UI"
+    x:Class="TalkiPlay.DeviceSetupPage">
+    <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="NavRow" Height="Auto"/>
+                <RowDefinition x:Name="MainRow" Height="*" />
+            </Grid.RowDefinitions>
+
+            <tp:NavigationView IsVisible="False"  Grid.Row="0" x:Name="NavigationView" ShowLeftButton="true" 
+                                      ShowRightButton="false" LeftButtonIcon="{x:Static tps:Images.ArrowBackIcon}" />
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" BackgroundColor="Transparent">
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="20, 10">
+                        <ui:ExtendedLabel CustomFont="{x:Static tp:Fonts.HeroTitleFont}" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="{Binding StepTitle}"/>
+                    </StackLayout>
+                </Grid>
+                <Grid Grid.Row="1" BackgroundColor="Transparent">
+                    <lottie:AnimationView HorizontalOptions="Fill" VerticalOptions="Fill" Scale="{Binding AnimScale}" IsVisible="{Binding ShowAnim}"
+                                          Loop="True" AutoPlay="True" IsPlaying="True"  Animation="{Binding StepAnim}" />
+                    <ff:SvgCachedImage HorizontalOptions="Fill" VerticalOptions="Fill" Source="{Binding StepImage}"  Aspect="AspectFit"
+                                       Margin="30" IsVisible="{Binding ShowAnim, Converter={Static tp:Converters.InvertedBooleanConverter}}"/>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid  HeightRequest="150" Padding="60, 0" IsVisible="False">
+                        <Grid.Triggers>
+                            <DataTrigger TargetType="Grid" Binding="{Binding CurrentStep}" Value="{x:Static tps:DeviceSetupStep.PairMe}">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                        </Grid.Triggers>
+                        <Frame HasShadow="True" BackgroundColor="Transparent" Padding="0" Margin="0" VerticalOptions="Center" >
+                            <cmu:ExtendedButtonEx HorizontalOptions="Fill" VerticalOptions="Center" Text="Pair me" 
+                               Command="{Binding PairMeCommand}" BackgroundColor="{x:Static tps:Colors.Blue5Color}" />
+                        </Frame>
+                    </Grid>
+
+                    <Grid HeightRequest="100" Padding="30, 0" IsVisible="False">
+                        <Grid.Triggers>
+                            <DataTrigger TargetType="Grid" Binding="{Binding CurrentStep}" Value="{x:Static tps:DeviceSetupStep.TapMe}">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                        </Grid.Triggers>
+                        <ui:ExtendedLabel Text="Having trouble?&#10;click for help here" CustomFont="{x:Static tp:Fonts.LinkWhiteFont}" HorizontalTextAlignment="Center">
+                            <ui:ExtendedLabel.Triggers>
+                            <DataTrigger TargetType="ui:ExtendedLabel" Binding="{Binding IsPluggedIn}" Value="True">
+                                <Setter Property="Text" Value="Plugged in?&#10;click for help here" />
+                            </DataTrigger>
+                            </ui:ExtendedLabel.Triggers>
+                            <ui:ExtendedLabel.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SwitchPlugInCommand}"/>
+                            </ui:ExtendedLabel.GestureRecognizers>
+                        </ui:ExtendedLabel>
+                    </Grid>
+
+                    <Grid HeightRequest="100" Padding="30, 0" IsVisible="False">
+                        <Grid.Triggers>
+                            <DataTrigger TargetType="Grid" Binding="{Binding CurrentStep}" Value="{x:Static tps:DeviceSetupStep.HomeTag}">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                        </Grid.Triggers>
+                        <ui:ExtendedLabel Text="Updating home pack may take a few minutes" CustomFont="{x:Static tp:Fonts.BodyLinkReverseFont}"
+                                          HorizontalOptions="Fill" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                    </Grid>
+
+                    <Grid HeightRequest="100" Padding="30, 0" IsVisible="False">
+                        <Grid.Triggers>
+                            <DataTrigger TargetType="Grid" Binding="{Binding CurrentStep}" Value="{x:Static tps:DeviceSetupStep.TagMe}">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                        </Grid.Triggers>
+                    </Grid>
+
+                    <Grid HeightRequest="100" Padding="30, 0" IsVisible="False">
+                        <Grid.Triggers>
+                            <DataTrigger TargetType="Grid" Binding="{Binding CurrentStep}" Value="{x:Static tps:DeviceSetupStep.Success}">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                        </Grid.Triggers>
+                    </Grid>
+
+                    <Grid HeightRequest="100" Padding="30, 0" IsVisible="False">
+                        <Grid.Triggers>
+                            <DataTrigger TargetType="Grid" Binding="{Binding CurrentStep}" Value="{x:Static tps:DeviceSetupStep.Failed}">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                        </Grid.Triggers>
+                        <ui:ExtendedLabel Text="Failed to create home tag" CustomFont="{x:Static tp:Fonts.BodyLinkReverseFont}"
+                                          HorizontalOptions="Fill" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</tp:BasePage>

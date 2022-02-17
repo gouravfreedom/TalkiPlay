@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<talkiPlay:BasePopupPage
+    x:TypeArguments="shared:ConfirmationDialogPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    x:Class="TalkiPlay.ConfirmationDialogPage"
+    x:DataType="shared:ConfirmationDialogPageViewModel">
+    <ContentPage.Content>
+
+        <Frame
+            HasShadow="False"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="CenterAndExpand"
+            Margin="20">
+            <Grid
+                ColumnSpacing="5"
+                RowSpacing="20"
+                Padding="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition
+                        Height="2.5*" />
+                    <RowDefinition
+                        Height="*" />
+                </Grid.RowDefinitions>
+                <ui:ExtendedLabel
+                    x:Name="TitleLabel"
+                    Text="{Binding MainTitle}"
+                    CustomFont="{x:Static talkiPlay:Fonts.BodyFont}"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2" />
+                <talkiPlay:AnimatedButton
+                    x:Name="OkButton"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Animation="{x:Static shared:Images.LoadingAnimation}"
+                    ButtonFont="{x:Static talkiPlay:Fonts.ButtonTealTextFont}"
+                    ButtonHeightRequest="60"
+                    Text="{Binding YesButtonText}"
+                    ButtonColor="{x:Static shared:Colors.WhiteColor}"
+                    CornerRadius="5"
+                    AnimationHeightRequest="80"
+                    AnimationWidthRequest="80"
+                    BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+                <talkiPlay:AnimatedButton
+                    x:Name="CancelButton"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Animation="{x:Static shared:Images.LoadingAnimation}"
+                    ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextDarkGreyFont}"
+                    ButtonHeightRequest="60"
+                    Text="{Binding NoButtonText}"
+                    ButtonColor="{x:Static shared:Colors.WhiteColor}"
+                    CornerRadius="5"
+                    AnimationHeightRequest="80"
+                    AnimationWidthRequest="80"
+                    BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+            </Grid>
+
+        </Frame>
+    </ContentPage.Content>
+</talkiPlay:BasePopupPage>

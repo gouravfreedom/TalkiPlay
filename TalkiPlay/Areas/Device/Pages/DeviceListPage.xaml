@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<talkiPlay:BasePage
+    x:TypeArguments="shared:DeviceListPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    x:Class="TalkiPlay.DeviceListPage" x:Name="DevicesPage">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="NavRow" />
+                <RowDefinition x:Name="MainRow" Height="*" />
+            </Grid.RowDefinitions>
+
+            <talkiPlay:NavigationView x:Name="NavigationView" Grid.Row="0" Grid.Column="0" ShowLeftButton="true" ShowRightButton="false"/>          
+
+            <ListView x:Name="BleList" Grid.Row="1" Grid.Column="0" CachingStrategy="RecycleElement" HasUnevenRows="true" BackgroundColor="Transparent" SeparatorVisibility="None"
+                      VerticalOptions="FillAndExpand" SeparatorColor="{x:Static shared:Colors.PinkishGrey}" Footer=" " IsPullToRefreshEnabled="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <talkiPlay:DeviceItemCell />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout x:Name="EmptyStateView" Grid.Row="1" Grid.Column="0" Spacing="40" Margin="0,40,0,60" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <CarouselView x:Name="EmptyStateCarouselView" HorizontalScrollBarVisibility="Never" IndicatorView="IndicatorView" HorizontalOptions="FillAndExpand">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <talkiPlay:TalkiPlayerInstructionItemView />
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <IndicatorView x:Name="IndicatorView" Count="2" IndicatorColor="{x:Static shared:Colors.WarmGrey}" SelectedIndicatorColor="{x:Static shared:Colors.TealColor}"
+                               IndicatorSize="5" HorizontalOptions="Center" />
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</talkiPlay:BasePage>

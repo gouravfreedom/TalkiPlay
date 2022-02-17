@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xamForms:ReactiveContentView x:TypeArguments="shared:RewardItemsViewModel"
+                              xmlns="http://xamarin.com/schemas/2014/forms"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                              xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+                              xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+                              xmlns:talkiPlay1="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+                              xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+                              x:Class="TalkiPlay.RewardItemsView"
+                              x:DataType="shared:RewardItemsViewModel">
+    <ContentView.Content>
+
+        <CollectionView SelectionMode="None" IsEnabled="False"
+                        HorizontalScrollBarVisibility="Never" 
+                        VerticalScrollBarVisibility="Never"
+                        ItemsSource="{Binding RewardItems}"
+                        Margin="8">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" 
+                                 Span="{Binding NumberOfColumns}"
+                                 HorizontalItemSpacing="8"
+                                 VerticalItemSpacing="8" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="shared:RewardItemViewModel">
+                    <Grid Margin="0,0" 
+                          Padding="8"
+                          HeightRequest="60"
+                          WidthRequest="60"
+                          HorizontalOptions="Center"
+                          VerticalOptions="Center">
+                        <forms:SvgCachedImage x:Name="Image"
+                                              Source="{Binding RewardImage}"
+                                              Aspect="AspectFit"
+                                              ErrorPlaceholder="{x:Static shared:Images.RewardUnknownIcon}"
+                                              LoadingPlaceholder="{x:Static shared:Images.RewardUnknownIcon}" />
+
+                        <talkiPlay1:BadgeView x:Name="Badge"
+                                              Text="{Binding BadgeCount}"
+                                              HorizontalOptions="Start"
+                                              VerticalOptions="Start"
+                                              Opacity="{Binding Opacity}"
+                                              BadgeColor="{x:Static shared:Colors.DarkIndigo}"
+                                              BadgeTextFont="{x:Static talkiPlay1:Fonts.BadgeTextFont}" />
+                    </Grid>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentView.Content>
+</xamForms:ReactiveContentView>

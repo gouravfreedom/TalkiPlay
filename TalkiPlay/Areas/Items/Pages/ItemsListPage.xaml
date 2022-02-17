@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<talkiPlay:BasePage x:TypeArguments="shared:ItemListPageViewModel" 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    x:Class="TalkiPlay.ItemsListPage"
+    x:DataType="shared:ItemListPageViewModel">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="NavRow"/>
+                <RowDefinition x:Name="MainRow" Height="*"/>
+            </Grid.RowDefinitions>
+            <talkiPlay:NavigationView x:Name="NavigationView" 
+                                      ShowLeftButton="true" 
+                                      ShowRightButton="false"
+                                      
+                                       
+                                      Grid.Row="0" Grid.Column="0" />
+
+                <ListView
+                    Grid.Row="1" Grid.Column="0"
+                    x:Name="ItemList"
+                    CachingStrategy="RecycleElement"
+                    HasUnevenRows="true"
+                    BackgroundColor="Transparent"
+                    SeparatorVisibility="None"
+                    VerticalOptions="FillAndExpand"
+                    SeparatorColor="{x:Static shared:Colors.PinkishGrey}"
+                    Footer=" ">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <talkiPlay:ItemSelectionCell/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+        </Grid>
+    </ContentPage.Content>
+</talkiPlay:BasePage>

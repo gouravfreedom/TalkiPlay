@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<talkiPlay:BasePage x:TypeArguments="shared:ITagItemSetupPageViewModel"
+                    xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+                    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+                    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+                    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+                    x:Class="TalkiPlay.TagItemSetupPage"
+                    x:DataType="shared:TagItemSetupPageViewModel">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="NavRow" />
+                <RowDefinition x:Name="MainRow"
+                               Height="*" />
+            </Grid.RowDefinitions>
+
+            <talkiPlay:NavigationView x:Name="NavigationView"
+                                     
+                                      ShowLeftButton="true"
+                                      ShowRightButton="false"
+                                      
+                                      
+                                      Grid.Row="0"
+                                      Grid.Column="0" />
+
+            <ScrollView x:Name="ScrollView"
+                        Grid.Row="1"
+                        Grid.Column="0">
+                <StackLayout HorizontalOptions="Center"
+                             Padding="20"
+                             Spacing="15">
+                    <ui:ExtendedLabel x:Name="Heading"
+                                      CustomFont="{x:Static talkiPlay:Fonts.BodyFont}"
+                                      Text="{Binding Heading}"
+                                      HorizontalOptions="FillAndExpand"
+                                      VerticalTextAlignment="Center"
+                                      HorizontalTextAlignment="Center" />
+                    <ui:ExtendedLabel x:Name="SubHeading"
+                                      CustomFont="{x:Static talkiPlay:Fonts.BodyLinkFont}"
+                                      Text="{Binding SubHeading}"
+                                      HorizontalOptions="FillAndExpand"
+                                      VerticalTextAlignment="Center"
+                                      HorizontalTextAlignment="Center" />
+                    <forms:SvgCachedImage x:Name="Image"
+                                          Source="{Binding InstructionImage}"
+                                          Aspect="AspectFit"
+                                          HeightRequest="250" />
+                    <ui:ExtendedLabel x:Name="Message"
+                                      CustomFont="{Binding HasError, Converter={x:Static talkiPlay:Converters.BooleanToFontConverter}}"
+                                      Text="{Binding Message}"
+                                      HorizontalOptions="FillAndExpand"
+                                      VerticalTextAlignment="Center"
+                                      HorizontalTextAlignment="Center" />
+                    <talkiPlay:AnimatedButton x:Name="GoButton"
+                                              Animation="{x:Static shared:Images.LoadingAnimation}"
+                                              ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}"
+                                              ButtonHeightRequest="60"
+                                              Text="Go"
+                                              ButtonColor="{x:Static shared:Colors.TealColor}"
+                                              CornerRadius="5"
+                                              AnimationHeightRequest="80"
+                                              AnimationWidthRequest="80"
+                                              BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+                    <talkiPlay:AnimatedButton x:Name="SkipButton"
+                                              Margin="0,0,0,60"
+                                              Animation="{x:Static shared:Images.LoadingAnimation}"
+                                              ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextDarkGreyFont}"
+                                              ButtonHeightRequest="60"
+                                              Text="Skip"
+                                              ButtonColor="{x:Static shared:Colors.WhiteColor}"
+                                              CornerRadius="5"
+                                              AnimationHeightRequest="80"
+                                              AnimationWidthRequest="80"
+                                              BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</talkiPlay:BasePage>

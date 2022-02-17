@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:fff="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:fft="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:tp="clr-namespace:TalkiPlay"
+             xmlns:tps="clr-namespace:TalkiPlay.Shared"
+             mc:Ignorable="d"
+             x:Class="TalkiPlay.StarView">
+    <Grid x:Name="rootGrid" HorizontalOptions="Fill" VerticalOptions="Fill">
+        <fff:SvgCachedImage Source="{Static tps:Images.StarOff}"  HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFit"/>
+        <fff:SvgCachedImage x:Name="imgOn" Source="{Static tps:Images.StarOn}"  HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFit"/>
+    </Grid>
+</ContentView>

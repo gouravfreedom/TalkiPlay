@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xamForms:ReactiveContentView
+    x:TypeArguments="shared:RoomViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+    x:Class="TalkiPlay.RoomCell" HeightRequest="200"
+    x:DataType="shared:RoomViewModel">
+    <ContentView.Content>
+
+        <Grid
+            HeightRequest="200"
+            Padding="20, 10, 20, 10">
+
+            <forms:SvgCachedImage
+                HeightRequest="180"
+                x:Name="BackgroundImage"
+                Source="{Binding BackgroundImage}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                 
+                Aspect="AspectFill"
+                LoadingPlaceholder="{x:Static shared:Images.LoadingIndicator}"
+                ErrorPlaceholder="{x:Static shared:Images.PlaceHolder}" />
+
+            <ui:ExtendedLabel
+                x:Name="HeroTitle"
+                Text="{Binding HeroTitle}"
+                CustomFont="{x:Static talkiPlay:Fonts.HeaderFont}"
+                VerticalOptions="Start"
+                Margin="0, 5, 0, 0"
+                HorizontalOptions="FillAndExpand"
+                HorizontalTextAlignment="Center" />
+
+            <!--<Button
+                WidthRequest="24"
+                HeightRequest="24"
+                ImageSource="{x:Static shared:Images.EditIcon}"
+                VerticalOptions="End"
+                HorizontalOptions="End"
+                Margin="0,0,10,10"
+                Command="{Binding EditCommand}" />-->
+        </Grid>
+
+
+        <!--<SwipeView>           
+            <SwipeView.RightItems>
+                <SwipeItem Text="Edit" BackgroundColor="{x:Static shared:Colors.DarkTealColor}"
+                           Invoked="SwipeItem_Invoked" />
+            </SwipeView.RightItems>
+             </SwipeView>-->
+
+
+
+
+
+        <!--<AbsoluteLayout
+            HorizontalOptions="FillAndExpand"
+            HeightRequest="200"
+            Margin="20, 10, 20, 10">
+           
+
+            <forms:SvgCachedImage
+                x:Name="BackgroundImage"
+                Source="{Binding BackgroundImage}"
+                HorizontalOptions="FillAndExpand"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                Aspect="AspectFit"
+                LoadingPlaceholder="{x:Static shared:Images.LoadingIndicator}"
+                ErrorPlaceholder="{x:Static shared:Images.PlaceHolder}" />
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Start"
+                Margin="0, 5, 0, 0"
+                AbsoluteLayout.LayoutFlags="All"
+                AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <ui:ExtendedLabel
+                    x:Name="HeroTitle"
+                    Text="{Binding HeroTitle}"
+                    CustomFont="{x:Static talkiPlay:Fonts.HeaderFont}"
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center" />            
+            </StackLayout>
+        </AbsoluteLayout>-->
+
+
+
+
+
+    </ContentView.Content>
+
+</xamForms:ReactiveContentView>

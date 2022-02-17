@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<talkiPlay:ReactiveBaseViewCell
+    x:TypeArguments="shared:AudioPackItemViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:plugin="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:forms1="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    x:Class="TalkiPlay.AudioPackItemCell">
+    <Grid
+        Padding="20"
+        ColumnSpacing="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="*" />
+            <ColumnDefinition
+                Width="35" />
+        </Grid.ColumnDefinitions>
+        <ui:ExtendedLabel
+            x:Name="Name"
+            CustomFont="{x:Static talkiPlay:Fonts.TitleRegularFontBig}"
+            Text="{Binding Name}"
+            HorizontalOptions="FillAndExpand"
+            VerticalTextAlignment="Center"
+            Grid.Row="0"
+            Grid.Column="0" />
+        <forms1:SvgCachedImage
+            x:Name="Icon"
+            Source="{Binding Icon}"
+            WidthRequest="24"
+            HeightRequest="24"
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalOptions="End" />
+    </Grid>
+</talkiPlay:ReactiveBaseViewCell>

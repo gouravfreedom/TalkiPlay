@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<tp:TabViewBase
+    x:TypeArguments="tps:CategoryListPageViewModel"
+    xmlns:tp="clr-namespace:TalkiPlay"
+    xmlns:tps="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:fff="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:cmu="clr-namespace:ChilliSource.Mobile.UI"    
+    x:Class="TalkiPlay.CategoryListPage">
+
+    <Grid x:Name="mainLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="NavRow" Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <tp:NavigationView Grid.Row="0" x:Name="NavigationView" IsVisible="False" ShowLeftButton="false" ShowRightButton="false"/>
+
+        <Grid Grid.Row="1" Margin="20, 0">
+            <cmu:ExtendedLabel CustomFont="{x:Static tp:Fonts.HeroTitleFont}" VerticalOptions="Center" TextColor="White" Text="Hello!"/>
+
+            <StackLayout HorizontalOptions="End" VerticalOptions="Center" Spacing="5">
+                <Grid WidthRequest="60" HeightRequest="60" HorizontalOptions="Center">
+                    <fff:SvgCachedImage x:Name="imgAvatar" Source="{Binding ActiveChild, Converter={x:Static tp:Converters.Child2AvatarConverter}}" HorizontalOptions="Fill" VerticalOptions="Fill">
+                        <fff:SvgCachedImage.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SelectChildCommand}"/>
+                        </fff:SvgCachedImage.GestureRecognizers>
+                    </fff:SvgCachedImage>
+                    <fff:SvgCachedImage WidthRequest="24" HeightRequest="24" HorizontalOptions="Center" VerticalOptions="Center"
+                                        IsVisible="{Binding Source={x:Reference imgAvatar}, Path=IsLoading}" Source="spinner_small.gif"/>
+                </Grid>
+                <cmu:ExtendedLabel Text="{Binding ActiveChild.Name}" HorizontalOptions="Center" LineBreakMode="TailTruncation" HorizontalTextAlignment="Center"
+                              CustomFont="{x:Static tp:Fonts.Header2Font}"/>
+            </StackLayout>            
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <RelativeLayout Margin="2">
+                <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.0}"
+                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.4}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <IndicatorView Grid.Row="0" x:Name="indicatorView" IndicatorColor="White" SelectedIndicatorColor="{x:Static tps:Colors.IndicatorYellowColor}"
+                               IndicatorSize="12" HorizontalOptions="Fill" VerticalOptions="Center" Count="5" IndicatorsShape="Circle" />
+                    <CarouselView Grid.Row="1" ItemsSource="{Binding RssImages}" HorizontalScrollBarVisibility="Never" IndicatorView="indicatorView" HorizontalOptions="Fill">
+                        <CarouselView.ItemsLayout>
+                            <LinearItemsLayout SnapPointsType="MandatorySingle" SnapPointsAlignment="Center" Orientation="Horizontal"></LinearItemsLayout>
+                        </CarouselView.ItemsLayout>
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                                    <fff:SvgCachedImage x:Name="rssCachedImage" Source="{Binding Image}" Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill">
+                                        <fff:SvgCachedImage.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnRssImageTapped"/>
+                                        </fff:SvgCachedImage.GestureRecognizers>
+                                    </fff:SvgCachedImage>
+                                    <fff:SvgCachedImage WidthRequest="64" HeightRequest="64" HorizontalOptions="Center" VerticalOptions="Center"
+                                                        IsVisible="{Binding Source={x:Reference rssCachedImage}, Path=IsLoading}" Source="spinner_big.gif"/>
+
+                                </Grid>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                    <ActivityIndicator Grid.Row="1" IsRunning="{Binding IsRssLoading}" IsVisible="{Binding IsRssLoading}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Grid>
+
+                <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.4}"
+                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.6}">
+                    <CollectionView x:Name="collectionView" ItemsSource="{Binding Categories}" ItemsLayout="VerticalList" SelectionMode="None">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Spacing="-14">
+                                    <cmu:ExtendedLabel CustomFont="{x:Static tp:Fonts.Header1Font}" Text="{Binding Name}" HorizontalOptions="Start" 
+                                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Padding="6, 0, 0, 0"/>
+                                    <CollectionView ItemsSource="{Binding Games}" SelectionMode="Single" ItemsLayout="HorizontalList" 
+                                                    SelectionChanged="OnGameSelectionChanged" HeightRequest="108">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Margin="0" Padding="6,0" WidthRequest="130" HeightRequest="108">
+                                                    <fff:SvgCachedImage x:Name="svgImage" Source="{Binding ImagePath}" Aspect="AspectFit" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                                                    <cmu:ExtendedLabel CustomFont="{x:Static tp:Fonts.Header2Font}" Text="{Binding Name}" HorizontalOptions="Center" 
+                                                                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center"
+                                                                       IsVisible="{Binding Source={x:Reference svgImage}, Path=IsLoading, Converter={x:Static tp:Converters.InvertedBooleanConverter}}"/>
+                                                    <fff:SvgCachedImage WidthRequest="24" HeightRequest="24" HorizontalOptions="Center" VerticalOptions="Center"
+                                                                        IsVisible="{Binding Source={x:Reference svgImage}, Path=IsLoading}" Source="spinner_small.gif"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <ActivityIndicator IsRunning="{Binding IsCategoriesLoading}" IsVisible="{Binding IsCategoriesLoading}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Grid>
+            </RelativeLayout>
+        </Grid>        
+    </Grid>
+</tp:TabViewBase>

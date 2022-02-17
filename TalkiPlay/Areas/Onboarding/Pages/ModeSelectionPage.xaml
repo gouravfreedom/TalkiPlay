@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tp:SimpleBasePage xmlns="http://xamarin.com/schemas/2014/forms"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:tp="clr-namespace:TalkiPlay"
+                   xmlns:tps="clr-namespace:TalkiPlay.Shared"
+                   xmlns:cmu="clr-namespace:ChilliSource.Mobile.UI"
+                   xmlns:ff="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+                   x:Class="TalkiPlay.ModeSelectionPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <tp:NavigationView Grid.Row="0" IsVisible="{Binding ShowNavBar, Mode=OneWay}" ShowLeftButton="true" 
+                           ShowRightButton="false" LeftButtonCommand="{Binding BackCommand}"/>
+        <Grid Grid.Row="1" Padding="50, 0">
+
+            <RelativeLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+                <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.11}"
+                      HorizontalOptions="Fill" HeightRequest="150">
+                    <ff:SvgCachedImage HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFit" Source="{x:Static tps:Images.LogoWhite}" />
+                </Grid>
+
+                <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.40}">
+                    <Frame HasShadow="True" BackgroundColor="Transparent" Padding="0" Margin="0" CornerRadius="25">
+                        <Frame.Background>
+                            <LinearGradientBrush StartPoint="0,0"
+                                                 EndPoint="1,0">
+                                <GradientStop Color="#23bcba"
+                                              Offset="0.1"/>
+                                <GradientStop Color="#45e994"
+                                              Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <cmu:ExtendedButtonEx x:Name="btnBuyer" HorizontalOptions="Fill" VerticalOptions="Center" Text="I'd like to purchase a TalkiPlayer"
+                                              BackgroundColor="Transparent" BorderColor="Transparent" Command="{Binding BuyerModeCommand}" />
+                    </Frame>
+                </Grid>
+
+                <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.55}">
+                    <Frame HasShadow="True" BackgroundColor="Transparent" Padding="0" Margin="0" CornerRadius="25">
+                        <Frame.Background>
+                            <LinearGradientBrush StartPoint="0,0"
+                                                 EndPoint="1,0">
+                                <GradientStop Color="#23bcba"
+                                              Offset="0.1"/>
+                                <GradientStop Color="#45e994"
+                                              Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <cmu:ExtendedButtonEx x:Name="btnParent" HorizontalOptions="Fill" VerticalOptions="Center" Text="I'm waiting for my TalkiPlayer"
+                                              BackgroundColor="Transparent" BorderColor="Transparent" Command="{Binding WaitModeCommand}"/>
+                    </Frame>
+                </Grid>
+
+                <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.8}">
+                    <cmu:ExtendedLabel HorizontalTextAlignment="Center" FontSize="24" TextColor="White" TextDecorations="Underline" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Center" Text="Continue without a TalkiPlayer">
+                        <cmu:ExtendedLabel.GestureRecognizers>
+                            <TapGestureRecognizer  Command="{Binding ParentModeCommand}"/>
+                        </cmu:ExtendedLabel.GestureRecognizers>
+                    </cmu:ExtendedLabel>
+                    
+                </Grid>
+            </RelativeLayout>
+        </Grid>
+    </Grid>
+</tp:SimpleBasePage>

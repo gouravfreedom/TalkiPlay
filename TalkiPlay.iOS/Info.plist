@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDisplayName</key>
+	<string>DTalkiPlay</string>
+	<key>CFBundleIdentifier</key>
+	<string>io.talkiplay.d.TalkiPlay</string>
+	<key>CFBundleName</key>
+	<string>TalkiPlay</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.1.6</string>
+	<key>CFBundleVersion</key>
+	<string>16271</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<string>NO</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>MinimumOSVersion</key>
+	<string>11.0</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>bluetooth-central</string>
+	</array>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>TalkiPlay needs access to Bluetooth to connect to Talkiplayer.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>TalkiPlay needs access to Bluetooth to connect to Talkiplayer.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>TalkiPlay needs access to your camera to scan QR Codes.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>TalkiPlay needs access to the microphone to be able to attach voice notes.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>TalkiPlay needs access to your photo library for you to be able to attach images.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>fonts/iconize-fontawesome-regular.ttf</string>
+		<string>fonts/iconize-fontawesome-solid.ttf</string>
+	</array>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>arm64</string>
+	</array>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleBlackTranslucent</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
+</dict>
+</plist>

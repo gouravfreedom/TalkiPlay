@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xamForms:ReactiveContentView
+    x:TypeArguments="shared:ChildViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+    x:DataType="shared:ChildViewModel"
+    x:Class="TalkiPlay.ChildCell">
+    <Grid
+        ColumnSpacing="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="80" />
+            <ColumnDefinition
+                Width="*" />
+            <ColumnDefinition
+                Width="44" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="Auto" />
+            <RowDefinition
+                Height="11" />
+        </Grid.RowDefinitions>
+        <forms:SvgCachedImage
+            x:Name="Photo"
+            Margin="20,20,0,0"
+            WidthRequest="50"
+            HeightRequest="50"
+            Source="{Binding Photo}"
+            Aspect="AspectFit"
+            Grid.Row="0"
+            Grid.Column="0" />
+        <ui:ExtendedLabel
+            x:Name="Name"
+            Margin="0,20,0,0"
+            CustomFont="{x:Static talkiPlay:Fonts.LabelBlackFont}"
+            Text="{Binding Name}"
+            HorizontalOptions="FillAndExpand"
+            VerticalTextAlignment="Center"
+            Grid.Row="0"
+            Grid.Column="1" />
+        <forms:SvgCachedImage
+            Margin="0,20,20,0"
+            Source="{x:Static shared:Images.ArrowIcon}"
+            WidthRequest="24"
+            HeightRequest="24"
+            Grid.Row="0"
+            Grid.Column="2"
+            HorizontalOptions="End" />
+        <BoxView
+            Grid.ColumnSpan="3"
+            Margin="0,10,0,0"
+            Grid.Column="0"
+            Grid.Row="1"
+            BackgroundColor="{x:Static shared:Colors.PinkishGrey}"
+            HeightRequest="1"
+            HorizontalOptions="FillAndExpand" />
+    </Grid>
+</xamForms:ReactiveContentView>

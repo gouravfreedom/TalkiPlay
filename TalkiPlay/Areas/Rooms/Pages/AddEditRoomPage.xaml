@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<talkiPlay:BasePage
+    x:TypeArguments="shared:AddEditRoomPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    x:Class="TalkiPlay.AddEditRoomPage"
+    x:DataType="shared:AddEditRoomPageViewModel">
+    <ContentPage.Content>
+
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    x:Name="NavRow" />
+                <RowDefinition
+                    x:Name="MainRow"
+                    Height="*" />
+            </Grid.RowDefinitions>
+
+            <talkiPlay:NavigationView
+                x:Name="NavigationView"
+               
+                ShowLeftButton="true"
+                ShowRightButton="false"
+                
+                
+                Grid.Row="0"
+                Grid.Column="0" />
+
+            <ScrollView
+                x:Name="ScrollView"
+                Grid.Row="1"
+                Grid.Column="0">
+                <StackLayout
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="StartAndExpand"
+                    BackgroundColor="Transparent"
+                    Margin="20, 60, 20, 20">
+                    <StackLayout
+                        Spacing="10">
+                        <StackLayout>
+                            <ui:ExtendedLabel
+                                Text="Name"
+                                CustomFont="{x:Static talkiPlay:Fonts.MetaLinkBlackFont}"
+                                HorizontalOptions="FillAndExpand" />
+                            <Frame
+                                x:Name="NameEntryFrame"
+                                HeightRequest="60"
+                                Padding="1"
+                                HasShadow="false"
+                                CornerRadius="4"
+                                BorderColor="White">
+                                <ui:ExtendedEntry
+                                    CustomFont="{x:Static talkiPlay:Fonts.BodyFont}"
+                                    CustomPlaceholderFont="{x:Static talkiPlay:Fonts.BodyPlaceHolderFont}"
+                                    Placeholder="Room name..."                                    
+                                    KeyboardReturnType="Next"
+                                    x:Name="NameEntry"
+                                    HorizontalContentPadding="10"
+                                    ErrorBackgroundColor="White"
+                                    BorderColor="Gray"
+                                    HasBorder="true" />
+                            </Frame>
+                            <ui:ValidationErrorsView
+                                ValidationMessageFont="{x:Static talkiPlay:Fonts.MetaErrorFont}"
+                                x:Name="NameErrorView" />
+                        </StackLayout>                        
+                    </StackLayout>
+                    <talkiPlay:AnimatedButton
+                        x:Name="NextButton"
+                        Margin="0,60,0,60"
+                        Animation="{x:Static shared:Images.LoadingAnimation}"
+                        ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}"
+                        ButtonHeightRequest="60"
+                        ButtonColor="{x:Static shared:Colors.TealColor}"
+                        CornerRadius="5"
+                        AnimationHeightRequest="80"
+                        AnimationWidthRequest="80"
+                        BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</talkiPlay:BasePage>

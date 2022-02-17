@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<rui:ReactiveContentView x:TypeArguments="tps:SettingsItemViewModel"
+                         xmlns="http://xamarin.com/schemas/2014/forms"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                         xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+                         xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+                         xmlns:tps="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+                         xmlns:tp="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+                        xmlns:rui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+                         x:Class="TalkiPlay.SettingsMenuItemView"
+                         x:DataType="tps:SettingsItemViewModel">    
+    <Grid Margin="20, 15">
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnViewTapped"/>
+        </Grid.GestureRecognizers>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="24" />
+        </Grid.ColumnDefinitions>
+        <ui:ExtendedLabel Grid.Column="0" CustomFont="{x:Static tp:Fonts.TitleRegularFontBig}" Text="{Binding Label}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+        <forms:SvgCachedImage Grid.Column="1" Source="{x:Static tps:Images.ArrowNextWhite}" WidthRequest="24" HeightRequest="24" HorizontalOptions="End" />
+    </Grid>
+</rui:ReactiveContentView>

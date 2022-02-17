@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<talkiPlay:BasePopupPage
+    x:TypeArguments="shared:ShakeTalkiPlayerPopUpPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    x:Class="TalkiPlay.ShakeTalkiPlayerPopup">
+    <ContentPage.Content>
+
+        <Frame
+            HasShadow="False"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+            Margin="20">
+
+            <Grid
+                x:Name="MainLayout"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Grid.Row="1"
+                Grid.Column="0"
+                RowSpacing="10"
+                Padding="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+                        Height="*" />
+                    <RowDefinition
+                        Height="15" />
+                </Grid.RowDefinitions>
+
+
+                <CarouselView
+                    x:Name="CarouselView"
+                    IndicatorView="IndicatorView"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Grid.Column="0"
+                    Grid.Row="0">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <talkiPlay:TalkiPlayerInstructionItemView />
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <IndicatorView
+                    Grid.Row="1"
+                    Grid.Column="0"                    
+                    Count="2"
+                    IndicatorColor="{x:Static shared:Colors.WarmGrey}"
+                    SelectedIndicatorColor="{x:Static shared:Colors.TealColor}"
+                    IndicatorSize="5"                    
+                    HorizontalOptions="Center" />
+            </Grid>
+
+
+        </Frame>
+    </ContentPage.Content>
+</talkiPlay:BasePopupPage>

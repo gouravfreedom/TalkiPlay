@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<talkiPlay:BasePage x:TypeArguments="shared:AudioPackListPageViewModel" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+                    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+                    x:Class="TalkiPlay.AudioPackListPage">
+    <ContentPage.Content>
+         <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="NavRow"/>
+                <RowDefinition x:Name="MainRow" Height="*"/>
+            </Grid.RowDefinitions>
+
+            <talkiPlay:NavigationView Grid.Row="0" x:Name="NavigationView"  ShowLeftButton="true" ShowRightButton="false"
+                                        />
+            <ListView Grid.Row="1" x:Name="AudioPackList" CachingStrategy="RecycleElement" HasUnevenRows="true" BackgroundColor="Transparent"
+                      SeparatorVisibility="None" VerticalOptions="FillAndExpand" SeparatorColor="{x:Static shared:Colors.PinkishGrey}" Footer=" " IsPullToRefreshEnabled="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <talkiPlay:AudioPackItemCell/>
+                    </DataTemplate>                    
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</talkiPlay:BasePage>

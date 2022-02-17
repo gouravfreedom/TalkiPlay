@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<tp:BasePage
+    x:TypeArguments="tps:TestGamePageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tp="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:tps="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ff="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    x:DataType="tps:TestGamePageViewModel"
+    x:Class="TalkiPlay.TestGamePage">
+    <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+        <lottie:AnimationView Grid.Row="0" HorizontalOptions="Fill" VerticalOptions="Fill" Loop="True" AutoPlay="True" IsPlaying="True"
+                                              Animation="{x:Static tps:Images.TpUpdating}" />
+    </Grid>    
+</tp:BasePage>

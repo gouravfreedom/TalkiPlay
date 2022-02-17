@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<tp:BasePage
+    x:TypeArguments="tps:SignupPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tp="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:tps="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:magicgradients="clr-namespace:MagicGradients;assembly=MagicGradients"
+    x:Class="TalkiPlay.SignupPage"
+    x:DataType="tps:SignupPageViewModel"
+    BackgroundColor="{x:Static tps:Colors.GradientStartColor}">
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="NavRow" Height="80" />
+            <RowDefinition x:Name="MainRow" Height="*" />
+        </Grid.RowDefinitions>
+        <magicgradients:GradientView x:Name="GradientView" Grid.RowSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/> 
+        <tp:NavigationView Grid.Row="0" x:Name="NavigationView" Title="Sign up" BarTintColor="Transparent" ShowLeftButton="true" ShowRightButton="false"
+                             IsVisible="{Binding ShowNavBar}"/>
+
+        <ScrollView Grid.Row="1" x:Name="ScrollView">
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent" Margin="20,20,20,0">
+                <forms:SvgCachedImage HorizontalOptions="Center" Source="{x:Static tps:Images.LogoWhite}" HeightRequest="100" />                   
+                <ui:ExtendedLabel x:Name="lblCompanyType"  Text="Household name" CustomFont="{x:Static tp:Fonts.MetaLinkWhiteFont}" HorizontalOptions="FillAndExpand" />
+                <Frame x:Name="HouseholdEntryFrame" HeightRequest="60" Padding="1" HasShadow="false" CornerRadius="4" BorderColor="White">
+                    <ui:ExtendedEntry CustomFont="{x:Static tp:Fonts.BodyFont}" CustomPlaceholderFont="{x:Static tp:Fonts.BodyPlaceHolderFont}"
+                        Placeholder="Household name..." Keyboard="Text" KeyboardReturnType="Next" x:Name="HouseholdEntry" HorizontalContentPadding="10"
+                        ErrorBackgroundColor="White" HasBorder="false" />
+                </Frame>
+                <ui:ValidationErrorsView ValidationMessageFont="{x:Static tp:Fonts.MetaErrorFont}" x:Name="HouseholdErrorView" Margin="0,0,0,10" />               
+                <ui:ExtendedLabel Text="Email address" CustomFont="{x:Static tp:Fonts.MetaLinkWhiteFont}" HorizontalOptions="FillAndExpand" />
+                <Frame x:Name="EmailEntryFrame" HeightRequest="60" Padding="1" HasShadow="false" CornerRadius="4" BorderColor="White">
+                    <ui:ExtendedEntry CustomFont="{x:Static tp:Fonts.BodyFont}" CustomPlaceholderFont="{x:Static tp:Fonts.BodyPlaceHolderFont}" Placeholder="Email address..."
+                        Keyboard="Email" KeyboardReturnType="Next" x:Name="EmailEntry" HorizontalContentPadding="10" ErrorBackgroundColor="White" HasBorder="false" />
+                </Frame>
+                <ui:ValidationErrorsView ValidationMessageFont="{x:Static tp:Fonts.MetaErrorFont}" x:Name="EmailErrorView"  Margin="0,0,0,10"/>
+                
+                <ui:ExtendedLabel Text="Password" CustomFont="{x:Static tp:Fonts.MetaLinkWhiteFont}" HorizontalOptions="FillAndExpand" />
+                <Frame x:Name="PasswordEntryFrame" HeightRequest="60" Padding="1" HasShadow="false" CornerRadius="4" BorderColor="White">
+                    <ui:ExtendedEntry CustomFont="{x:Static tp:Fonts.BodyFont}" CustomPlaceholderFont="{x:Static tp:Fonts.BodyPlaceHolderFont}" Placeholder="Password..."
+                        IsPassword="True" KeyboardReturnType="Next" x:Name="PasswordEntry" HorizontalContentPadding="10" ErrorBackgroundColor="White" HasBorder="false" />
+                </Frame>
+                <ui:ValidationErrorsView ValidationMessageFont="{x:Static tp:Fonts.MetaErrorFont}" x:Name="PasswordErrorView" Margin="0,0,0,10"/>               
+                <ui:ExtendedLabel Text="Confirm password" CustomFont="{x:Static tp:Fonts.MetaLinkWhiteFont}" HorizontalOptions="FillAndExpand" />
+                <Frame x:Name="ConfirmPasswordEntryFrame" HeightRequest="60" Padding="1" HasShadow="false" CornerRadius="4" BorderColor="White">
+                    <ui:ExtendedEntry CustomFont="{x:Static tp:Fonts.BodyFont}" CustomPlaceholderFont="{x:Static tp:Fonts.BodyPlaceHolderFont}" Placeholder="Confirm password..."
+                        IsPassword="True" KeyboardReturnType="Go" x:Name="ConfirmPasswordEntry" HorizontalContentPadding="10" ErrorBackgroundColor="White" HasBorder="false" />
+                </Frame>
+                <ui:ValidationErrorsView ValidationMessageFont="{x:Static tp:Fonts.MetaErrorFont}" x:Name="ConfirmPasswordErrorView" Margin="0,0,0,10"/>
+                <tp:TncView x:Name="TncView" Margin="0,5,0,0"/>
+                <ui:ValidationErrorsView ValidationMessageFont="{x:Static tp:Fonts.MetaErrorFont}" x:Name="TncErrorView" HorizontalOptions="Center" Margin="0,0,0,10"/>
+
+                <tp:AnimatedButton x:Name="SignupButton" Margin="0,5,0,20" Animation="{x:Static tps:Images.LoadingAnimation}" ButtonFont="{x:Static tp:Fonts.ButtonTextFont}"
+                    ButtonHeightRequest="60" Text="Sign up" ButtonColor="{x:Static tps:Colors.Fuschia}" CornerRadius="5"
+                    AnimationHeightRequest="80" AnimationWidthRequest="80" BusyButtonColor="{x:Static tps:Colors.WarmGrey}" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="8" x:Name="LoginLayout" Padding="0,20,0,40" Margin="0,0,0,0">
+                    <ui:ExtendedLabel Text="Already have an account?" CustomFont="{x:Static tp:Fonts.BodyLinkReverseFont}" HorizontalTextAlignment="Center" />
+                    <ui:ExtendedLabel Text="Log in." CustomFont="{x:Static tp:Fonts.BodyLinkReverseFont}" HorizontalTextAlignment="Center" x:Name="LoginLabel" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</tp:BasePage>

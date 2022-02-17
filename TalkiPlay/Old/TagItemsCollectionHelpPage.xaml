@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<talkiPlay:BasePage
+    x:TypeArguments="talkiPlay:TagItemHelpPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    x:Class="TalkiPlay.TagItemsCollectionHelpPage">
+    <ContentPage.Content>
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    x:Name="NavRow" />
+                <RowDefinition
+                    x:Name="MainRow"
+                    Height="*" />
+            </Grid.RowDefinitions>
+            <talkiPlay:NavigationView
+                x:Name="NavigationView"
+               
+                ShowLeftButton="false"
+                ShowRightButton="false"
+                
+                
+                Grid.Row="0"
+                Grid.Column="0" />
+
+            <StackLayout
+                x:Name="MainLayout"
+                Grid.Row="1"
+                Grid.Column="0"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Padding="20, 20, 20, 0"
+                Spacing="0">
+
+                <forms:SvgCachedImage
+                    x:Name="CollectionImage"
+                    Source="{x:Static shared:Images.CollectionImage}"
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="250"
+                    Aspect="AspectFit"
+                    Margin="0,0,0,10" />
+
+                <talkiPlay:AnimatedButton
+                    x:Name="ContinueButton"
+                    Animation="{x:Static shared:Images.LoadingAnimation}"
+                    ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}"
+                    ButtonHeightRequest="60"
+                    Text="Continue"
+                    ButtonColor="{x:Static shared:Colors.TealColor}"
+                    CornerRadius="5"
+                    AnimationHeightRequest="80"
+                    AnimationWidthRequest="80"
+                    BusyButtonColor="{x:Static shared:Colors.WarmGrey}"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="FillAndExpand" />
+
+                <AbsoluteLayout
+                    x:Name="SubLayout"
+                    VerticalOptions="End"
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="95">
+                    <Frame
+                        HasShadow="false"
+                        Padding="15"
+                        BackgroundColor="{x:Static shared:Colors.TealColor}"
+                        CornerRadius="0"
+                        AbsoluteLayout.LayoutBounds="0,0,1,80"
+                        AbsoluteLayout.LayoutFlags="WidthProportional, PositionProportional">
+                        <ui:ExtendedLabel
+                            CustomFont="{x:Static talkiPlay:Fonts.BodyWhiteFont}"
+                            Text="To see and add more items, tap on the collection tab"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalTextAlignment="Center" />
+                    </Frame>
+                    <forms:SvgCachedImage
+                        Source="{x:Static shared:Images.TriangleImage}"
+                        HorizontalOptions="FillAndExpand"
+                        AbsoluteLayout.LayoutBounds="0.66,1.28,40,40"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        Aspect="AspectFit" />
+                </AbsoluteLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</talkiPlay:BasePage>

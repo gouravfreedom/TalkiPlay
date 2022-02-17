@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xamForms:ReactiveContentView
+    x:TypeArguments="shared:SelectTalkiPlayerViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    x:Class="TalkiPlay.SelectTalkiPlayerView"
+    x:DataType="shared:SelectTalkiPlayerViewModel">
+    <ContentView.Content>
+        <Frame
+            HasShadow="false"
+            BackgroundColor="Transparent"
+            WidthRequest="90"
+            HeightRequest="90"
+            Margin="1,10,1,1"
+            Padding="0"
+            BorderColor="{x:Static shared:Colors.Black}"
+            x:Name="Frame">
+            <talkiPlay:SvgImageButton
+                x:Name="AddButton"
+                Source="{x:Static shared:Images.AddBlackIcon}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Aspect="AspectFit"
+                ImageScale="0.5" />
+
+
+        </Frame>
+    </ContentView.Content>
+</xamForms:ReactiveContentView>

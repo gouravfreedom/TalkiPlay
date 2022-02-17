@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<tp:BasePage
+    x:TypeArguments="tps:PacksRewardPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tp="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:tps="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:fff="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" 
+    xmlns:cmu="clr-namespace:ChilliSource.Mobile.UI" 
+    xmlns:ctrl="clr-namespace:TalkiPlay.Functional.UI.FormsExtensions"
+    x:Class="TalkiPlay.PackItemsRewardPage"
+    x:DataType="tps:PacksRewardPageViewModel">
+
+    <Grid x:Name="mainLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="NavRow" Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <tp:NavigationView Grid.Row="0" x:Name="NavigationView" Title="{Binding Title}" ShowRightButton="false" LeftButtonCommand="{Binding BackCommand}"/>
+
+        <Grid Grid.Row="1" RowDefinitions="Auto, Auto, Auto" Margin="20, 5, 20, 0" RowSpacing="10">
+            <Grid Grid.Row="0" Margin="10, 0">
+                <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="Center" >
+                    <Grid WidthRequest="60" HeightRequest="60" HorizontalOptions="End" Margin="20, 0" VerticalOptions="Center">
+                        <fff:SvgCachedImage x:Name="imgAvatar" Source="{Binding ActiveChild, Converter={x:Static tp:Converters.Child2AvatarConverter}}" 
+                                            HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <fff:SvgCachedImage.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SelectChildCommand}"/>
+                            </fff:SvgCachedImage.GestureRecognizers>
+                        </fff:SvgCachedImage>
+                        <fff:SvgCachedImage WidthRequest="24" HeightRequest="24" HorizontalOptions="Center" VerticalOptions="Center"
+                                            IsVisible="{Binding Source={x:Reference imgAvatar}, Path=IsLoading}" Source="spinner_small.gif"/>
+                    </Grid>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Start" VerticalOptions="Center" Spacing="0">
+                        <cmu:ExtendedLabel Text="{Binding ActiveChild.Name}" HorizontalOptions="Center" LineBreakMode="TailTruncation" CustomFont="{x:Static tp:Fonts.Header1Font}"/>
+                        <cmu:ExtendedLabel Text="{Binding ActiveChild.Age, StringFormat='Age {0}'}" HorizontalOptions="Center" CustomFont="{x:Static tp:Fonts.Header2Font}"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+
+            <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center">
+                <cmu:ExtendedLabel Text="I have practiced for:" HorizontalOptions="Center" CustomFont="{x:Static tp:Fonts.Header1FontBig}"/>
+                <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+                    <cmu:ExtendedLabel Text="{Binding SelectedPack.TotalMinutesPlayed, Mode=OneWay}" CustomFont="{x:Static tp:Fonts.HeaderYellowFont}"/>
+                    <cmu:ExtendedLabel Text="{Binding SelectedPack.TimeUnit}" HorizontalOptions="Center" VerticalOptions="End" CustomFont="{x:Static tp:Fonts.Header2Font}"/>
+                </StackLayout>
+            </StackLayout>
+            <Grid Grid.Row="2">
+                <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Spacing="10" Margin="0, 20, 0, 0">
+                    <cmu:ExtendedLabel Text="What do I know?" HorizontalOptions="Center" CustomFont="{x:Static tp:Fonts.Header1FontBig}"/>
+                    <ctrl:ExtendedPicker x:Name="packPicker" ItemsSource="{Binding Packs}" ItemDisplayBinding="{Binding Pack.Name}"
+                                         HorizontalOptions="Center" HeightRequest="40" Title="Select a pack" TitleColor="White" TextColor="White"
+                                         Image="{x:Static tps:Images.ArrowDownIcon}" BackgroundColor="#3D65BD">
+                    </ctrl:ExtendedPicker>
+                </StackLayout>
+            </Grid>            
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="10, 0, 5, 0">
+            <CollectionView ItemsSource="{Binding SelectedPack.Items}" SelectionMode="None" BackgroundColor="Transparent" HorizontalOptions="Fill" VerticalOptions="Fill">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*,*,*" Margin="0, 15, 0, 0" x:DataType="tps:ItemRewardViewModel" HorizontalOptions="Fill">
+                            <cmu:ExtendedLabel Grid.Column="0" Text="{Binding Item.Name, Mode=OneWay}" HorizontalOptions="Start" VerticalOptions="Center"
+                                               LineBreakMode="TailTruncation" CustomFont="{x:Static tp:Fonts.Header1Font}" FontAttributes="Bold"/>
+                            <fff:SvgCachedImage Grid.Column="1" Source="{Binding Item.ImagePath, Mode=OneWay}" HorizontalOptions="Center"
+                                                VerticalOptions="Center" WidthRequest="48" HeightRequest="48" Aspect="AspectFit"/>
+                            <Grid Grid.Column="2">
+                                <tp:StarView WidthRequest="40" HeightRequest="40" ProgressValue="{Binding Progress, Mode=OneWay}" HorizontalOptions="Center"/>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>       
+    </Grid>
+</tp:BasePage>

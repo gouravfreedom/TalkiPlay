@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TalkiPlay.StarView">
+    <Grid x:Name="rootGrid" VerticalOptions="Center">
+        <!--<local:PolygonEx x:Name="star_off"  Stroke="Gray"/>
+        <local:PolygonEx x:Name="imgOn" Stroke="Gold" HorizontalOptions="Start"/>-->
+        <Image Source="star_off.png"/>
+        <Image x:Name="imgOn" Source="star_on.png" HorizontalOptions="Start"/>
+        <!--<ctl:LabelEx Text="{x:Static ctls:FaIcons.Star}" UIData="{StaticResource udStarOff}"/>
+        <Frame x:Name="slOn" Padding="0" Margin="0" IsClippedToBounds="True" BackgroundColor="Transparent" HorizontalOptions="Start" HasShadow="False">
+            <ctl:LabelEx x:Name="imgOn" Text="{x:Static ctls:FaIcons.Star}" UIData="{StaticResource udStarOn}"/>
+        </Frame>-->
+    </Grid>
+</ContentView>

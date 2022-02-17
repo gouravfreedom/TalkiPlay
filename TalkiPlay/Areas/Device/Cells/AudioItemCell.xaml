@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<talkiPlay:ReactiveBaseViewCell
+    x:TypeArguments="shared:AudioItemViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:plugin="clr-namespace:ProgressRingControl.Forms.Plugin;assembly=ProgressRing.Forms.Plugin"
+    xmlns:forms1="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    IsSelectable="False"
+    x:Class="TalkiPlay.AudioItemCell">
+    <Grid
+        Padding="20, 10, 20, 10"
+        ColumnSpacing="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="40" />
+            <ColumnDefinition
+                Width="*" />
+            <ColumnDefinition
+                Width="35" />
+        </Grid.ColumnDefinitions>
+
+        <talkiPlay:SvgImageButton
+            x:Name="AudioPlayButton"
+            Source="{Binding Icon}"
+            WidthRequest="40"
+            HeightRequest="40"
+            Grid.Row="0"
+            Grid.Column="0" />
+        <ui:ExtendedLabel
+            x:Name="Name"
+            CustomFont="{x:Static talkiPlay:Fonts.LabelBlackFont}"
+            Text="{Binding Name}"
+            HorizontalOptions="FillAndExpand"
+            VerticalTextAlignment="Center"
+            Grid.Row="0"
+            Grid.Column="1" />
+        <AbsoluteLayout
+            x:Name="ProgressViewLayout"
+            Grid.Row="0"
+            Grid.Column="2"
+            HorizontalOptions="End"
+            WidthRequest="40"
+            HeightRequest="40"
+            VerticalOptions="FillAndExpand"
+            IsVisible="true">
+            <plugin:ProgressRing
+                x:Name="ProgressView"
+                RingThickness="4"
+                RingBaseColor="{x:Static shared:Colors.PinkishGrey}"
+                RingProgressColor="{x:Static shared:Colors.TealColor}"
+                AbsoluteLayout.LayoutBounds="0,0, 1, 1"
+                AbsoluteLayout.LayoutFlags="All" />
+            <talkiPlay:SvgImageButton
+                Source="{x:Static shared:Images.StopIcon}"
+                AbsoluteLayout.LayoutBounds="0.5,0.5, 24, 24"
+                AbsoluteLayout.LayoutFlags="PositionProportional" />
+        </AbsoluteLayout>
+
+        <talkiPlay:SvgImageButton
+            x:Name="RemoveButton"
+            Source="{x:Static shared:Images.TrashIcon}"
+            WidthRequest="24"
+            HeightRequest="24"
+            Grid.Row="0"
+            Grid.Column="2"
+            IsVisible="false" />
+        <talkiPlay:SvgImageButton
+            x:Name="DownloadButton"
+            Source="{x:Static shared:Images.DownloadIcon}"
+            WidthRequest="24"
+            HeightRequest="24"
+            Grid.Row="0"
+            Grid.Column="2"
+            IsVisible="false" />
+        <Frame
+            HasShadow="false"
+            Margin="0"
+            Padding="0"
+            x:Name="LoadingView"
+            IsVisible="false"
+            Grid.Row="0"
+            Grid.Column="2">
+            <forms1:AnimationView
+                WidthRequest="30"
+                HeightRequest="30"
+                Grid.Row="0"
+                Grid.Column="2"
+                Animation="{x:Static shared:Images.LoadingAnimation}"
+                IsPlaying="True"
+                Loop="True" />
+        </Frame>
+        <talkiPlay:SvgImageButton
+            x:Name="RetryButton"
+            Source="{x:Static shared:Images.RetryIcon}"
+            WidthRequest="24"
+            HeightRequest="24"
+            Grid.Row="0"
+            Grid.Column="2"
+            IsVisible="false" />
+    </Grid>
+</talkiPlay:ReactiveBaseViewCell>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xamForms:ReactiveContentView
+    x:TypeArguments="shared:ItemConfigurationViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:forms1="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    x:Class="TalkiPlay.ItemConfigurationView"
+    x:DataType="shared:ItemConfigurationViewModel">
+    <Grid VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="50">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <!--<ui:ExtendedLabel Grid.Row="0" Grid.Column="0" x:Name="Name" Margin="20,20,0,0" CustomFont="{x:Static talkiPlay:Fonts.LabelBlackFont}" Text="{Binding Name}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center"/>-->
+        <forms:SvgCachedImage Grid.Column="0" Source="{Binding ImagePath}" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="48" HeightRequest="48" Aspect="AspectFit"/>
+        <Switch Grid.Row="0" Grid.Column="1" x:Name="ItemOnOff" Margin="0" HorizontalOptions="Start" VerticalOptions="Center" IsToggled="{Binding IsEnabled, Mode=TwoWay}"
+                OnColor="{x:Static shared:Colors.TealColor}" ThumbColor="{x:Static shared:Colors.Yellow}"/>
+        
+    </Grid>
+</xamForms:ReactiveContentView>

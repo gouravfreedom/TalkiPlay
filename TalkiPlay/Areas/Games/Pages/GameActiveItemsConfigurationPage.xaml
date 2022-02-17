@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<talkiPlay:BasePage
+    x:TypeArguments="shared:GameActiveItemsConfigurationPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    x:Class="TalkiPlay.GameActiveItemsConfigurationPage"
+    x:DataType="shared:GameActiveItemsConfigurationPageViewModel">
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="NavRow" />
+            <RowDefinition x:Name="MainRow" Height="*" />
+            <!--<RowDefinition  Height="60"/>-->
+        </Grid.RowDefinitions>
+        <talkiPlay:NavigationView Grid.Row="0" x:Name="NavigationView" ShowLeftButton="true" ShowRightButton="false"
+             />
+
+        <CollectionView Grid.Row="1" x:Name="ItemsList" SelectionMode="None">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <talkiPlay:ItemConfigurationView />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</talkiPlay:BasePage>

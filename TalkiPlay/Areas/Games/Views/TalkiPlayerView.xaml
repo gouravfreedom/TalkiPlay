@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<xamForms:ReactiveContentView x:TypeArguments="shared:TalkiPlayerViewModel"
+                              xmlns="http://xamarin.com/schemas/2014/forms"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                              xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+                              xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+                              xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+                              xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+                              x:DataType="shared:TalkiPlayerViewModel"
+                              x:Class="TalkiPlay.TalkiPlayerView">
+    <ContentView.Content>
+        <AbsoluteLayout WidthRequest="110"
+                        HeightRequest="110"
+                        Padding="1, 10, 1, 1">
+            <Frame HasShadow="false"
+                   CornerRadius="4"
+                   BorderColor="{x:Static shared:Colors.TealColor}"
+                   Margin="15,0,0,0"
+                   AbsoluteLayout.LayoutFlags="SizeProportional"
+                   AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+                <ui:ExtendedLabel x:Name="Name"
+                                  CustomFont="{x:Static talkiPlay:Fonts.BodyLinkFont}"
+                                  Text="{Binding Name}"
+                                  HorizontalOptions="FillAndExpand"
+                                  VerticalOptions="Center"
+                                  LineBreakMode="TailTruncation"
+                                  HorizontalTextAlignment="Center"
+                                  MaxLines="2" />
+            </Frame>
+
+            <AbsoluteLayout AbsoluteLayout.LayoutFlags="PositionProportional"
+                            BackgroundColor="FloralWhite"
+                            AbsoluteLayout.LayoutBounds="0.05, -0.10, 24, 24">
+
+                <talkiPlay:SvgImageButton x:Name="RemoveButton"
+                                          Source="{x:Static shared:Images.RemoveIcon}"
+                                          AbsoluteLayout.LayoutFlags="All"
+                                          AbsoluteLayout.LayoutBounds="0, 0, 1, 1" />
+            </AbsoluteLayout>
+
+        </AbsoluteLayout>
+    </ContentView.Content>
+</xamForms:ReactiveContentView>

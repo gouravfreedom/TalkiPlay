@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rui:ReactiveContentView
+    x:TypeArguments="tps:GameSessionViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:rui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+    xmlns:tp="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:tps="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ff="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    x:DataType="tps:GameSessionViewModel"
+    x:Class="TalkiPlay.GameSessionView">
+    <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill" IsVisible="False">
+            <Grid.Triggers>
+                <DataTrigger TargetType="Grid" Binding="{Binding GameStatus}" Value="{x:Static tps:GameSessionStatus.Pending}">
+                    <Setter Property="IsVisible" Value="True"/>
+                </DataTrigger>
+            </Grid.Triggers>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" BackgroundColor="Transparent" Margin="0, 30, 0, 0" >
+                <ui:ExtendedLabel CustomFont="{x:Static tp:Fonts.HeaderFont}" FontAttributes="Bold" Padding="10" TextColor="White" Text="{Binding Title}"
+                                      HorizontalTextAlignment="Center" VerticalTextAlignment="Start" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Grid>        
+            <Grid Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill">
+                <RelativeLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.9}">
+                        <lottie:AnimationView HorizontalOptions="Fill" VerticalOptions="Fill" Loop="True" AutoPlay="False"
+                                              IsPlaying="False"  Animation="{x:Static tps:Images.ObShakeMeTapMe}" Margin="10">
+                            <lottie:AnimationView.Triggers>
+                                <DataTrigger TargetType="lottie:AnimationView" Binding="{Binding GameStatus}" Value="{x:Static tps:GameSessionStatus.Pending}">
+                                    <Setter Property="IsPlaying" Value="True"/>
+                                </DataTrigger>
+                            </lottie:AnimationView.Triggers>
+                        </lottie:AnimationView>
+                    </Grid>
+
+                    <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.0}"
+                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}">
+                        <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <ff:SvgCachedImage Source="{x:Static tps:Images.SpeechBubbleExplore}" Aspect="AspectFit" Margin="20, 0" HorizontalOptions="Start" VerticalOptions="Fill"/>
+                        </Grid>
+                    </Grid>
+                </RelativeLayout>            
+            </Grid>
+        </Grid>
+
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill" IsVisible="False">
+            <Grid.Triggers>
+                <DataTrigger TargetType="Grid" Binding="{Binding GameStatus}" Value="{x:Static tps:GameSessionStatus.WaitingForDevice}">
+                    <Setter Property="IsVisible" Value="True"/>
+                </DataTrigger>
+            </Grid.Triggers>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" BackgroundColor="Transparent" Margin="0, 30, 0, 0" >
+                 <ui:ExtendedLabel CustomFont="{x:Static tp:Fonts.Header1Font}" TextColor="White" Text="{Binding Description}" Padding="10"
+                                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+            </Grid>        
+            <Grid Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill">
+                <RelativeLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.9}">
+                        <lottie:AnimationView HorizontalOptions="Fill" VerticalOptions="Fill" Loop="True" AutoPlay="False"
+                                              IsPlaying="False"  Animation="{x:Static tps:Images.ObShakeMeTapMe}" Margin="10">
+                            <lottie:AnimationView.Triggers>
+                                <DataTrigger TargetType="lottie:AnimationView" Binding="{Binding GameStatus}" Value="{x:Static tps:GameSessionStatus.WaitingForDevice}">
+                                    <Setter Property="IsPlaying" Value="True"/>
+                                </DataTrigger>
+                            </lottie:AnimationView.Triggers>
+                        </lottie:AnimationView>
+                    </Grid>
+
+                    <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                          RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.0}"
+                          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+                          RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}">
+                          <ui:ExtendedLabel CustomFont="{x:Static tp:Fonts.HeaderFont}" FontAttributes="Bold" VerticalOptions="Start"
+                                            HorizontalTextAlignment="Center" VerticalTextAlignment="Start" HorizontalOptions="FillAndExpand"
+                                            TextColor="White" Text="{Binding Title}" Padding="10"/>
+                    </Grid>
+                </RelativeLayout>            
+            </Grid>
+        </Grid>
+
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill" IsVisible="False">
+            <Grid.Triggers>
+                <DataTrigger TargetType="Grid" Binding="{Binding GameStatus}" Value="{x:Static tps:GameSessionStatus.WaitingForResult}">
+                    <Setter Property="IsVisible" Value="True"/>
+                </DataTrigger>
+            </Grid.Triggers>
+
+            <RelativeLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+                <!--<Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.0}"
+                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}">
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <tp:AnimatedButton HorizontalOptions="Center" Animation="{x:Static tps:Images.LoadingAnimation}" ButtonFont="{x:Static tp:Fonts.ButtonTextFont}"
+                                           ButtonHeightRequest="60" ButtonColor="{x:Static tps:Colors.Fuschia}" 
+                                           AnimationHeightRequest="240" AnimationWidthRequest="240" BusyButtonColor="{x:Static tps:Colors.WarmGrey}" IsBusy="True" />
+                        <ui:ExtendedLabel Text="Downloading game result" CustomFont="{x:Static tp:Fonts.ButtonTextFont}" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Grid>-->
+
+                <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.0}"
+                        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+                        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1.0}">
+                    <lottie:AnimationView HorizontalOptions="Fill" VerticalOptions="Fill" Loop="True" AutoPlay="False" Scale="2"
+                                            IsPlaying="False"  Animation="{x:Static tps:Images.TrophyAnimation}" Margin="10">
+                        <lottie:AnimationView.Triggers>
+                                <DataTrigger TargetType="lottie:AnimationView" Binding="{Binding GameStatus}" Value="{x:Static tps:GameSessionStatus.WaitingForResult}">
+                                    <Setter Property="IsPlaying" Value="True"/>
+                                </DataTrigger>
+                            </lottie:AnimationView.Triggers>
+                    </lottie:AnimationView>
+                </Grid>                
+            </RelativeLayout>
+        </Grid>
+
+
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill" IsVisible="False">
+            <Grid.Triggers>
+                <DataTrigger TargetType="Grid" Binding="{Binding GameStatus}" Value="{x:Static tps:GameSessionStatus.RewardsCeremony}">
+                    <Setter Property="IsVisible" Value="True"/>
+                </DataTrigger>
+            </Grid.Triggers>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" BackgroundColor="Transparent" Margin="0, 30, 0, 0" >
+                <ui:ExtendedLabel CustomFont="{x:Static tp:Fonts.HeaderFont}" FontAttributes="Bold" Padding="10" TextColor="White" Text="{Binding Title}"
+                                  HorizontalTextAlignment="Center" VerticalTextAlignment="Start" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            </Grid>        
+            <Grid Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill">
+                <Frame HasShadow="True" CornerRadius="4" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Margin="20" Padding="20, 20, 20, 0"  BackgroundColor="White">
+                    <Grid RowSpacing="16" Padding="8" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="64" />
+                        </Grid.RowDefinitions>
+                        <ui:ExtendedLabel Grid.Row="0" Text="{Binding Description}" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" CustomFont="{x:Static tp:Fonts.Header1BlackFont}"/>
+                        <ff:SvgCachedImage Grid.Row="1" x:Name="RewardImage" Source="{Binding RewardEgg}" Aspect="AspectFit" DownsampleToViewSize="True" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="{Binding EggHeight}"/>
+                        <lottie:AnimationView Grid.Row="1" x:Name="RewardAnim" Animation="{x:Static tps:Images.EggWiggle}" Scale="1.1"  Loop="False" AutoPlay="False" IsPlaying="False"
+                                              OnFinish="OnWiggleAnimFinish" ClickedCommand="{Binding CrackEggCommand}" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="{Binding EggHeight}"/>
+
+                            <Grid  Grid.Row="2" WidthRequest="140" Padding="25, 0">
+                            <Frame HasShadow="True" BackgroundColor="Transparent" Padding="0" Margin="0" VerticalOptions="End" >
+                                <ui:ExtendedButtonEx x:Name="DoneButton" HorizontalOptions="Fill" VerticalOptions="Center" Text="Done" Margin="0, 8, 0, 0" />
+                            </Frame>
+                        </Grid>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </Grid>
+
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill" IsVisible="False" Padding="30">
+            <Grid.Triggers>
+                <DataTrigger TargetType="Grid" Binding="{Binding GameStatus}" Value="{x:Static tps:GameSessionStatus.Failed}">
+                    <Setter Property="IsVisible" Value="True"/>
+                </DataTrigger>
+            </Grid.Triggers>
+
+            <ff:SvgCachedImage Source="{x:Static tps:Images.TpSad}" Aspect="AspectFit" Margin="40" HorizontalOptions="Start" VerticalOptions="Fill"/>
+        </Grid>
+    </Grid>    
+</rui:ReactiveContentView>

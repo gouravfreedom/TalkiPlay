@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tp:BasePage
+    x:TypeArguments="tps:GameSessionPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tp="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:tps="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ff="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    x:Class="TalkiPlay.GameSessionPage"
+    x:DataType="tps:GameSessionPageViewModel">
+    <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+        <RelativeLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+            <CollectionView x:Name="GamesSessionList" SelectionMode="None"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.0}"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1.0}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <tp:GameSessionView HeightRequest="{Binding Source={x:Reference GamesSessionList}, Path=Height, Mode=OneWay}"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RelativeLayout>
+
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill" IsVisible="{Binding IsCurrentGameDone}">
+            <RelativeLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+                <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.0}"
+                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}">
+                    <ui:ExtendedLabel CustomFont="{x:Static tp:Fonts.HeroTitleFont}" FontAttributes="Bold" TextColor="White" Text="Awesome!!"
+                                      HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                </Grid>
+                <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.1}"
+                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}"
+                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.8}"
+                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.4}">
+                    <Frame HasShadow="True" CornerRadius="24" Padding="0" IsClippedToBounds="True" HorizontalOptions="Fill" VerticalOptions="Center" 
+                           HeightRequest="{Binding Source={RelativeSource Self}, Path=Width, Converter={x:Static tp:Converters.Width2HeightByImageRatio}, Mode=OneWay}">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding PlayNextGameCommand}"/>
+                        </Frame.GestureRecognizers>
+                        <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <ff:SvgCachedImage x:Name="svgImage" HorizontalOptions="Fill" VerticalOptions="Center" Aspect="AspectFill" Source="{Binding NextGame.ImagePath}"
+                                               HeightRequest="{Binding Source={RelativeSource Self}, Path=Width, Converter={x:Static tp:Converters.Width2HeightByImageRatio}, Mode=OneWay}"/>
+                            <ui:ExtendedLabel CustomFont="{x:Static tp:Fonts.HeaderFont}" Text="Up Next" HorizontalOptions="Center"
+                                              VerticalTextAlignment="Start" HorizontalTextAlignment="Center" Margin="0,14,0,0"
+                                              IsVisible="{Binding Source={x:Reference svgImage}, Path=IsLoading, Converter={x:Static tp:Converters.InvertedBooleanConverter}}"/>
+                            <ui:ExtendedLabel CustomFont="{x:Static tp:Fonts.HeaderFont}" Text="{Binding NextGame.Name}" HorizontalOptions="Center"
+                                              VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="0,20,0,0"
+                                              IsVisible="{Binding Source={x:Reference svgImage}, Path=IsLoading, Converter={x:Static tp:Converters.InvertedBooleanConverter}}"/>
+                            <ff:SvgCachedImage WidthRequest="24" HeightRequest="24" HorizontalOptions="Center" VerticalOptions="Center"
+                                               IsVisible="{Binding Source={x:Reference svgImage}, Path=IsLoading}" Source="spinner_small.gif"/>
+                        </Grid>
+                    </Frame>
+                </Grid>                
+                <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
+                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7}"
+                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.3}">
+                    <ui:ExtendedLabel CustomFont="{x:Static tp:Fonts.Underline1FontBig}" TextColor="White" Text="Skip" HorizontalOptions="Center" VerticalOptions="Center">
+                        <ui:ExtendedLabel.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SkipCommand}"/>
+                        </ui:ExtendedLabel.GestureRecognizers>
+                    </ui:ExtendedLabel>
+
+                </Grid>
+            </RelativeLayout>            
+        </Grid>
+    </Grid>
+</tp:BasePage>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talkiPlay:ReactiveBaseViewCell
+    x:TypeArguments="shared:DeviceItemViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:ffs="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    x:Class="TalkiPlay.DeviceItemCell"
+    IsSelectable="false"
+    SelectionColor="Transparent"
+    BackgroundColor="Transparent">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="24" />
+        </Grid.ColumnDefinitions>
+        <ui:ExtendedLabel Grid.Column="0" x:Name="Name" CustomFont="{x:Static talkiPlay:Fonts.TitleRegularFontBig}" Text="{Binding Name}"
+            HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+        <ffs:SvgCachedImage Grid.Column="1" x:Name="Icon" Source="{Binding Icon}" WidthRequest="24" HeightRequest="24"/>
+    </Grid>
+</talkiPlay:ReactiveBaseViewCell>

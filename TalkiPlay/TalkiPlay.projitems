@@ -1,0 +1,1146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{BAE89D57-39FF-4EF1-9DF9-D5F4D39A9A1E}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>TalkiPlay</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\AcceptInvitePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\ChangePasswordPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\EditUserDetailsPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\ForgotPasswordPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\LoginPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\ResetPasswordPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\SignupPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\ValidationMessages.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Views\TncView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Children\Pages\AddEditChildPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Children\Pages\AvatarSelectionPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Children\Pages\ChildDetailsPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Children\Pages\ChildListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Children\Pages\GameChildListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Children\Views\AvatarItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Children\Views\ChildViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\BasePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\ConfirmationDialogPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\ConnectivityPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\SimpleBasePageModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\WebPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\ButtonViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\ItemSelectionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\LoadingPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\PressableView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\SimpleNavBar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\TabItemType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\AudioItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\AudioPackItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\CheckForUpdateViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\DeviceInfoViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\DeviceItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\AudioListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\AudioPackListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\DeviceListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\DevicePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\ShakeTalkiPlayerPopUpPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\FirmwareUpdatePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\TestBleRequestPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\VolumeControlPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\BluetoothWarningPopupPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\ChestPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\GameConfigurationPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\GameActiveItemsConfigurationPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\GameListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\GameRoomListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\GameSessionPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\ReaderWarningPopupPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\ScanHomeTagPopupPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TagItemSetupPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TagItemStartPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TalkiPlayerPairingPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TapToPairPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Views\GameSessionViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Views\GameViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Views\ItemConfigurationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Views\PlayerViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Views\TalkiPlayerViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\GuideHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\GuideState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Pages\GuideChildSelectionPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Pages\GuideImagePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Pages\GuideInfoPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Pages\GuidePackSelectionPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Pages\GuideQuestionPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Pages\GuideRecommendationPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Pages\WizardBasePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Views\GuideChildViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Views\GuideGameViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Views\GuidePackViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Items\Pages\ItemListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Items\Pages\ItemsPackListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Items\Pages\ItemsRoomListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Items\Pages\ItemsTagItemSetupPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Items\Pages\ItemsTagItemStartPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Items\Pages\PackListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\ModeSelectionPage.xaml.cs">
+      <DependentUpon>ModeSelectionPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\ModeSelectionPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\OnboardingChildAvatarPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\OnboardingChildDOBPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\OnboardingChildNamePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\OnboardingImagePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\OnboardingPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\QRCodeOnboardingHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Views\OnboardingAnimView.xaml.cs">
+      <DependentUpon>OnboardingAnimView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Views\OnboardingImageView.xaml.cs">
+      <DependentUpon>OnboardingImageView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Views\OnboardingItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Views\WelcomeView.xaml.cs">
+      <DependentUpon>WelcomeView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\QRCodes\Models\PlayedItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\QRCodes\Pages\QRCodeGameRewardPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\QRCodes\Pages\QRCodeGameSessionPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\QRCodes\Pages\QRCodePdfListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\QRCodes\Pages\TestPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\QRCodes\Views\QRCodePdfViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\QRCodes\Views\StarItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rewards\Pages\RewardListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rewards\Pages\PacksRewardPage.xaml.cs">
+      <DependentUpon>PacksRewardPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rewards\Pages\PacksRewardPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rewards\Pages\RewardsChildListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rewards\Views\RewardChildViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rewards\Views\RewardItemsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rewards\Views\RewardItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rooms\Pages\AddEditRoomPage.xaml.cs">
+      <DependentUpon>AddEditRoomPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rooms\Views\RoomCell.xaml.cs">
+      <DependentUpon>RoomCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rooms\Views\RoomImageItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rooms\Views\RoomViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Settings\Cells\SettingsItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Settings\Cells\ToggleCellViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Settings\Pages\LegalLinksPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Settings\Pages\LegalSubscriptionInfoPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Settings\Pages\LegalSubscriptionInfoPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Settings\Pages\SettingsPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Subscription\Pages\SubscriptionListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Subscription\Pages\SubscriptionTermsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Subscription\Pages\SubscriptionTermsPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Config.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\Assets.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\Audio.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\Colors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\Dimensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\Geometries.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\Images.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\Message.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\Styles.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\ApiManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Asset.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Chest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Child.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Company.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Firmware.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Game.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Category.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Instruction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Item.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Mode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Pack.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Reward.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Room.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Sound.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Subscription.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\Tag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Entities\ApiExceptionHandlerConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Entities\ApiHandledException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Entities\ApiToken.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Entities\ErrorMessages.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Entities\ErrorResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Extentions\ApiExceptionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Handlers\ApiAuthenticationHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Handlers\NoNetworkHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\ITalkiPlayApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Entities\Attributes\Annotations.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Entities\Attributes\Description.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Entities\EnvironmentInformation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Entities\ObservableObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Entities\ObservableRangeCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Entities\Results\IOperationResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Entities\Results\IServiceResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Entities\Results\OperationResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Entities\Results\OperationResultAsyncExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Entities\Results\OperationResultExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Entities\Results\ServiceResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Entities\Results\ServiceResultAsyncExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Entities\Results\ServiceResultExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Entities\Unit.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Extensions\Attributes\CamelCaseAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Extensions\Attributes\DataAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Extensions\Attributes\OrderAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Extensions\ByteArrayExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Extensions\CollectionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Extensions\EnumExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Extensions\ExceptionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Extensions\IListExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Extensions\ImageUrlExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Extensions\ObjectExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Extensions\ObservableOperatorExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Extensions\SemaphoreSlimExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Extensions\StringExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Extensions\TaskExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Extensions\VisualElementExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Logging\ApplicationInformationEnricher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Logging\Contracts\IEnvironmentInformation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Logging\Contracts\ILogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Logging\ILoggerExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Logging\Logger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Logging\LoggerConfigurationExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Logging\LoggerProxy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Logging\SerilogILoggerExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Logging\Sinks\DebugSink.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Logging\Sinks\DiagnosticsSink.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\Ensure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\ReactiveExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\IObservableDynamicDataRangeCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\ObservableDynamicDataRangeCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\DisposableReactiveObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\IPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\NavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\Old\Messenger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\Old\ObservableExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\Old\ObservableListToObservableDynamicDataRangeCollectionAdapter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\Old\PageExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\Old\ReactiveNavigationViewHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\Old\ReactiveObjectExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\Old\SplatExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\Old\IObservableDynamicDataRangeCollectionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\ReactiveBaseCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\ReactiveUI\ReactiveValidatableObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Animations\BaseAnimation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Animations\BounceAnimation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Animations\FadeAnimation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Animations\QuickEntranceAnimation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Animations\RotationAnimation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Animations\ScaleAnimation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Animations\ShakeAnimation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Animations\VibrateAnimation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Behaviors\BaseBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Behaviors\EffectBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Behaviors\EmailValidationBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Behaviors\EventToCommandBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Behaviors\ValidateOnUnFocusBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Cells\BaseCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Controls\Custom\ImageButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Controls\Custom\Repeater\CollectionChangedHandle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Controls\Custom\Repeater\RepeaterView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Controls\Custom\Repeater\TemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Controls\Custom\ValidationErrorsView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Controls\ExtendedAnimationView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Converters\BooleanToObjectConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Converters\InvertedBooleanConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Entities\Attributes\DataTemplateAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Entities\Attributes\ViewModelAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Entities\Enums\AccessibilityTextStyle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Entities\Enums\AnimationIntensityType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Entities\Enums\KeyboardReturnKeyType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Entities\Enums\PageTransitionEffectType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Entities\Enums\TransitionDirection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Entities\ExtendedFont.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Entities\TransitionOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Entities\ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Entities\ViewModels\GroupViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\FormsExtensions\ExtendedButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\FormsExtensions\ExtendedDatePicker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\FormsExtensions\ExtendedEditor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\FormsExtensions\ExtendedEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\FormsExtensions\ExtendedFrame.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\FormsExtensions\ExtendedLabel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\FormsExtensions\ExtendedPicker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\FormsExtensions\ExtendedSearchBar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\FormsExtensions\ExtendedSwitch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\FormsExtensions\ExtendedWebView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Services\IAlertService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Services\IDeviceService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Services\ILocalNotificationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Services\INavigationTransitionService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Services\NavigationLocator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Services\NavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\Comparison.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\IValidatableObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\IValidationRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\IValidity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\NullableComparer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\Rules\ActionAsyncValidationRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\Rules\ActionValidationRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\Rules\ComparisonRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\Rules\EmailRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\Rules\GreaterThanOrEqualToRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\Rules\GreaterThanRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\Rules\IsNotNullOrEmptyRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\Rules\LessThanOrEqualToRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\Rules\LessThanRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\Rules\RepeatPasswordRule.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\ValidatableObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Validations\ValidatableObjects.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Utility\RssImageFetcher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\AudioPlaybackManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\FileHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\FileSystemManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\AssetDownloadManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\ConnectivityManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Managers\WebpageHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\AssetSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Ensure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Files\IFileData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\GameMediator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\IAsset.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\IChest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\IChild.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\IGame.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\IGameSession.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\IInstruction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\IItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\IModalViewModelWithParameters.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\IMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\IPack.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\IReward.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\IRoom.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\ISound.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\ITag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\IUser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\IUserSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ItemSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\NetworkConnectionNotifier.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SoftwareVersion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Subscription\AndroidPurchaseVerificationData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TagItemsSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Effects\BorderlessEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Effects\LongPressEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\BasePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\BasePopupPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\NavigationViewHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\BadgeView.xaml.cs">
+      <DependentUpon>BadgeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\ButtonView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\CircleView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\EmptyStateView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\LayoutData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\RepeaterView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\SvgImageButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\ImageButtonView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\WrapLayout.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\WrapLayoutContentAlignment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Views\TestBleRequestItemTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Pages\GuideChildSelectionPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Pages\GuideInfoPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Pages\GuideRecommendationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Pages\GuideImagePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Pages\GuidePackSelectionPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Pages\GuideQuestionPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Views\GuideChildView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Views\GuideGameView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Guide\Views\GuidePackView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\QRCodes\Pages\QRCodeGameRewardPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\QRCodes\Pages\QRCodeGameSessionPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\QRCodes\Pages\QRCodePdfListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\QRCodes\Pages\TestPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rewards\Pages\RewardsChildListPage.xaml.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rewards\Views\RewardChildView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Subscription\Pages\SubscriptionListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Tabs\Old\BottomTabsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Tabs\Old\TabbedPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Tabs\Old\TabInterfaces.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Tabs\Old\TabItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Tabs\Old\TabItemsModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Tabs\SimpleTabPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Old\Pages\FormsExtensions\ExtendedTabbedPage\ExtendedTabbedPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Old\Pages\FormsExtensions\ExtendedTabbedPage\ITabItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Old\Pages\FormsExtensions\ExtendedTabbedPage\TabItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\AssetRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\ChildrenRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\RewardsRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Repositories\UserRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AudioPlayback\AudioPlayerSetting.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AudioPlayback\BackgroundAudioPlayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AudioPlayback\IAudioPlayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AudioPlayback\IAudioPlayerFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Business\FirmwareService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Business\GameService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Business\ReceiptVerificationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Business\SecureSettingsService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Business\SubscriptionHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Business\SubscriptionService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Business\SubscriptionVerificationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\TalkPlayer\BatteryPowerStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\TalkPlayer\FileData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\TalkPlayer\IDataUploadResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\TalkPlayer\ITalkiPlayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\TalkPlayer\TalkiPlayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\TalkPlayer\TalkiPlayerManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\TalkPlayer\UploadData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\TalkPlayer\UploadDataRequests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\TalkPlayer\UploadDataType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\TalkPlayer\UploadStatus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\UserSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Utility\Connectivity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Utility\DeviceInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Utility\FileStorage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Utility\TalkiPlayNavigationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Utility\Dialogs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Utility\IApplicationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Utility\IConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Utility\IDownloadManagerExtended.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Utility\IMessageHandlerFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Utility\IStorage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Utility\ITabService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Utility\ITalkiPlayNavigator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Utility\SimpleNavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\GameListPage.xaml.cs">
+      <DependentUpon>GameListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Views\GameView.xaml.cs">
+      <DependentUpon>GameItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\TransitionReactiveNavigationViewHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\LoadingPage.xaml.cs">
+      <DependentUpon>LoadingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\DeviceListPage.xaml.cs">
+      <DependentUpon>DeviceListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\ConnectivityPage.xaml.cs">
+      <DependentUpon>ConnectivityPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rewards\Views\RewardItemsView.xaml.cs">
+      <DependentUpon>RewardItemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rewards\Pages\RewardListPage.xaml.cs">
+      <DependentUpon>RewardListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\CarouselView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\CarouselPageIndicatorView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\DevicePage.xaml.cs">
+      <DependentUpon>DevicePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\FirmwareUpdatePage.xaml.cs">
+      <DependentUpon>FirmwareUpdatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\FormEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\AnimatedButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\AcceptInvitePage.xaml.cs">
+      <DependentUpon>AcceptInvitePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\ChangePasswordPage.xaml.cs">
+      <DependentUpon>ChangePasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\ForgotPasswordPage.xaml.cs">
+      <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\ResetPasswordPage.xaml.cs">
+      <DependentUpon>ResetPasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Settings\Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Settings\Cells\SettingsMenuCell.xaml.cs">
+      <DependentUpon>SettingsMenuCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\EditUserDetailsPage.xaml.cs">
+      <DependentUpon>EditDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\PackListPage.xaml.cs">
+      <DependentUpon>PackListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TagItemStartPage.xaml.cs">
+      <DependentUpon>TagItemStartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TagItemSetupPage.xaml.cs">
+      <DependentUpon>TagItemSetupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Items\Pages\ItemsListPage.xaml.cs">
+      <DependentUpon>ItemsListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Children\Pages\AvatarSelectionPage.xaml.cs">
+      <DependentUpon>AvatarSelectorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Children\Pages\ChildDetailsPage.xaml.cs">
+      <DependentUpon>ChildDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Children\Pages\AddEditChildPage.xaml.cs">
+      <DependentUpon>AddEditChildPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Children\Pages\ChildListPage.xaml.cs">
+      <DependentUpon>ChildrenListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Children\Views\ChildCell.xaml.cs">
+      <DependentUpon>ChildCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Children\Views\AvatarItem.xaml.cs">
+      <DependentUpon>AvatarItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Effects\TouchRecognizer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Effects\RoundedCornerEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\GameSessionPage.xaml.cs">
+      <DependentUpon>GameSessionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Views\PlayerView.xaml.cs">
+      <DependentUpon>PlayerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Views\SelectPlayerView.xaml.cs">
+      <DependentUpon>SelectPlayerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Views\PlayerViewTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\GameActiveItemsConfigurationPage.xaml.cs">
+      <DependentUpon>GameActiveItemsConfigurationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Views\ItemConfigurationView.xaml.cs">
+      <DependentUpon>ItemConfigurationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Views\TalkiPlayerView.xaml.cs">
+      <DependentUpon>TalkiPlayerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Views\SelectTalkiPlayerView.xaml.cs">
+      <DependentUpon>SelectTalkiPlayerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Views\TalkiPlayerViewTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TapToPairPage.xaml.cs">
+      <DependentUpon>TapToPairPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TalkiPlayerPairingPage.xaml.cs">
+      <DependentUpon>TalkiPlayerPairingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\BluetoothWarningPopup.xaml.cs">
+      <DependentUpon>BluetoothWarningPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\NavigationView.xaml.cs">
+      <DependentUpon>NavigationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\TestBleRequestSelectionPage.xaml.cs">
+      <DependentUpon>TestBleRequestSelectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Views\TestBleRequstItemView.xaml.cs">
+      <DependentUpon>TestBleRequstItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\ConfirmationDialogPage.xaml.cs">
+      <DependentUpon>ConfirmationDialogPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\AudioListPage.xaml.cs">
+      <DependentUpon>AudioListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\VolumeControlPage.xaml.cs">
+      <DependentUpon>VolumeControlPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\ShakeTalkiPlayerPopup.xaml.cs">
+      <DependentUpon>ShakeTalkiPlayerPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Views\TalkiPlayerInstructionItemView.xaml.cs">
+      <DependentUpon>TalkiPlayerInstructionItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\ScanHomeTagPopup.xaml.cs">
+      <DependentUpon>ScanHomeTagPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\GameConfigurationPage.xaml.cs">
+      <DependentUpon>GameConfigurationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\OnboardingPage.xaml.cs">
+      <DependentUpon>OnboardingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Views\OnboardingView.xaml.cs">
+      <DependentUpon>OnboardingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\AudioPackListPage.xaml.cs">
+      <DependentUpon>AudioPackListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\ChestPopup.xaml.cs">
+      <DependentUpon>ChestPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\WebPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Converters\BooleanToObjectBindingConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Settings\Pages\SettingsCellTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Cells\ItemSelectionCell.xaml.cs">
+      <DependentUpon>ItemSelectionCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Cells\ReactiveBaseViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Cells\SpacerCell.xaml.cs">
+      <DependentUpon>SpacerCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\AudioItemCell.xaml.cs">
+      <DependentUpon>AudioItemCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\AudioPackItemCell.xaml.cs">
+      <DependentUpon>AudioPackItemCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\CheckForUpdateCell.xaml.cs">
+      <DependentUpon>CheckForUpdateCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\DeviceInfoCell.xaml.cs">
+      <DependentUpon>DeviceInfoCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\DeviceInfoCellTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\DeviceItemCell.xaml.cs">
+      <DependentUpon>DeviceItemCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Settings\Cells\ToggleCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Old\TagItemsCollectionHelpPage.xaml.cs">
+      <DependentUpon>TagItemsCollectionHelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\SignupPage.xaml.cs">
+      <DependentUpon>SignupPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\OnboardingImagePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\OnboardingChildNamePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Effects\SafeAreaPaddingEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Effects\EffectHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\SimpleBasePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Converters\IsValidColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\OnboardingChildDOBPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\DateTimePickerView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\OnboardingChildAvatarPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\QRCodes\Views\QRCodePdfView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Converters\EmbRsrcToImageConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Utility\ImageResizer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Category\CategoryListPage.xaml.cs">
+      <DependentUpon>CategoryListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Category\CategoryListPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bootstrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Tabs\MainTabPage.xaml.cs">
+      <DependentUpon>MainTabPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\ViewBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\CollectionViewEx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\TestGamePage.xaml.cs">
+      <DependentUpon>TestGamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\TestGamePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Views\GameSessionView.xaml.cs">
+      <DependentUpon>GameSessionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Converters\WidthToHeightByImageRatio.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\UI\Converters\ChildToAvatarConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\DeviceSetupPage.xaml.cs">
+      <DependentUpon>DeviceSetupPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\DeviceSetupPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Common\Views\StarView.xaml.cs">
+      <DependentUpon>StarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Interfaces\IChildPackItemProgress.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Functional\Api\Dtos\ChidItemReward.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rewards\Pages\PackItemsRewardPage.xaml.cs">
+      <DependentUpon>PackItemsRewardPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Settings\Pages\LegalLinksPage.xaml.cs">
+      <DependentUpon>LegalLinksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\NewModeSelectionPage.xaml.cs">
+      <DependentUpon>NewModeSelectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\NewModeSelectionPageViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Common\Views\BadgeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\GameListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Views\GameView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\LoadingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\DeviceListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Rooms\Pages\AddEditRoomPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rooms\Pages\RoomImageSelectionPage.xaml.cs">
+      <DependentUpon>RoomImageSelectionPage.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Rooms\Pages\RoomImageSelectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rooms\Pages\AddEditRoomPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rooms\Pages\RoomImageSelectionPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rooms\Pages\RoomListPage.xaml.cs">
+      <DependentUpon>RoomListPage.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Rooms\Pages\RoomListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\Rooms\Pages\RoomListPageViewModel.cs" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Rooms\Views\RoomCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\checkbox_default.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\checkbox_selected.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\ConnectivityPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Rewards\Views\RewardItemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Rewards\Pages\RewardListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\reward_egg_unhatched.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\play_btn.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\talki_icon.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\helper_btn.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\home_btn.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\power.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\play_again_btn.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\next_hunt_btn.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\upload_icon.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\DevicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\FirmwareUpdatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\ble_icon.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\ble_connect_icon.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\arrow_forward_icon.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\retry_icon.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\AcceptInvitePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\ChangePasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\ForgotPasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\ResetPasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Settings\Pages\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Settings\Cells\SettingsMenuCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\account_icon.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\EditUserDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\PackListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\talkiplay_logo.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\talkiplay_logo_white.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TagItemStartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TagItemSetupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Items\Pages\ItemsListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Children\Pages\AvatarSelectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Children\Pages\ChildDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Children\Pages\AddEditChildPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Children\Pages\ChildListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Children\Views\ChildCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Children\Views\AvatarItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\GameSessionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Views\PlayerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Views\SelectPlayerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\add_black_icon.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\close_icon.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\GameActiveItemsConfigurationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Views\ItemConfigurationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Views\TalkiPlayerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Views\SelectTalkiPlayerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TapToPairPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TalkiPlayerPairingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\BluetoothWarningPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\arrow_back.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Common\Views\NavigationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\add_white_icon.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\done_outline.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\error_outline.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\remove_circle_outline.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\TestBleRequestSelectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Views\TestBleRequstItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\ConfirmationDialogPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\AudioListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\stop.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\play.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\download_icon.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\remove_icon.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\VolumeControlPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\ShakeTalkiPlayerPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\shake.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\tapandhold.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Views\TalkiPlayerInstructionItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\taptoend.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\taptostart.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\ScanHomeTagPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\GameConfigurationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\fireworks.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\triangle.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\collections.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\whatsinbox.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\letsplay.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\taptopair.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\roomselection.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\taptoactivate.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\wakemeup.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\plugme.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\thisisyourtalkiplayer.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\dontputmeinwater.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\whatsinthebox.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\OnboardingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Views\OnboardingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\AudioPackListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\ChestPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\selectagame.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Common\Cells\ItemSelectionCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Common\Cells\SpacerCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\AudioItemCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\AudioPackItemCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\CheckForUpdateCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\DeviceInfoCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\DeviceItemCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Old\TagItemsCollectionHelpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\SignupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\ob_01_thisisyourtalkiplayer.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\ob_06_add_child.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\ob_02_talking_rainbow.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\ob_07_toggle_items.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\ob_03_download.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\ob_09_hunt_game.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\ob_05_phone_game.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\ob_08_explore_game.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\ob_04_cut_out.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Png\logo.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Category\CategoryListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\plus_white.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Tabs\MainTabPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\speech_bubble_pair_me.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Png\game_bg.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\TestGamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\speech_bubble_explore.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Games\Views\GameSessionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\arrow_next_white.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Device\Pages\DeviceSetupPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Common\Views\StarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\star_off.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\star_on.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Rewards\Pages\PackItemsRewardPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Settings\Pages\LegalLinksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\NewModeSelectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Category\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Functional\Utils\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Managers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Common\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Common\Effects\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Common\Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Common\Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Games\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Games\Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Device\Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Rewards\Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Authentication\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Settings\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Authentication\Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Settings\Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Settings\Cells\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Items\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Items\Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Items\Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Children\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Children\Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Children\Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Common\Converters\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Rooms\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Subscription\Views" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Tabs\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Common\Cells\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\Device\Cells\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Old\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\QRCodes\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\QRCodes\Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Areas\QRCodes\Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\treasure_chest.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Rewards\Pages\RewardsChildListPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\lock_grey.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\guide_tap_game.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Png\guide_child_led_play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Png\guide_personalisation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Png\button_lets_play.png" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Png\button_start_guide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Jpg\game_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\fonts\fontawesome-regular.ttf" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\fonts\fontawesome-solid.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\tp_charging.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\tp_light_up.svg" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\tp_sad.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Svg\tp_celebrating.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Png\hunt_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\ModeSelectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Views\WelcomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Views\OnboardingImageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Views\OnboardingAnimView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Areas\Rewards\Pages\PacksRewardPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

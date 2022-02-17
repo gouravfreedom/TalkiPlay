@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<talkiPlay:ReactiveBaseViewCell x:TypeArguments="shared:CheckForUpdateViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    x:Class="TalkiPlay.CheckForUpdateCell">
+     <Grid Margin="20, 15">
+             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="24"/>
+            </Grid.ColumnDefinitions>
+            <ui:ExtendedLabel Grid.Column="0" x:Name="Label" CustomFont="{x:Static talkiPlay:Fonts.TitleRegularFontBig}" Text="{Binding Label}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+            <forms:SvgCachedImage Grid.Column="1" Source="{x:Static shared:Images.ArrowNextWhite}" WidthRequest="24" HeightRequest="24" HorizontalOptions="End"/>
+        </Grid>
+</talkiPlay:ReactiveBaseViewCell>

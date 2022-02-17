@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tp:TabViewBase 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tps="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:tp="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:fff="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms" 
+    xmlns:cmu="clr-namespace:ChilliSource.Mobile.UI"
+    x:Class="TalkiPlay.PacksRewardPage"
+    x:TypeArguments="tps:PacksRewardPageViewModel"
+    x:DataType="tps:PacksRewardPageViewModel">
+
+    <Grid x:Name="mainLayout" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="NavRow" Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <tp:NavigationView Grid.Row="0" x:Name="NavigationView" IsVisible="False" ShowLeftButton="false" ShowRightButton="false"/>
+
+        <Grid Grid.Row="1" RowDefinitions="Auto, Auto, Auto" Margin="0, 0" RowSpacing="10">
+            <Grid Grid.Row="0" Margin="10, 0">
+                <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="Center" >
+                    <Grid WidthRequest="60" HeightRequest="60" HorizontalOptions="End" Margin="20, 0" VerticalOptions="Center">
+                        <fff:SvgCachedImage x:Name="imgAvatar" Source="{Binding ActiveChild, Converter={x:Static tp:Converters.Child2AvatarConverter}}" 
+                                            HorizontalOptions="Fill" VerticalOptions="Fill">
+                            <fff:SvgCachedImage.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SelectChildCommand}"/>
+                            </fff:SvgCachedImage.GestureRecognizers>
+                        </fff:SvgCachedImage>
+                        <fff:SvgCachedImage WidthRequest="24" HeightRequest="24" HorizontalOptions="Center" VerticalOptions="Center"
+                                            IsVisible="{Binding Source={x:Reference imgAvatar}, Path=IsLoading}" Source="spinner_small.gif"/>
+                    </Grid>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Start" VerticalOptions="Center" Spacing="0">
+                        <cmu:ExtendedLabel Text="{Binding ActiveChild.Name}" HorizontalOptions="Center" LineBreakMode="TailTruncation" CustomFont="{x:Static tp:Fonts.Header1Font}"/>
+                        <cmu:ExtendedLabel Text="{Binding ActiveChild.Age, StringFormat='Age {0}'}" HorizontalOptions="Center" CustomFont="{x:Static tp:Fonts.Header2Font}"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+
+            <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="Center" Spacing="15">
+                <fff:SvgCachedImage Source="{x:Static tps:Images.TreasureChestImage}" HeightRequest="100" Aspect="AspectFit">
+                    <fff:SvgCachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GotoRewardList}"/>
+                    </fff:SvgCachedImage.GestureRecognizers>
+                </fff:SvgCachedImage>
+                <cmu:ExtendedLabel Text="My learning goal is" HorizontalOptions="Center" VerticalOptions="Center" LineBreakMode="TailTruncation" 
+                                       HorizontalTextAlignment="Center" CustomFont="{x:Static tp:Fonts.Header1Font}"/>
+            </StackLayout>
+
+            <Grid Grid.Row="2" HorizontalOptions="Fill">
+                <AbsoluteLayout Margin="0, 0">
+                    <Grid AbsoluteLayout.LayoutBounds="{Binding Game1Bound, Mode=OneWay}" Padding="0">
+                        <Frame HorizontalOptions="Fill" VerticalOptions="Fill" HasShadow="True" CornerRadius="24" Padding="0" IsClippedToBounds="True">
+                            <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                                <fff:SvgCachedImage x:Name="svgImage1" Source="{Binding FavoriteGame1.ImagePath}" Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                                <cmu:ExtendedLabel CustomFont="{x:Static tp:Fonts.Header2Font}" Text="{Binding FavoriteGame1.Name}" HorizontalOptions="Center"
+                                                        VerticalTextAlignment="Start" HorizontalTextAlignment="Center" Margin="0,20,0,0"
+                                                        IsVisible="{Binding Source={x:Reference svgImage1}, Path=IsLoading, Converter={x:Static tp:Converters.InvertedBooleanConverter}}"/>
+                                <fff:SvgCachedImage WidthRequest="24" HeightRequest="24" HorizontalOptions="Center" VerticalOptions="Center"
+                                                        IsVisible="{Binding Source={x:Reference svgImage1}, Path=IsLoading}" Source="spinner_small.gif"/>
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnFavGame1Tapped"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </Grid>
+                    <Grid AbsoluteLayout.LayoutBounds="{Binding Game2Bound, Mode=OneWay}" Padding="0">
+                        <Frame HorizontalOptions="Fill" VerticalOptions="Fill" HasShadow="True" CornerRadius="24" Padding="0" IsClippedToBounds="True">
+                            <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+                                <fff:SvgCachedImage x:Name="svgImage2" Source="{Binding FavoriteGame2.ImagePath}" Aspect="AspectFill" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                                <cmu:ExtendedLabel CustomFont="{x:Static tp:Fonts.Header2Font}" Text="{Binding FavoriteGame2.Name}" HorizontalOptions="Center"
+                                                        VerticalTextAlignment="Start" HorizontalTextAlignment="Center" Margin="0,20,0,0"
+                                                        IsVisible="{Binding Source={x:Reference svgImage2}, Path=IsLoading, Converter={x:Static tp:Converters.InvertedBooleanConverter}}"/>
+                                <fff:SvgCachedImage WidthRequest="24" HeightRequest="24" HorizontalOptions="Center" VerticalOptions="Center"
+                                                        IsVisible="{Binding Source={x:Reference svgImage2}, Path=IsLoading}" Source="spinner_small.gif"/>
+                            </Grid>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnFavGame2Tapped"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+                    </Grid>
+                </AbsoluteLayout>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2" RowDefinitions="Auto, *" Margin="0, 10">
+            <cmu:ExtendedLabel Grid.Row="0" Text="What do I know?" HorizontalOptions="Center" CustomFont="{x:Static tp:Fonts.Header1FontBig}"/>
+            <tp:CollectionViewEx x:Name="packList" Grid.Row="1" ItemsSource="{Binding Packs}" SelectionMode="Single" SelectionChanged="OnPackSelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowDefinitions="Auto, Auto, Auto" Margin="20, 8" x:DataType="tps:PackRewardViewModel">                            
+                            <cmu:ExtendedLabel Grid.Row="0" Text="{Binding Pack.Name}" HorizontalOptions="Center" CustomFont="{x:Static tp:Fonts.Header2Font}"/>
+                            <ProgressBar Grid.Row="1" Margin="30,10,30,0" Progress="{Binding Progress}" ProgressColor="{x:Static tps:Colors.Yellow2Color}" ScaleY="3.5" BackgroundColor="#ECECF3"/>
+                            <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="End" Spacing="20">
+                                <cmu:ExtendedLabel Grid.Row="0" Text="details" HorizontalOptions="Center" CustomFont="{x:Static tp:Fonts.ItalicWhiteFontSmall}"/>
+                                <fff:SvgCachedImage Source="{x:Static tps:Images.ArrowNextWhite}" HeightRequest="20" Aspect="AspectFill" HorizontalOptions="Fill" 
+                                                    VerticalOptions="Center"/>
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.Footer>
+                    <Grid>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                            <cmu:ExtendedLabel Grid.Row="0" Text="update" VerticalOptions="Center" CustomFont="{x:Static tp:Fonts.ItalicWhiteFontBig}"/>
+                            <fff:SvgCachedImage Source="{x:Static tps:Images.LogoPng}" HeightRequest="60" Aspect="AspectFill" HorizontalOptions="Fill" 
+                                                    VerticalOptions="Center"/>
+                            <cmu:ExtendedLabel Grid.Row="0" Text="goals" VerticalOptions="Center" CustomFont="{x:Static tp:Fonts.ItalicWhiteFontBig}"/>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GotoStartGuide}"/>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </Grid>
+                </CollectionView.Footer>
+            </tp:CollectionViewEx>
+        </Grid>
+    </Grid>
+</tp:TabViewBase>

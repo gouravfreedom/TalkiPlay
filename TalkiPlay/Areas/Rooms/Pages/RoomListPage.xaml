@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<talkiPlay:BasePage
+    x:TypeArguments="shared:RoomListPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    x:Class="TalkiPlay.RoomListPage"
+    x:DataType="shared:RoomListPageViewModel">
+    <ContentPage.Content>
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    x:Name="NavRow" />
+                <RowDefinition
+                    x:Name="MainRow"
+                    Height="*" />
+            </Grid.RowDefinitions>
+
+            <talkiPlay:NavigationView
+                x:Name="NavigationView"
+               
+                ShowLeftButton="false"
+                ShowRightButton="true"
+                
+                RightButtonIcon="{x:Static shared:Images.AddIcon}"
+                
+                Grid.Row="0"
+                Grid.Column="0" />
+
+
+            <CollectionView
+                x:Name="RoomList"
+                SelectionMode="Single"
+                VerticalOptions="FillAndExpand"
+                Grid.Row="1"
+                Grid.Column="0">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout
+                        Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <talkiPlay:RoomCell />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyView>
+                    <StackLayout
+                        Padding="20">
+                        <StackLayout
+                            x:Name="EmptyViewLayout"
+                            VerticalOptions="CenterAndExpand"
+                            Spacing="30">
+                            <ui:ExtendedLabel
+                                CustomFont="{x:Static talkiPlay:Fonts.BodyFont}"
+                                Text="There are no rooms configured. Please contact your administrator."
+                                HorizontalOptions="CenterAndExpand"
+                                HorizontalTextAlignment="Center"
+                                VerticalOptions="Center" />
+                        </StackLayout>
+                    </StackLayout>
+                </CollectionView.EmptyView>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</talkiPlay:BasePage>

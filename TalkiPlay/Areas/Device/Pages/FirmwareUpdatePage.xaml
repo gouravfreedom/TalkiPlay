@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<tp:BasePage
+    x:TypeArguments="tps:FirmwareUpdatePageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tp="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:tps="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ff="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    x:Class="TalkiPlay.FirmwareUpdatePage">
+    <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="NavRow" Height="Auto"/>
+                <RowDefinition x:Name="MainRow" Height="*" />
+            </Grid.RowDefinitions>
+
+            <tp:NavigationView IsVisible="False"  Grid.Row="0" x:Name="NavigationView" ShowLeftButton="true" ShowRightButton="false"  />
+
+            <Grid Grid.Row="1">
+                <Grid x:Name="gridCheckingUpdate" IsVisible="True">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="150"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="End" Padding="20, 10">
+                            <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="30" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="Checking for newer version of software"/>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="2" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="End" Padding="30, 0, 30, 60">
+                            <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="20" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" TextColor="White" Text="Installed Sofware Version"/>
+                            <ui:ExtendedLabel x:Name="lblVersionChecking" FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="20" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="v1.1.0"/>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="1" BackgroundColor="Transparent">
+                        <lottie:AnimationView HorizontalOptions="Fill" VerticalOptions="Fill" Loop="True" AutoPlay="False" Scale="1.4"
+                                              IsPlaying="{Binding Source={Reference gridCheckingUpdate}, Path=IsVisible}" Animation="{x:Static tps:Images.TpSearch}" />
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="gridNoUpdate" IsVisible="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="150"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="20, 10">
+                            <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="30" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="Software is up to date!!!"/>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="2" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="End" Padding="30, 0, 30, 60" Spacing="10">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="12" FontAttributes="Bold"
+                                                  VerticalOptions="Center" TextColor="White" Text="Sofware Version: "/>
+                                <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="12" FontAttributes="Bold"
+                                  x:Name="lblVersionNoUpdate" VerticalOptions="Center" TextColor="White" Text="1.0.0"/>
+                            </StackLayout>
+
+                            <Frame HasShadow="True" BackgroundColor="Transparent" Margin="0" Padding="0" HorizontalOptions="Fill">
+                                <tp:AnimatedButtonEx x:Name="btnNoUpdateRequire" Text="Cool, I'm happy"/>
+                            </Frame>                              
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="1" BackgroundColor="Transparent">
+                        <ff:SvgCachedImage HorizontalOptions="Center" VerticalOptions="Fill" Aspect="AspectFill" Source="{x:Static tps:Images.TpCelebrating}" />
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="gridDeviceNotReady" IsVisible="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="150"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="20, 10">
+                            <ui:ExtendedLabel x:Name="lblDeviceNotReadyTitle" FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="30" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="Device not connected"/>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="2" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="End" Padding="30, 0, 30, 60">
+                            <ui:ExtendedLabel x:Name="lblDeviceNotReadyMessage" FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="20" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="Please connect device to continue update"/>
+                            <Frame HasShadow="True" BackgroundColor="Transparent" Margin="0" Padding="0" HorizontalOptions="Fill" IsVisible="{Binding Source={x:Reference btnDeviceNotReady}, Path=IsVisible}">
+                                <tp:AnimatedButtonEx x:Name="btnDeviceNotReady" IsVisible="False" Text="Hmm, go back to devices"/>
+                            </Frame>                                                          
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="1" BackgroundColor="Transparent">
+                        <ff:SvgCachedImage x:Name="svgImgDeviceDisconnected" HorizontalOptions="Center" VerticalOptions="Fill" Aspect="AspectFill" Source="{x:Static tps:Images.TpSad}" />
+                        <ff:SvgCachedImage x:Name="svgImgDeviceConnected" HorizontalOptions="Center" VerticalOptions="Fill" Aspect="AspectFill" Source="{x:Static tps:Images.TpLightUp}" />
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="gridUpdateAvailable" IsVisible="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="150"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="End" Padding="20, 10">
+                            <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="30" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="Newer version of software available"/>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="2" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="End" Padding="30, 0, 30, 60">
+                            <Frame HasShadow="True" BackgroundColor="Transparent" Margin="0" Padding="0" HorizontalOptions="Fill" VerticalOptions="Center" >
+                                <tp:AnimatedButtonEx x:Name="btnUpdateAvailable" Text="Start the update"/>
+                            </Frame>                            
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="1" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="20, 10">
+                            <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="20" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" TextColor="White" Text="New Sofware Version"/>
+                            <ui:ExtendedLabel x:Name="lblVersionUpdateAvailable" FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="20" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="v2.1.0"/>
+                        </StackLayout>
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="gridReadyToUpdate" IsVisible="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="150"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="20, 10">
+                            <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}"  FontSize="30" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="Please connect my charger before updating"/>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="2" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="End" Padding="30, 0, 30, 60" Spacing="10">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="12" FontAttributes="Bold"
+                                                  VerticalOptions="Center" TextColor="White" Text="Sofware Version: "/>
+                                <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="12" FontAttributes="Bold"
+                                  x:Name="lblVersionReadyToUpdate" VerticalOptions="Center" TextColor="White" Text="1.0.0"/>
+                            </StackLayout>
+                            <Frame HasShadow="True" BackgroundColor="Transparent" Margin="0" Padding="0" HorizontalOptions="Fill">
+                                <tp:AnimatedButtonEx x:Name="btnReadyToUpdate" Text="I'm ready to update"/>
+                            </Frame>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="1" BackgroundColor="Transparent">
+                        <lottie:AnimationView Animation="{x:Static tps:Images.ObPluggedIn}" Scale="1.5" Loop="True" AutoPlay="False"
+                                   IsPlaying="{Binding Source={Reference gridReadyToUpdate}, Path=IsVisible}" HorizontalOptions="Fill"  VerticalOptions="Fill"/>
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="gridUpdating" IsVisible="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="150"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="20, 10">
+                            <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="30" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="Yah! I'm updating..."/>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="2" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="End" Padding="30, 0, 30, 60">
+                            <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="20" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" TextColor="White" 
+                                              Text="This will take 8-30 mins to update, please don't close the app while updating."/>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="1" BackgroundColor="Transparent">
+                        <lottie:AnimationView HorizontalOptions="Fill" VerticalOptions="Fill" Loop="True" AutoPlay="False"
+                                              IsPlaying="{Binding Source={Reference gridUpdating}, Path=IsVisible}" Animation="{x:Static tps:Images.TpUpdating}" />
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="gridUpdateSuccess" IsVisible="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="150"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="20, 10">
+                            <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="30" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="Success!!!"/>
+                            <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}"  FontSize="20" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text=" "/>
+                            <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}"  FontSize="30" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="Update complete!"/>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="2" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="End" Padding="30, 0, 30, 60">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="12" FontAttributes="Bold"
+                                                  VerticalOptions="Center" TextColor="White" Text="Sofware Version: "/>
+                                <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="12" FontAttributes="Bold"
+                                  x:Name="lblVersionUpdateSuccess" VerticalOptions="Center" TextColor="White" Text="1.0.0"/>
+                            </StackLayout>
+                            <Frame HasShadow="True" BackgroundColor="Transparent" Margin="0" Padding="0" HorizontalOptions="Fill">
+                                <tp:AnimatedButtonEx x:Name="btnUpdateSuccess" Text="All done!"/>
+                            </Frame>                            
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="1" BackgroundColor="Transparent">
+                        <ff:SvgCachedImage HorizontalOptions="Center" VerticalOptions="Fill" Aspect="AspectFill" Source="{x:Static tps:Images.TpCelebrating}" />
+                    </Grid>
+                </Grid>
+
+                <Grid x:Name="gridUpdateFailed" IsVisible="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="150"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="20, 10">
+                            <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="30" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="Oh no!"/>
+                            <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}"  FontSize="20" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text=" "/>
+                            <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}"  FontSize="30" FontAttributes="Bold"
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="Something went wrong"/>
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="2" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="End" Padding="30, 0, 30, 60">
+                            <Frame HasShadow="True" BackgroundColor="Transparent" Margin="0" Padding="0" HorizontalOptions="Fill">
+                                <tp:AnimatedButtonEx x:Name="btnUpdateFailed" Text="Retry"/>
+                            </Frame>                               
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="1" BackgroundColor="Transparent">
+                        <ff:SvgCachedImage HorizontalOptions="Center" VerticalOptions="Fill" Aspect="AspectFill" Source="{x:Static tps:Images.TpSad}" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</tp:BasePage>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<talkiPlay:BasePage
+    x:TypeArguments="shared:VolumeControlPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    x:Class="TalkiPlay.VolumeControlPage">
+    <ContentPage.Content>
+
+        <RelativeLayout
+            x:Name="MainLayout">
+            <talkiPlay:NavigationView
+                x:Name="NavigationView"
+               
+                ShowLeftButton="true"
+                ShowRightButton="true"
+                
+                 />
+
+
+            <StackLayout
+                Padding="20, 150, 20, 20"
+                x:Name="SubLayout"
+                Spacing="20">
+                <ui:ExtendedLabel
+                    x:Name="Name"
+                    CustomFont="{x:Static talkiPlay:Fonts.BodyLinkFont}"
+                    Text="Volume"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center" />
+                <ui:ExtendedLabel
+                    x:Name="VolumeValue"
+                    CustomFont="{x:Static talkiPlay:Fonts.Header1BlackFont}"
+                    Text="{Binding Volume}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center" />
+
+                <Slider
+                    Minimum="0"
+                    Maximum="100"
+                    ThumbColor="{x:Static shared:Colors.Fuschia}"
+                    MinimumTrackColor="{x:Static shared:Colors.TealColor}"
+                    x:Name="VolumeControl"></Slider>
+
+            </StackLayout>
+
+            <talkiPlay:AnimatedButton
+                Margin="0"
+                VerticalOptions="End"
+                x:Name="ChangeButton"
+                Animation="{x:Static shared:Images.LoadingAnimation}"
+                ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}"
+                ButtonHeightRequest="60"
+                Text="Change Volume"
+                ButtonColor="{x:Static shared:Colors.TealColor}"
+                CornerRadius="0"
+                AnimationHeightRequest="80"
+                AnimationWidthRequest="80"
+                BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+
+        </RelativeLayout>
+
+
+    </ContentPage.Content>
+</talkiPlay:BasePage>

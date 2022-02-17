@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<talkiPlay:SimpleBasePage
+    x:TypeArguments="shared:RewardListPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    x:Class="TalkiPlay.RewardListPage"
+    x:DataType="shared:RewardListPageViewModel">
+    <ContentPage.Content>
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    x:Name="NavRow"
+                    Height="60"  />
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <talkiPlay:NavigationView
+                x:Name="NavigationView"
+                               
+                ShowRightButton="false"
+                ShowLeftButton="true"
+                
+                
+                Title="Rewards"
+                Grid.Row="0"
+                Grid.Column="0" />
+            <CarouselView
+                Height="{Binding CarouselHeight, Mode=OneWayToSource}"
+                Width="{Binding CarouselWidth, Mode=OneWayToSource}"
+                IndicatorView="IndicatorView"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" 
+                HorizontalScrollBarVisibility="Never"
+                ItemsSource="{Binding Rewards}"
+                Position="{Binding CurrentIndex, Mode=TwoWay}"
+                Grid.Column="0"
+                Grid.Row="1">
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout
+                        SnapPointsType="MandatorySingle"
+                        SnapPointsAlignment="Center"
+                        Orientation="Horizontal">
+                    </LinearItemsLayout>
+                </CarouselView.ItemsLayout>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <talkiPlay:RewardItemsView />
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+                
+            <IndicatorView
+                x:Name="IndicatorView"
+                Grid.Column="0"
+                Grid.Row="2"
+                Margin="10, 12, 10, 20"
+                IndicatorColor="{x:Static shared:Colors.WarmGrey}"
+                SelectedIndicatorColor="{x:Static shared:Colors.TealColor}"
+                IndicatorSize="10"
+                HorizontalOptions="Center"                    
+                Count="1"/>
+        </Grid>
+      
+    </ContentPage.Content>
+</talkiPlay:SimpleBasePage>

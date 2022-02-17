@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<talkiPlay:BasePopupPage x:TypeArguments="shared:ScanHomeTagPopupPageViewModel"
+                         xmlns="http://xamarin.com/schemas/2014/forms"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                         xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+                         xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+                         xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+                         xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+                         x:Class="TalkiPlay.ScanHomeTagPopup"
+                         x:DataType="shared:ScanHomeTagPopupPageViewModel">
+    <ContentPage.Content>
+        <Frame HasShadow="False"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"
+               Margin="20">
+            <StackLayout HorizontalOptions="Center"
+                         BackgroundColor="Transparent"
+                         Padding="20"
+                         Spacing="20">
+                <ui:ExtendedLabel x:Name="Heading"
+                                  CustomFont="{x:Static talkiPlay:Fonts.BodyFont}"
+                                  Text="{Binding Title}"
+                                  HorizontalOptions="FillAndExpand"
+                                  VerticalTextAlignment="Center"
+                                  HorizontalTextAlignment="Center" />
+                <forms:SvgCachedImage x:Name="Image"
+                                      Source="{Binding Image}"
+                                      Aspect="AspectFit"
+                                      HeightRequest="250"
+                                      LoadingPlaceholder="{x:Static shared:Images.LoadingIndicator}"
+                                      ErrorPlaceholder="{x:Static shared:Images.PlaceHolder}" />
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</talkiPlay:BasePopupPage>

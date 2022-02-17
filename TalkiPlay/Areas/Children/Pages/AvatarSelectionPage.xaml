@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<talkiPlay:BasePage
+    x:TypeArguments="shared:AvatarSelectionPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"    
+    x:Class="TalkiPlay.AvatarSelectionPage"
+    x:DataType="shared:AvatarSelectionPageViewModel">
+    <ContentPage.Content>
+        <RelativeLayout
+            x:Name="MainLayout">
+            <talkiPlay:NavigationView
+                x:Name="NavigationView"
+               
+                ShowLeftButton="true"
+                ShowRightButton="false"
+                
+                 />
+
+            <CollectionView
+                x:Name="AvatarList"
+                SelectionMode="None">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout
+                        Orientation="Vertical"
+                        Span="4"
+                        HorizontalItemSpacing="10"
+                        VerticalItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <talkiPlay:AvatarItem />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <talkiPlay:AnimatedButton
+                x:Name="AddChildButton"
+                Animation="{x:Static shared:Images.LoadingAnimation}"
+                ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}"
+                ButtonHeightRequest="60"
+                Text="{Binding ButtonText}"
+                ButtonColor="{x:Static shared:Colors.TealColor}"
+                CornerRadius="5"
+                AnimationHeightRequest="80"
+                AnimationWidthRequest="80"
+                BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+
+        </RelativeLayout>
+
+    </ContentPage.Content>
+</talkiPlay:BasePage>

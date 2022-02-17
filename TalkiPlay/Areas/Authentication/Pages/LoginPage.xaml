@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<talkiPlay:BasePage
+    x:TypeArguments="shared:LoginPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:forms1="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:magicgradients="clr-namespace:MagicGradients;assembly=MagicGradients"
+    x:Class="TalkiPlay.LoginPage"
+    x:DataType="shared:LoginPageViewModel"
+    BackgroundColor="{x:Static shared:Colors.TealColor}">
+    <ContentPage.Content>
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    x:Name="NavRow"
+                    Height="80" />
+                <RowDefinition
+                    x:Name="MainRow"
+                    Height="*" />
+            </Grid.RowDefinitions>
+             <magicgradients:GradientView
+                x:Name="GradientView"
+                Grid.RowSpan="2"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+
+            </magicgradients:GradientView>
+            <talkiPlay:NavigationView
+                x:Name="NavigationView"
+                BarTintColor="Transparent"
+                ShowLeftButton="true"
+                Title="Log in"                
+                ShowRightButton="false"
+                IsVisible="{Binding ShowNavBar}"                
+                Grid.Row="0"
+                Grid.Column="0" />
+            <ScrollView
+                Grid.Row="1"
+                Grid.Column="0"
+                x:Name="ScrollView">
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Padding="20,0,20,0"
+                    x:Name="MainLayout">
+                    <forms:SvgCachedImage
+                        HorizontalOptions="CenterAndExpand"
+                        Source="{x:Static shared:Images.LogoWhite}"
+                        HeightRequest="100" />
+                    
+                        <ui:ExtendedLabel
+                            Text="Email address"
+                            CustomFont="{x:Static talkiPlay:Fonts.MetaLinkWhiteFont}"
+                            HorizontalOptions="FillAndExpand" />
+                        <Frame
+                            x:Name="EmailEntryFrame"
+                            HeightRequest="60"
+                            Padding="1"
+                            HasShadow="false"
+                            CornerRadius="4"
+                            BorderColor="White">
+                            <ui:ExtendedEntry
+                                CustomFont="{x:Static talkiPlay:Fonts.BodyFont}"
+                                CustomPlaceholderFont="{x:Static talkiPlay:Fonts.BodyPlaceHolderFont}"
+                                Placeholder="Email address..."
+                                Keyboard="Email"
+                                KeyboardReturnType="Next"
+                                x:Name="EmailEntry"
+                                HorizontalContentPadding="10"
+                                ErrorBackgroundColor="White"
+                                HasBorder="false" />
+                        </Frame>
+                        <ui:ValidationErrorsView
+                            ValidationMessageFont="{x:Static talkiPlay:Fonts.MetaErrorFont}"
+                            x:Name="EmailErrorView" />
+                  
+                        <ui:ExtendedLabel
+                            Text="Password"
+                            CustomFont="{x:Static talkiPlay:Fonts.MetaLinkWhiteFont}"
+                            HorizontalOptions="FillAndExpand" />
+                        <Frame
+                            x:Name="PasswordEntryFrame"
+                            HeightRequest="60"
+                            Padding="1"
+                            HasShadow="false"
+                            CornerRadius="4"
+                            BorderColor="White">
+                            <ui:ExtendedEntry
+                                CustomFont="{x:Static talkiPlay:Fonts.BodyFont}"
+                                CustomPlaceholderFont="{x:Static talkiPlay:Fonts.BodyPlaceHolderFont}"
+                                Placeholder="Password..."
+                                IsPassword="True"
+                                KeyboardReturnType="Go"
+                                x:Name="PasswordEntry"
+                                HorizontalContentPadding="10"
+                                ErrorBackgroundColor="White"
+                                HasBorder="false" />
+                        </Frame>
+
+                        <ui:ValidationErrorsView
+                            ValidationMessageFont="{x:Static talkiPlay:Fonts.MetaErrorFont}"
+                            x:Name="PasswordErrorView" />
+                   
+                    <ui:ExtendedLabel
+                        Text="Forgot password?"
+                        CustomFont="{x:Static talkiPlay:Fonts.BodyLinkReverseFont}"
+                        HorizontalOptions="Center"
+                        x:Name="ForgotPassword"
+                        Margin="0,20,0,20" />
+                    <talkiPlay:AnimatedButton
+                        x:Name="LoginButton"
+                        Margin="0,0,0,20"
+                        Animation="{x:Static shared:Images.LoadingAnimation}"
+                        ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}"
+                        ButtonHeightRequest="60"
+                        Text="Sign in"
+                        ButtonColor="{x:Static shared:Colors.Fuschia}"
+                        CornerRadius="5"
+                        AnimationHeightRequest="80"
+                        AnimationWidthRequest="80"
+                        BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+                    <StackLayout                        
+                        Orientation="Horizontal"
+                        HorizontalOptions="Center"
+                        Spacing="8"
+                        x:Name="SignupLayout"
+                        Padding="0,20,0,20">
+                        <ui:ExtendedLabel
+                            Text="Don't have an account?"
+                            CustomFont="{x:Static talkiPlay:Fonts.BodyLinkReverseFont}"
+                            HorizontalTextAlignment="Center" />
+                        <ui:ExtendedLabel
+                            Text="Sign up."
+                            CustomFont="{x:Static talkiPlay:Fonts.BodyLinkReverseFont}"
+                            HorizontalTextAlignment="Center"
+                            x:Name="SignUpLabel" />
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</talkiPlay:BasePage>

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<tp:TabViewBase
+    x:TypeArguments="tps:GameListPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tp="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:tps="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    x:Class="TalkiPlay.GameListPage" 
+    x:DataType="tps:GameListPageViewModel">
+    <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    x:Name="NavRow"
+                    Height="Auto" />
+                <RowDefinition
+                    x:Name="MainRow"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <tp:NavigationView
+                x:Name="NavigationView"
+                Title="{Binding Title}"
+                ShowLeftButton="False"
+                ShowRightButton="False"
+                
+                
+                Grid.Row="0"
+                Grid.Column="0" />
+
+            <tp:ImageButtonView
+                x:Name="GuideNavButton"
+                DefaultSource="{x:Static tps:Images.LogoButtonIcon}"
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalOptions="End"
+                Command="{Binding GuideCommand}"/>
+
+            <Grid
+                x:Name="MainLayout"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Grid.Row="1"
+                Grid.Column="0"
+                RowSpacing="10"
+                Margin="0"
+                Padding="0,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition
+                        Height="20" />
+                    <RowDefinition
+                        Height="*" />
+                </Grid.RowDefinitions>
+
+                <IndicatorView
+                    x:Name="IndicatorView"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Margin="10,0"
+                    IndicatorColor="{x:Static tps:Colors.WarmGrey}"
+                    SelectedIndicatorColor="{x:Static tps:Colors.TealColor}"
+                    IndicatorSize="{Binding IndicatorSize}"
+                    HorizontalOptions="Center"
+                    Count="1" />
+                <CarouselView
+                    x:Name="CarouselView"
+                    IndicatorView="IndicatorView"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    ItemsSource="{Binding Games}"
+                    Position="{Binding CurrentIndex}"
+                    Grid.Column="0"
+                    Grid.Row="1">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <tp:GameView />
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+
+            </Grid>
+        </Grid>
+</tp:TabViewBase>

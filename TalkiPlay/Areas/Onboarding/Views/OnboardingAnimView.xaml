@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xamForms:ReactiveContentView
+    x:TypeArguments="shared:OnboardingItemViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    x:Class="TalkiPlay.OnboardingAnimView"
+    x:DataType="shared:OnboardingItemViewModel">
+    <Grid Padding="10" RowSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ui:ExtendedLabel Grid.Row="0" x:Name="Heading" CustomFont="{x:Static talkiPlay:Fonts.HeroTitleFont}" Text="{Binding Heading}" 
+                              HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+            <Label.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.Platforms>
+                        <On Platform="iOS" Value="0, 50, 0, 0" />
+                        <On Platform="Android" Value="0, 0, 0, 0" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.Margin>
+        </ui:ExtendedLabel>
+
+        <Grid Grid.Row="1">
+            <lottie:AnimationView x:Name="ltAnimView" Animation="{Binding Resource}" Speed="1" Scale="{Binding ResourceScale}" AutoPlay="True" Loop="True"
+                                   HorizontalOptions="Fill"  VerticalOptions="Fill"/>
+        </Grid>
+    </Grid>
+</xamForms:ReactiveContentView>

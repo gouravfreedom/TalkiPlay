@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xamForms:ReactiveContentView
+    x:TypeArguments="shared:OnboardingItemViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    x:Class="TalkiPlay.OnboardingView"
+    x:DataType="shared:OnboardingItemViewModel">
+    <ContentView.Content>
+        <StackLayout Margin="15,70,15,15" Spacing="10">
+            <ui:ExtendedLabel x:Name="Heading" CustomFont="{x:Static talkiPlay:Fonts.HeroTitleFont}" Text="{Binding Heading}" 
+                              HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="10, 0"/>
+
+            <lottie:AnimationView x:Name="ltAnimView" Animation="{Binding Resource}" HorizontalOptions="FillAndExpand" Speed="1" Scale="1"
+                                  VerticalOptions="FillAndExpand" AutoPlay="True" Loop="True" Margin="0,10"/>
+
+            <forms:SvgCachedImage x:Name="imgView" Source="{Binding Resource}" HorizontalOptions="FillAndExpand" Aspect="AspectFit"
+                                  Margin="0,60,0,40" />
+
+            <ui:ExtendedLabel x:Name="SubHeading" CustomFont="{x:Static talkiPlay:Fonts.HeroTitleFont}" Text="{Binding SubHeading}"
+                              HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="10,20,10,10"/>
+        </StackLayout>
+    </ContentView.Content>
+</xamForms:ReactiveContentView>

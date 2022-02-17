@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<talkiPlay:BasePage
+    x:TypeArguments="shared:RoomImageSelectionPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ffimage="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    x:Class="TalkiPlay.RoomImageSelectionPage"
+    x:DataType="shared:RoomImageSelectionPageViewModel">
+    <ContentPage.Content>
+        <RelativeLayout
+            x:Name="MainLayout">
+            <talkiPlay:NavigationView
+                x:Name="NavigationView"
+               
+                ShowLeftButton="true"
+                ShowRightButton="false"
+                
+                 />
+
+
+            <CollectionView
+                x:Name="ImageList"                            
+                SelectionMode="Single">
+                <CollectionView.Header>
+                    <StackLayout HeightRequest="10"></StackLayout>
+                </CollectionView.Header>
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout
+                        Orientation="Vertical"
+                        Span="2" 
+                        HorizontalItemSpacing="10"
+                        VerticalItemSpacing="0" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="shared:RoomImageItemViewModel">
+                        <ContentView BackgroundColor="White" Padding="0,0">
+                            <Frame                            
+                                HasShadow="false"
+                                Margin="1"
+                                Padding="10"
+                                BackgroundColor="White"
+                                CornerRadius="6"
+                                BorderColor="{Binding IsSelected, Converter={x:Static talkiPlay:Converters.BooleanToColorConverter}}">
+                                <ffimage:SvgCachedImage                                
+                                    Source="{Binding Image}"
+                                    LoadingPlaceholder="{x:Static shared:Images.LoadingIndicator}"
+                                    ErrorPlaceholder="{x:Static shared:Images.PlaceHolder}"
+                                    WidthRequest="80"
+                                    HeightRequest="80" />
+                            </Frame>
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <talkiPlay:AnimatedButton
+                x:Name="AddRoomButton"
+                Animation="{x:Static shared:Images.LoadingAnimation}"
+                ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}"
+                ButtonHeightRequest="60"
+                Text="{Binding ButtonText}"
+                ButtonColor="{x:Static shared:Colors.TealColor}"
+                CornerRadius="5"
+                AnimationHeightRequest="80"
+                AnimationWidthRequest="80"
+                BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+
+        </RelativeLayout>
+
+    </ContentPage.Content>
+</talkiPlay:BasePage>

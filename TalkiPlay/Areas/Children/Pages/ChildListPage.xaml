@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<talkiPlay:BasePage
+    x:TypeArguments="shared:ChildListPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:shared="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:talkiPlay="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    x:Class="TalkiPlay.ChildListPage"
+    x:DataType="shared:ChildListPageViewModel">
+    <ContentPage.Content>
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand" RowSpacing="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    x:Name="NavRow" Height="Auto" />
+                <RowDefinition
+                    x:Name="MainRow"
+                    Height="*" />
+            </Grid.RowDefinitions>
+            <talkiPlay:NavigationView
+                x:Name="NavigationView"
+               
+                ShowLeftButton="true"
+                ShowRightButton="true"
+                
+                RightButtonIcon="{x:Static shared:Images.AddIcon}"
+                
+                Grid.Row="0"
+                Grid.Column="0" />
+
+            <CollectionView
+                x:Name="ChildrenList"
+                SelectionMode="Single"
+                VerticalOptions="FillAndExpand"
+                Grid.Row="1"
+                Grid.Column="0">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout
+                        Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <talkiPlay:ChildCell />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.Footer>
+                    <StackLayout HeightRequest="60"/>
+                </CollectionView.Footer>
+                <CollectionView.EmptyView>
+                   
+                        <StackLayout
+                            x:Name="EmptyViewLayout"
+                            IsVisible="{Binding ShowEmptyState}"
+                            VerticalOptions="CenterAndExpand"
+                            Spacing="30" Padding="20"
+                            x:DataType="shared:ChildListPageViewModel">
+                            <ui:ExtendedLabel
+                                CustomFont="{x:Static talkiPlay:Fonts.LabelBlackFont}"
+                                Margin="20,40,20,0"
+                                Text="There are no children registered. Please click 'Add a child' button below to register a child."
+                                HorizontalOptions="FillAndExpand"
+                                HorizontalTextAlignment="Center" />
+                            <talkiPlay:AnimatedButton
+                                x:Name="AddChildButton"
+                                Animation="{x:Static shared:Images.LoadingAnimation}"
+                                ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}"
+                                ButtonHeightRequest="60"
+                                Text="Add a child"
+                                ButtonColor="{x:Static shared:Colors.TealColor}"
+                                CornerRadius="5"
+                                AnimationHeightRequest="80"
+                                AnimationWidthRequest="80"
+                                BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+                        </StackLayout>
+                    
+                </CollectionView.EmptyView>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</talkiPlay:BasePage>

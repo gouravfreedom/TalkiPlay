@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xamForms:ReactiveContentView
+    x:TypeArguments="tps:ChildPlayerViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xamForms="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+    xmlns:tps="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:tp="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    x:Class="TalkiPlay.PlayerView"
+    x:DataType="tps:ChildPlayerViewModel">
+    <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsClippedToBounds="False" RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>        
+        <forms:SvgCachedImage Grid.Row="1" HorizontalOptions="Center" VerticalOptions="StartAndExpand" WidthRequest="100" HeightRequest="100" Aspect="AspectFit" 
+                Source="{Binding Child, Converter={Static tp:Converters.Child2AvatarConverter}, Mode=OneWay}" LoadingPlaceholder="{x:Static tps:Images.LoadingIndicator}" ErrorPlaceholder="{x:Static tps:Images.PlaceHolder}" DownsampleToViewSize="True"/>
+
+        <ui:ExtendedLabel Grid.Row="2" Text="{Binding Name}" HorizontalOptions="FillAndExpand" VerticalOptions="End" LineBreakMode="TailTruncation" HorizontalTextAlignment="Center"
+                              CustomFont="{x:Static tp:Fonts.Header2Font}" Margin="0, 5, 0, 0"/>
+        <tp:SvgImageButton Grid.Row="0" WidthRequest="24" HeightRequest="24" HorizontalOptions="End" VerticalOptions="Start" Margin="0"
+            Source="{x:Static tps:Images.RemoveIcon}" Command="{Binding RemoveCommand}"/>
+        
+    </Grid>    
+</xamForms:ReactiveContentView>

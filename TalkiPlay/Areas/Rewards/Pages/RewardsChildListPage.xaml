@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<tp:TabViewBase
+    x:TypeArguments="tps:RewardsChildListPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tp="clr-namespace:TalkiPlay;assembly=TalkiPlay"
+    xmlns:tps="clr-namespace:TalkiPlay.Shared;assembly=TalkiPlay"
+    xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
+    x:Class="TalkiPlay.RewardsChildListPage"
+    x:DataType="tps:RewardsChildListPageViewModel">
+    <Grid
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand" RowSpacing="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    x:Name="NavRow" Height="Auto" />
+                <RowDefinition
+                    Height="*" />
+            </Grid.RowDefinitions>
+            <tp:NavigationView
+                x:Name="NavigationView"
+                Title="Rewards"
+                ShowLeftButton="false"
+                ShowRightButton="false"
+                
+                Grid.Row="0"
+                Grid.Column="0" />
+
+            <CollectionView
+                SelectionMode="None"
+                
+                Grid.Row="1"
+                Grid.Column="0"
+                ItemsSource="{Binding Children}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="{Binding NumberOfColumns}"
+                                     HorizontalItemSpacing="8"
+                                     VerticalItemSpacing="8" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="tps:ChildViewModel">
+                        <tp:RewardChildView/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <!--<CollectionView.Footer>
+                    <StackLayout HeightRequest="60"/>
+                </CollectionView.Footer>-->
+                <CollectionView.EmptyView>
+                    <StackLayout
+                        VerticalOptions="FillAndExpand"
+                            HorizontalOptions="Center"
+                            Spacing="30" Padding="20">
+                            <ui:ExtendedLabel
+                                CustomFont="{x:Static tp:Fonts.LabelBlackFont}"
+                                Margin="40"
+                                Text="No children found."
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                    
+                </CollectionView.EmptyView>
+            </CollectionView>
+        </Grid>
+</tp:TabViewBase>

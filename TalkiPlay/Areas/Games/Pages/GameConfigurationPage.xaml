@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tp:BasePage
+    x:TypeArguments="tps:GameConfigurationPageViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tp="clr-namespace:TalkiPlay"
+    xmlns:tps="clr-namespace:TalkiPlay.Shared"
+    xmlns:cmu="clr-namespace:ChilliSource.Mobile.UI"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    x:Class="TalkiPlay.GameConfigurationPage"
+    x:DataType="tps:GameConfigurationPageViewModel">
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="NavRow" />
+            <RowDefinition x:Name="MainRow" Height="*" />
+        </Grid.RowDefinitions>
+
+        <tp:NavigationView Grid.Row="0"  x:Name="NavigationView" ShowLeftButton="true" ShowRightButton="false"/>
+
+        <ScrollView Grid.Row="1">
+            <StackLayout x:Name="MainLayout">
+                <Grid Margin="0">
+                    <Grid.HeightRequest>
+                        <OnIdiom x:TypeArguments="x:Double" Phone="250" Tablet="500"/>
+                    </Grid.HeightRequest>
+                    <forms:SvgCachedImage Source="{Binding GameBackgroundImage}" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFill" />
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                        <cmu:ExtendedLabel x:Name="TitleLabel" Text="{Binding GameTitle}" CustomFont="{x:Static tp:Fonts.HeroTitleFont}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
+                        <cmu:ExtendedLabel x:Name="ShortDescription" Text="{Binding GameShortDescription}" CustomFont="{x:Static tp:Fonts.TitleFont}" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </Grid>                
+
+                <StackLayout HorizontalOptions="FillAndExpand" Padding="0,0,0,15" Spacing="30">
+                    <CollectionView x:Name="PlayerList" SelectionMode="None" VerticalOptions="Start" HeightRequest="160">
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" ItemSpacing="16"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <tp:PlayerView />
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+
+                <StackLayout HorizontalOptions="Center"  Spacing="10" > 
+                    <StackLayout Orientation="Horizontal" Margin="20, 0">
+                        <cmu:ExtendedLabel x:Name="lblItemsTitle" Text="Activate game items" CustomFont="{x:Static tp:Fonts.Header1Font}" VerticalOptions="Center"/>
+                        <tp:SvgImageButton x:Name="BtnConfigGame" WidthRequest="48" HeightRequest="48" VerticalOptions="Center"
+                                      Scale="0.6" Aspect="AspectFit" Source="{x:Static tps:Images.PlusWhiteIcon}" />
+                    </StackLayout>                    
+                    <tp:CollectionViewEx x:Name="ItemsList" SelectionMode="None" HorizontalOptions="Center" HeightRequest="0" ShouldDisableScroll="True">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="0" VerticalItemSpacing="12" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <tp:ItemConfigurationView />
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </tp:CollectionViewEx>
+                </StackLayout>
+
+                <Grid  HeightRequest="80" Padding="60, 0">
+                    <Frame HasShadow="True" BackgroundColor="Transparent" Padding="0" Margin="0" VerticalOptions="Center" >
+                        <cmu:ExtendedButtonEx x:Name="StartGameButton" HorizontalOptions="Fill" VerticalOptions="Center"
+                                              Text="Start game" Command="{Binding StartGameCommand}"/>
+                    </Frame>
+                </Grid>
+            </StackLayout>
+        </ScrollView>        
+
+        <forms:SvgCachedImage x:Name="spechBubblePairMe" Grid.Row="1" Source="{x:Static tps:Images.SpeechBubblePairMe}" Aspect="AspectFit" HorizontalOptions="EndAndExpand"
+                              VerticalOptions="End" WidthRequest="250" HeightRequest="250" Margin="0,0,80,95" IsVisible="{Binding ShowPairMePopup}">
+            <forms:SvgCachedImage.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTappedToPair"/>
+            </forms:SvgCachedImage.GestureRecognizers>
+        </forms:SvgCachedImage>
+
+        <lottie:AnimationView Grid.Row="1" Margin="-40, -40" WidthRequest="200" HeightRequest="200" HorizontalOptions="End" VerticalOptions="End" Scale="1.3" Rotation="-20"
+                              Loop="True" AutoPlay="True" IsPlaying="True"  Animation="animations/welcome_with_wiggle.json"
+                              IsVisible="{Binding IsConnected, Converter={x:Static tp:Converters.InvertedBooleanConverter}}" OnClick="OnWelcomeAnimClicked"/>
+     </Grid>
+</tp:BasePage>   
