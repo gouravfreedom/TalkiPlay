@@ -30,7 +30,7 @@ namespace TalkiPlay.iOS
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            Forms.SetFlags("IndicatorView_Experimental","Markup_Experimental","Shapes_Experimental", "CarouselView_Experimental");
+            Forms.SetFlags("IndicatorView_Experimental","Markup_Experimental","Shapes_Experimental", "CarouselView_Experimental", "Brush_Experimental");
             global::Xamarin.Forms.Forms.Init();
             Sharpnado.Tabs.iOS.Preserver.Preserve();
 
