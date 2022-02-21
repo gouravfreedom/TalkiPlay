@@ -63,9 +63,18 @@
                 </StackLayout>
 
                 <Grid  HeightRequest="80" Padding="60, 0">
-                    <Frame HasShadow="True" BackgroundColor="Transparent" Padding="0" Margin="0" VerticalOptions="Center" >
-                        <cmu:ExtendedButtonEx x:Name="StartGameButton" HorizontalOptions="Fill" VerticalOptions="Center"
-                                              Text="Start game" Command="{Binding StartGameCommand}"/>
+                    <Frame HasShadow="True" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25" >
+                        <Frame.Background>
+                            <LinearGradientBrush StartPoint="0,0"
+                                                 EndPoint="1,0">
+                                <GradientStop Color="#23bcba"
+                                              Offset="0.1"/>
+                                <GradientStop Color="#45e994"
+                                              Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <Button x:Name="StartGameButton" FontSize="19" FontAttributes="Bold" TextColor="White" HorizontalOptions="Fill" VerticalOptions="Center"
+                                BackgroundColor="Transparent" BorderColor="Transparent" Text="Start game" Command="{Binding StartGameCommand}"/>
                     </Frame>
                 </Grid>
             </StackLayout>

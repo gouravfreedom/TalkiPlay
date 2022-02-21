@@ -27,7 +27,7 @@
                 <Grid RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.0}"
                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.22}">
-                    <Frame HasShadow="True" BackgroundColor="Transparent" Padding="0" Margin="0" CornerRadius="25" >
+                    <Frame HasShadow="True" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25" >
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0,0"
                                                  EndPoint="1,0">
@@ -37,7 +37,7 @@
                                               Offset="1.0"/>
                             </LinearGradientBrush>
                         </Frame.Background>
-                        <cmu:ExtendedButtonEx x:Name="btnEducator" HorizontalOptions="Fill" VerticalOptions="Center" Text="I have a Talkiplayer"
+                        <Button x:Name="btnEducator" FontSize="19" FontAttributes="Bold" TextColor="White" HorizontalOptions="Fill" VerticalOptions="Center" Text="I have a Talkiplayer"
                                               BackgroundColor="Transparent" BorderColor="Transparent" Command="{Binding EducatorModeCommand}" />
                     </Frame>
                 </Grid>

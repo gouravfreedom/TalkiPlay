@@ -43,9 +43,18 @@
                                 <Setter Property="IsVisible" Value="True" />
                             </DataTrigger>
                         </Grid.Triggers>
-                        <Frame HasShadow="True" BackgroundColor="Transparent" Padding="0" Margin="0" VerticalOptions="Center" >
-                            <cmu:ExtendedButtonEx HorizontalOptions="Fill" VerticalOptions="Center" Text="Pair me" 
-                               Command="{Binding PairMeCommand}" BackgroundColor="{x:Static tps:Colors.Blue5Color}" />
+                        <Frame HasShadow="True" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25" >
+                            <Frame.Background>
+                                <LinearGradientBrush StartPoint="0,0"
+                                                     EndPoint="1,0">
+                                    <GradientStop Color="#23bcba"
+                                                  Offset="0.1"/>
+                                    <GradientStop Color="#45e994"
+                                                  Offset="1.0"/>
+                                </LinearGradientBrush>
+                            </Frame.Background>
+                            <Button Command="{Binding PairMeCommand}" FontSize="19" FontAttributes="Bold" TextColor="White" HorizontalOptions="Fill" VerticalOptions="Center" Text="Pair me"
+                                                  BackgroundColor="Transparent" BorderColor="Transparent" />
                         </Frame>
                     </Grid>
 

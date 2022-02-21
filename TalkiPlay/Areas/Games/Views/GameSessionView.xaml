@@ -161,8 +161,18 @@
                                               OnFinish="OnWiggleAnimFinish" ClickedCommand="{Binding CrackEggCommand}" HorizontalOptions="Fill" VerticalOptions="Center" HeightRequest="{Binding EggHeight}"/>
 
                             <Grid  Grid.Row="2" WidthRequest="140" Padding="25, 0">
-                            <Frame HasShadow="True" BackgroundColor="Transparent" Padding="0" Margin="0" VerticalOptions="End" >
-                                <ui:ExtendedButtonEx x:Name="DoneButton" HorizontalOptions="Fill" VerticalOptions="Center" Text="Done" Margin="0, 8, 0, 0" />
+                            <Frame HasShadow="True" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25" >
+                                <Frame.Background>
+                                    <LinearGradientBrush StartPoint="0,0"
+                                                         EndPoint="1,0">
+                                        <GradientStop Color="#23bcba"
+                                                      Offset="0.1"/>
+                                        <GradientStop Color="#45e994"
+                                                      Offset="1.0"/>
+                                    </LinearGradientBrush>
+                                </Frame.Background>
+                                <Button x:Name="DoneButton" FontSize="19" FontAttributes="Bold" TextColor="White" HorizontalOptions="Fill" VerticalOptions="Center" Text="Done"
+                                        BackgroundColor="Transparent" BorderColor="Transparent" />
                             </Frame>
                         </Grid>
                     </Grid>
