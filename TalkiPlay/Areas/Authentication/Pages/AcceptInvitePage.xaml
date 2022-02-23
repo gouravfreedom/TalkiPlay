@@ -195,7 +195,7 @@
                                 x:Name="ConfirmPasswordErrorView" />
                         </StackLayout>
                     </StackLayout>
-                    <talkiPlay:AnimatedButton
+                    <!--<talkiPlay:AnimatedButton
                         x:Name="SignupButton"
                         Margin="0,10,0,80"
                         Animation="{x:Static shared:Images.LoadingAnimation}"
@@ -206,7 +206,26 @@
                         CornerRadius="5"
                         AnimationHeightRequest="80"
                         AnimationWidthRequest="80"
-                        BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+                        BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />-->
+                    <Frame HasShadow="True" HeightRequest="25"  BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25">
+                        <Frame.Background>
+                            <LinearGradientBrush StartPoint="0,0"
+                                                 EndPoint="1,0">
+                                <GradientStop Color="#23bcba"
+                                              Offset="0.1"/>
+                                <GradientStop Color="#45e994"
+                                              Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <AbsoluteLayout>
+                            <StackLayout AbsoluteLayout.LayoutBounds="0.0,0.0,1,1" AbsoluteLayout.LayoutFlags="All" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                <Button x:Name="SignupButton" FontSize="19" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Text="Sign Up"
+                                                      BackgroundColor="Transparent" BorderColor="Transparent"/>
+                            
+                            </StackLayout>
+                            <forms:SvgCachedImage AbsoluteLayout.LayoutBounds="0.8,0,1,1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="End" VerticalOptions="Fill" Aspect="Fill" Source="{x:Static tps:Images.LogoPng}" />
+                        </AbsoluteLayout>
+                    </Frame>
                 </StackLayout>
             </ScrollView>
         </Grid>

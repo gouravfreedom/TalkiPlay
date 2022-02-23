@@ -56,7 +56,7 @@ namespace TalkiPlay
             {
                 Dialogs.HideLoading();
                 
-                this.BindCommand(ViewModel, v => v.SignupCommand, view => view.SignupButton.Button).DisposeWith(d);
+                this.BindCommand(ViewModel, v => v.SignupCommand, view => view.SignupButton).DisposeWith(d);
               
             
                 this.OneWayBind(ViewModel, v => v.Household.Errors, view => view.HouseholdErrorView.ItemsSource).DisposeWith(d);
@@ -76,7 +76,7 @@ namespace TalkiPlay
                 this.OneWayBind(ViewModel, v => v.Password.IsValid, view => view.PasswordEntry.IsValid).DisposeWith(d);                
                 this.OneWayBind(ViewModel, v => v.ConfirmPassword.IsValid, view => view.ConfirmPasswordEntry.IsValid).DisposeWith(d);                
             
-                this.OneWayBind(ViewModel, v => v.IsBusy, view => view.SignupButton.IsBusy).DisposeWith(d);
+                //this.OneWayBind(ViewModel, v => v.IsBusy, view => view.SignupButton.IsBusy).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.SignupCommand, v => v.ConfirmPasswordEntry.ReturnCommand)
                     .DisposeWith(d);
                       

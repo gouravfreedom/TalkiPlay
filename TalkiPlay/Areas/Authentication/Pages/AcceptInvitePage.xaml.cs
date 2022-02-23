@@ -53,7 +53,7 @@ namespace TalkiPlay
 
             this.WhenActivated(d =>
             {
-                this.BindCommand(ViewModel, v => v.SignupCommand, view => view.SignupButton.Button).DisposeWith(d);
+                this.BindCommand(ViewModel, v => v.SignupCommand, view => view.SignupButton).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.Email.Errors, view => view.EmailErrorView.ItemsSource).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.Password.Errors, view => view.PasswordErrorView.ItemsSource).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.FirstName.Errors, view => view.FirstNameErrorView.ItemsSource).DisposeWith(d);
@@ -70,7 +70,7 @@ namespace TalkiPlay
                 this.OneWayBind(ViewModel, v => v.LastName.IsValid, view => view.LastNameEntry.IsValid).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.ConfirmPassword.IsValid, view => view.ConfirmPasswordEntry.IsValid).DisposeWith(d);
 
-                this.OneWayBind(ViewModel, v => v.IsBusy, view => view.SignupButton.IsBusy).DisposeWith(d);
+                //this.OneWayBind(ViewModel, v => v.IsBusy, view => view.SignupButton.IsBusy).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.SignupCommand, v => v.ConfirmPasswordEntry.ReturnCommand)
                     .DisposeWith(d);
           

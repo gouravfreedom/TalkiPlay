@@ -8,6 +8,7 @@
     xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:ui="clr-namespace:ChilliSource.Mobile.UI;assembly=TalkiPlay"
     xmlns:magicgradients="clr-namespace:MagicGradients;assembly=MagicGradients"
+    xmlns:ff="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     x:Class="TalkiPlay.SignupPage"
     x:DataType="tps:SignupPageViewModel"
     BackgroundColor="{x:Static tps:Colors.GradientStartColor}">
@@ -52,9 +53,25 @@
                 <tp:TncView x:Name="TncView" Margin="0,5,0,0"/>
                 <ui:ValidationErrorsView ValidationMessageFont="{x:Static tp:Fonts.MetaErrorFont}" x:Name="TncErrorView" HorizontalOptions="Center" Margin="0,0,0,10"/>
 
-                <tp:AnimatedButton x:Name="SignupButton" Margin="0,5,0,20" Animation="{x:Static tps:Images.LoadingAnimation}" ButtonFont="{x:Static tp:Fonts.ButtonTextFont}"
-                    ButtonHeightRequest="60" Text="Sign up" ButtonColor="{x:Static tps:Colors.Fuschia}" CornerRadius="5"
-                    AnimationHeightRequest="80" AnimationWidthRequest="80" BusyButtonColor="{x:Static tps:Colors.WarmGrey}" />
+                <Frame HasShadow="True" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25">
+                        <Frame.Background>
+                            <LinearGradientBrush StartPoint="0,0"
+                                                 EndPoint="1,0">
+                                <GradientStop Color="#23bcba"
+                                              Offset="0.1"/>
+                                <GradientStop Color="#45e994"
+                                              Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                    <AbsoluteLayout>
+                        <StackLayout AbsoluteLayout.LayoutBounds="0.0,0.0,1,1" AbsoluteLayout.LayoutFlags="All" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <Button x:Name="SignupButton" FontSize="19" FontAttributes="Bold" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Text="Sign Up"
+                                                  BackgroundColor="Transparent" BorderColor="Transparent"/>
+                            
+                        </StackLayout>
+                        <ff:SvgCachedImage AbsoluteLayout.LayoutBounds="0.8,0,1,1" AbsoluteLayout.LayoutFlags="All" HorizontalOptions="End" VerticalOptions="Fill" Aspect="Fill" Source="{x:Static tps:Images.LogoPng}" />
+                    </AbsoluteLayout>
+                </Frame>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="8" x:Name="LoginLayout" Padding="0,20,0,40" Margin="0,0,0,0">
                     <ui:ExtendedLabel Text="Already have an account?" CustomFont="{x:Static tp:Fonts.BodyLinkReverseFont}" HorizontalTextAlignment="Center" />
                     <ui:ExtendedLabel Text="Log in." CustomFont="{x:Static tp:Fonts.BodyLinkReverseFont}" HorizontalTextAlignment="Center" x:Name="LoginLabel" />
