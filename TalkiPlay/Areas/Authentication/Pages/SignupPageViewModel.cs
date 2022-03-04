@@ -1,4 +1,5 @@
 using System;
+//using System.Drawing;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Disposables;
@@ -9,7 +10,7 @@ using ChilliSource.Mobile.UI.ReactiveUI;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using Splat;
-
+using Xamarin.Forms;
 namespace TalkiPlay.Shared
 {
     public enum SignupNavigationSource
@@ -40,8 +41,14 @@ namespace TalkiPlay.Shared
             Household = new ReactiveValidatableObject<string>();
             ConfirmPassword = new ReactiveValidatableObject<string>();
             HasAgreedToTnc = new ReactiveValidatableObject<bool>();
-            
-            
+            HouseholdColor = new ReactiveValidatableObject<Color>();
+            CompanyColor = new ReactiveValidatableObject<Color>();
+            HouseholdText = new ReactiveValidatableObject<string>();
+            HouseholdText.Value = "Household name";
+            HouseholdPlaceHolder = new ReactiveValidatableObject<string>();
+            HouseholdPlaceHolder.Value = "Household name...";
+            HouseholdColor.Value = Color.DarkGray;
+            CompanyColor.Value = Color.White;
             AddValidations();
             SetupCommands();
             SetupRx();
@@ -65,11 +72,22 @@ namespace TalkiPlay.Shared
 
         public ReactiveValidatableObject<string> Household { get; }
 
+        public ReactiveValidatableObject<string> HouseholdText { get; }
+
+        public ReactiveValidatableObject<string> HouseholdPlaceHolder { get; }
+
         public ReactiveValidatableObject<bool> HasAgreedToTnc { get; }
+
+        public ReactiveValidatableObject<Color> HouseholdColor { get; }
+        public ReactiveValidatableObject<Color> CompanyColor { get; }
 
         public ReactiveCommand<Unit, Unit> SignupCommand { get; private set; }
         
         public ReactiveCommand<Unit, Unit> LoginCommand { get; private set; }
+
+        public ReactiveCommand<Unit, Unit> ParentCommand { get; private set; }
+
+        public ReactiveCommand<Unit, Unit> CompanyCommand { get; private set; }
 
 
         public extern bool IsBusy { [ObservableAsProperty] get; }
@@ -137,7 +155,25 @@ namespace TalkiPlay.Shared
                     SimpleNavigationService.PushAsync(new LoginPageViewModel(LoginNavigationSource.Signup)).Forget();
                 }
             });
-            
+
+            ParentCommand = ReactiveCommand.Create(() =>
+            {
+                _userSettings.HasTalkiPlayerDevice = false;
+                HouseholdText.Value = "Household name";
+                HouseholdPlaceHolder.Value = "Household name...";
+                HouseholdColor.Value = Color.DarkGray;
+                CompanyColor.Value = Color.White;
+            });
+
+            CompanyCommand = ReactiveCommand.Create(() =>
+            {
+                _userSettings.HasTalkiPlayerDevice = true;
+                HouseholdText.Value = "Company name";
+                HouseholdPlaceHolder.Value = "Company name...";
+                HouseholdColor.Value = Color.White;
+                CompanyColor.Value = Color.DarkGray;
+            });
+
             LoginCommand
                 .ThrownExceptions.SubscribeAndLogException();
 

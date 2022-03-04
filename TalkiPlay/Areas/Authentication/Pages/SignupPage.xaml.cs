@@ -16,9 +16,9 @@ namespace TalkiPlay
         public SignupPage()
         {
             InitializeComponent();
-            bool isDeviceMode = Locator.Current.GetService<IUserSettings>().HasTalkiPlayerDevice;
-            lblCompanyType.Text = isDeviceMode ? "Company name" : "Household name";
-            HouseholdEntry.Placeholder = isDeviceMode ? "Company name..." : "Household name...";
+            //bool isDeviceMode = Locator.Current.GetService<IUserSettings>().HasTalkiPlayerDevice;
+            //lblCompanyType.Text = isDeviceMode ? "Company name" : "Household name";
+            //HouseholdEntry.Placeholder = isDeviceMode ? "Company name..." : "Household name...";
 
             GradientView.GradientSource = Styles.BuildMainGradientSource();
 
@@ -66,6 +66,10 @@ namespace TalkiPlay
                 this.OneWayBind(ViewModel, v => v.ConfirmPassword.Errors, view => view.ConfirmPasswordErrorView.ItemsSource).DisposeWith(d);
                 
                 this.Bind(ViewModel, v => v.Household.Value, view => view.HouseholdEntry.Text).DisposeWith(d);
+                this.Bind(ViewModel, v => v.HouseholdText.Value, view => view.lblCompanyType.Text).DisposeWith(d);
+                this.Bind(ViewModel, v => v.HouseholdPlaceHolder.Value, view => view.HouseholdEntry.Placeholder).DisposeWith(d);
+                this.Bind(ViewModel, v => v.HouseholdColor.Value , view => view.parentLabel.BackgroundColor).DisposeWith(d);
+                this.Bind(ViewModel, v => v.CompanyColor.Value, view => view.companyLabel.BackgroundColor).DisposeWith(d);
                 this.Bind(ViewModel, v => v.Email.Value, view => view.EmailEntry.Text).DisposeWith(d);
                 this.Bind(ViewModel, v => v.Password.Value, view => view.PasswordEntry.Text).DisposeWith(d);                
                 this.Bind(ViewModel, v => v.ConfirmPassword.Value, view => view.ConfirmPasswordEntry.Text).DisposeWith(d);

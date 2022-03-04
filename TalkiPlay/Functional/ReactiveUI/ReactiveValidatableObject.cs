@@ -172,5 +172,9 @@ namespace ChilliSource.Mobile.UI.ReactiveUI
             if(!IsDirty) IsDirty = true;
         }
 
-	}
+        public static implicit operator ReactiveValidatableObject<T>(string v)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

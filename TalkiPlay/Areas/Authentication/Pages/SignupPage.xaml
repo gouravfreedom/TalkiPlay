@@ -24,10 +24,24 @@
         <ScrollView Grid.Row="1" x:Name="ScrollView">
             <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="Transparent" Margin="20,20,20,0">
                 <forms:SvgCachedImage HorizontalOptions="Center" Source="{x:Static tps:Images.LogoWhite}" HeightRequest="100" />                   
-                <ui:ExtendedLabel x:Name="lblCompanyType"  Text="Household name" CustomFont="{x:Static tp:Fonts.MetaLinkWhiteFont}" HorizontalOptions="FillAndExpand" />
+                <StackLayout Padding="20,5" Orientation="Horizontal" BackgroundColor="Transparent" Spacing="0">
+
+                    <ui:ExtendedLabel x:Name="parentLabel" FontSize="17" Padding="5,10" VerticalTextAlignment="Center" Text="Parent" HorizontalTextAlignment="Center" BackgroundColor="White" TextColor="Black" HorizontalOptions="FillAndExpand">
+                        <ui:ExtendedLabel.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ParentCommand}" />
+                        </ui:ExtendedLabel.GestureRecognizers>
+                    </ui:ExtendedLabel>
+                    <BoxView WidthRequest="1" BackgroundColor="DarkGray" VerticalOptions="FillAndExpand"/>
+                    <ui:ExtendedLabel x:Name="companyLabel" FontSize="17" Padding="5,10" VerticalTextAlignment="Center" Text="Company" HorizontalTextAlignment="Center" BackgroundColor="Gray" TextColor="Black" HorizontalOptions="FillAndExpand">
+                        <ui:ExtendedLabel.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CompanyCommand}" />
+                        </ui:ExtendedLabel.GestureRecognizers>
+                    </ui:ExtendedLabel>
+                </StackLayout>
+                <ui:ExtendedLabel x:Name="lblCompanyType"  Text="{Binding HouseholdText}" CustomFont="{x:Static tp:Fonts.MetaLinkWhiteFont}" HorizontalOptions="FillAndExpand" />
                 <Frame x:Name="HouseholdEntryFrame" HeightRequest="60" Padding="1" HasShadow="false" CornerRadius="4" BorderColor="White">
                     <ui:ExtendedEntry CustomFont="{x:Static tp:Fonts.BodyFont}" CustomPlaceholderFont="{x:Static tp:Fonts.BodyPlaceHolderFont}"
-                        Placeholder="Household name..." Keyboard="Text" KeyboardReturnType="Next" x:Name="HouseholdEntry" HorizontalContentPadding="10"
+                        Placeholder="{Binding HouseholdPlaceHolder}" Keyboard="Text" KeyboardReturnType="Next" x:Name="HouseholdEntry" HorizontalContentPadding="10"
                         ErrorBackgroundColor="White" HasBorder="false" />
                 </Frame>
                 <ui:ValidationErrorsView ValidationMessageFont="{x:Static tp:Fonts.MetaErrorFont}" x:Name="HouseholdErrorView" Margin="0,0,0,10" />               
