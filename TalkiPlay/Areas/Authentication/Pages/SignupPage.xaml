@@ -53,7 +53,7 @@
                 <tp:TncView x:Name="TncView" Margin="0,5,0,0"/>
                 <ui:ValidationErrorsView ValidationMessageFont="{x:Static tp:Fonts.MetaErrorFont}" x:Name="TncErrorView" HorizontalOptions="Center" Margin="0,0,0,10"/>
 
-                <Frame HasShadow="True" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25">
+                <Frame HasShadow="False" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25">
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0,0"
                                                  EndPoint="1,0">

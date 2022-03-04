@@ -57,14 +57,14 @@ namespace TalkiPlay
             this.WhenActivated(d =>
             {
                 CleaupTabPage();
-                this.BindCommand(ViewModel, v => v.LoginCommand, view => view.LoginButton.Button).DisposeWith(d);
+                this.BindCommand(ViewModel, v => v.LoginCommand, view => view.LoginButton).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.Email.Errors, view => view.EmailErrorView.ItemsSource).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.Password.Errors, view => view.PasswordErrorView.ItemsSource).DisposeWith(d);
                 this.Bind(ViewModel, v => v.Email.Value, view => view.EmailEntry.Text).DisposeWith(d);
                 this.Bind(ViewModel, v => v.Password.Value, view => view.PasswordEntry.Text).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.Email.IsValid, view => view.EmailEntry.IsValid).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.Password.IsValid, view => view.PasswordEntry.IsValid).DisposeWith(d);
-                this.OneWayBind(ViewModel, v => v.IsBusy, view => view.LoginButton.IsBusy).DisposeWith(d);
+                //this.OneWayBind(ViewModel, v => v.IsBusy, view => view.LoginButton.IsBusy).DisposeWith(d);
                 //this.BindCommand(ViewModel, v => v.ForgotPasswordCommand, view => view._forgotpasswordGestureRecognizer.Command).DisposeWith(d);
                 //this.BindCommand(ViewModel, v => v.SignupCommand, view => view._signupGestureRecognizer.Command).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.LoginCommand, v => v.PasswordEntry.ReturnCommand)

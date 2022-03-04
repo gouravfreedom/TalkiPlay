@@ -58,14 +58,35 @@ namespace TalkiPlay
             };
             image.SetBinding(SvgCachedImage.SourceProperty, nameof(ViewModelType.ImageSource));
 
-            
-            var button = new Button
-            {         
-                Style = Styles.PrimaryButtonStyle,
-                HorizontalOptions = LayoutOptions.FillAndExpand,
+            var stops = new GradientStopCollection();
+            stops.Add(new GradientStop() { Color = Color.FromHex("#23bcba"), Offset = 0.1f });
+            stops.Add(new GradientStop() { Color = Color.FromHex("#45e994"), Offset = 1.0f });
+
+            var nextButtonFrame = new Frame()
+            {
+                HasShadow = false,
+                BackgroundColor = Color.Transparent,
+                Padding = new Thickness(20, 0),
+                Margin = new Thickness(20, 0),
+                CornerRadius = 25,
+                Background = new LinearGradientBrush(stops)
             };
+
+            var button = new Button
+            {
+                Style = Styles.NewPrimaryButtonStyle,
+                Text = "Next",
+                HorizontalOptions = LayoutOptions.Fill
+            };
+            nextButtonFrame.Content = button;
+
+            //var button = new Button
+            //{         
+            //    Style = Styles.PrimaryButtonStyle,
+            //    HorizontalOptions = LayoutOptions.FillAndExpand,
+            //};
             button.SetBinding(Button.TextProperty, nameof(ViewModelType.NextButtonText));
-            button.SetBinding(Button.IsVisibleProperty, nameof(ViewModelType.ShowNextButton));
+            button.SetBinding(Frame.IsVisibleProperty, nameof(ViewModelType.ShowNextButton));
             button.SetBinding(Button.CommandProperty, nameof(ViewModelType.NextCommand));
 
             var gradient = Styles.BuildMainGradient();
@@ -102,10 +123,10 @@ namespace TalkiPlay
             var imageHeightOffset = imageBottomOffset + imageTopOffset;
 
             mainLayout.ConstrainLayout(() =>
-                button.Right() == mainLayout.Right() - Dimensions.DefaultHorizontalMargin &&
-                button.Left() == mainLayout.Left() + Dimensions.DefaultHorizontalMargin &&
-                button.Bottom() == mainLayout.Bottom() - buttonBottomOffset.ToConst() &&
-                button.Height() == Dimensions.DefaultButtonHeight
+                nextButtonFrame.Right() == mainLayout.Right() - Dimensions.DefaultHorizontalMargin &&
+                nextButtonFrame.Left() == mainLayout.Left() + Dimensions.DefaultHorizontalMargin &&
+                nextButtonFrame.Bottom() == mainLayout.Bottom() - buttonBottomOffset.ToConst() &&
+                nextButtonFrame.Height() == Dimensions.DefaultButtonHeight
             );
             
             mainLayout.ConstrainLayout(() =>

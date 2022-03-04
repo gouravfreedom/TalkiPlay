@@ -77,7 +77,7 @@ namespace TalkiPlay
                     this.OneWayBind(ViewModel, v => v.Avatars, view => view.AvatarList.ItemsSource).DisposeWith(d);
                     this.OneWayBind(ViewModel, v => v.ButtonText, view => view.AddChildButton.Text).DisposeWith(d);
                     //this.OneWayBind(ViewModel, v => v.IsBusy, view => view.AddChildButton.IsBusy).DisposeWith(d);
-                    this.BindCommand(ViewModel, v => v.SaveCommand, view => view.AddChildButton.Button).DisposeWith(d);
+                    this.BindCommand(ViewModel, v => v.SaveCommand, view => view.AddChildButton).DisposeWith(d);
 
                     this.OneWayBind(ViewModel, v => v.SelectedItem, view => view.AvatarList.SelectedItem)
                         .DisposeWith(d);

@@ -43,7 +43,7 @@
                                 <Setter Property="IsVisible" Value="True" />
                             </DataTrigger>
                         </Grid.Triggers>
-                        <Frame HasShadow="True" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25" >
+                        <Frame HasShadow="False" VerticalOptions="Center"  BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25" >
                             <Frame.Background>
                                 <LinearGradientBrush StartPoint="0,0"
                                                      EndPoint="1,0">

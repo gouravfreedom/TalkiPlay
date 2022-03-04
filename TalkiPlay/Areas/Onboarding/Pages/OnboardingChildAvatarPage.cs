@@ -3,6 +3,7 @@ using MagicGradients;
 using TalkiPlay.Shared;
 using Xamarin.Forms;
 using Xamarin.Forms.Markup;
+using GradientStop = Xamarin.Forms.GradientStop;
 
 namespace TalkiPlay
 {
@@ -63,17 +64,31 @@ namespace TalkiPlay
             collectionView.SetBinding(ItemsView.ItemsSourceProperty, nameof(OnboardingChildAvatarPageViewModel.Avatars));
             collectionView.SetBinding(SelectableItemsView.SelectedItemProperty, nameof(OnboardingChildAvatarPageViewModel.SelectedItem), BindingMode.TwoWay );
 
+            var stops = new GradientStopCollection();
+            stops.Add(new GradientStop() { Color = Color.FromHex("#23bcba"), Offset = 0.1f });
+            stops.Add(new GradientStop() { Color = Color.FromHex("#45e994"), Offset = 1.0f });
+
+            var nextButtonFrame = new Frame()
+            {
+                HasShadow = false,
+                BackgroundColor = Color.Transparent,
+                Padding = new Thickness(20, 0),
+                Margin = new Thickness(20, 0),
+                CornerRadius = 25,
+                Background = new LinearGradientBrush(stops)
+            };
 
             var nextButton = new Button
             {
-                Style = Styles.PrimaryButtonStyle,
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                Margin = new Thickness(15, 0),
+                Style = Styles.NewPrimaryButtonStyle,
+                Text = "Next",
+                HorizontalOptions = LayoutOptions.Fill
             }.Bind(Button.TextProperty,nameof(OnboardingChildAvatarPageViewModel.NextButtonText));
             nextButton.SetBinding(Button.CommandProperty, nameof(OnboardingChildAvatarPageViewModel.NextCommand));
+            nextButtonFrame.Content = nextButton;
             var buttonLayout = new StackLayout
             {
-                Children = { nextButton },
+                Children = { nextButtonFrame },
                 Margin = new Thickness(0, 0, 0, 20 + bottomOffset)
             };
 

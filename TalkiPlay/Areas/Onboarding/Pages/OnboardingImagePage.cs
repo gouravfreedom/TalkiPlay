@@ -62,15 +62,35 @@ namespace TalkiPlay
             };
             label.SetBinding(Label.TextProperty, nameof(OnboardingImagePageViewModel.HeaderText));
 
-            
-            var button = new Button
-            {                
-                Style = Styles.PrimaryButtonStyle,
-                HorizontalOptions = LayoutOptions.FillAndExpand,
+            var stops = new GradientStopCollection();
+            stops.Add(new GradientStop() { Color = Color.FromHex("#23bcba"), Offset = 0.1f });
+            stops.Add(new GradientStop() { Color = Color.FromHex("#45e994"), Offset = 1.0f });
+
+            var nextButtonFrame = new Frame()
+            {
+                HasShadow = false,
+                BackgroundColor = Color.Transparent,
+                Padding = new Thickness(20, 0),
+                Margin = new Thickness(20, 0),
+                CornerRadius = 25,
+                Background = new LinearGradientBrush(stops)
             };
+
+            var button = new Button
+            {
+                Style = Styles.NewPrimaryButtonStyle,
+                Text = "Next",
+                HorizontalOptions = LayoutOptions.Fill
+            };
+
+            //var button = new Button
+            //{                
+            //    Style = Styles.PrimaryButtonStyle,
+            //    HorizontalOptions = LayoutOptions.FillAndExpand,
+            //};
             button.SetBinding(Button.TextProperty, nameof(OnboardingImagePageViewModel.ButtonText));
             button.SetBinding(Button.CommandProperty, nameof(OnboardingImagePageViewModel.NextCommand));
-
+            nextButtonFrame.Content = button;
             var gradient = Styles.BuildMainGradient();
             
 
@@ -112,10 +132,10 @@ namespace TalkiPlay
 
             
             mainLayout.ConstrainLayout(() =>
-                  button.Right() == mainLayout.Right() - 20 &&
-                  button.Left() == mainLayout.Left() + 20 &&
-                  button.Bottom() == mainLayout.Bottom() - buttonBottom.ToConst() &&
-                  button.Height() == 60
+                  nextButtonFrame.Right() == mainLayout.Right() - 20 &&
+                  nextButtonFrame.Left() == mainLayout.Left() + 20 &&
+                  nextButtonFrame.Bottom() == mainLayout.Bottom() - buttonBottom.ToConst() &&
+                  nextButtonFrame.Height() == 60
               );
                                  
             Content = mainLayout;            

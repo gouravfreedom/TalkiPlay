@@ -21,7 +21,19 @@ namespace TalkiPlay
                 new Setter { Property = VisualElement.HeightRequestProperty, Value = Dimensions.DefaultButtonHeight  },
             }
         };
-        
+
+        public static readonly Style NewPrimaryButtonStyle = new Style(typeof(Button))
+        {
+            Setters =
+            {
+                new Setter { Property = Button.FontFamilyProperty, Value = Fonts.ButtonTextFont.Family },
+                new Setter { Property = Button.FontSizeProperty, Value = 19 },
+                new Setter { Property = Button.TextColorProperty, Value = Colors.WhiteColor },
+                new Setter { Property = VisualElement.BackgroundColorProperty, Value = Color.Transparent  },
+                
+            }
+        };
+
         public static GradientView BuildMainGradient()
         {
             return new GradientView()

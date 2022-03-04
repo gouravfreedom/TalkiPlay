@@ -35,7 +35,7 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <talkiPlay:AnimatedButton
+            <!--<talkiPlay:AnimatedButton
                 x:Name="AddChildButton"
                 Animation="{x:Static shared:Images.LoadingAnimation}"
                 ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}"
@@ -45,7 +45,20 @@
                 CornerRadius="5"
                 AnimationHeightRequest="80"
                 AnimationWidthRequest="80"
-                BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+                BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />-->
+            <Frame HasShadow="False" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25" >
+                        <Frame.Background>
+                            <LinearGradientBrush StartPoint="0,0"
+                                                 EndPoint="1,0">
+                                <GradientStop Color="#23bcba"
+                                              Offset="0.1"/>
+                                <GradientStop Color="#45e994"
+                                              Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <Button x:Name="AddChildButton" FontSize="19" FontAttributes="Bold" TextColor="White" HorizontalOptions="Fill" VerticalOptions="Center" Text="Next"
+                                              BackgroundColor="Transparent" BorderColor="Transparent"/>
+                    </Frame>
 
         </RelativeLayout>
 

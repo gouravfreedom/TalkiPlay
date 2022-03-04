@@ -67,19 +67,31 @@ namespace TalkiPlay
             
             var dobLayout = BuildValidationLayout(datePicker, "Birthdate", nameof(ViewModel.DateOfBirthIsValid), nameof(ViewModel.DateOfBirthErrors));
 
+            var stops = new GradientStopCollection();
+            stops.Add(new GradientStop() { Color = Color.FromHex("#23bcba"), Offset = 0.1f });
+            stops.Add(new GradientStop() { Color = Color.FromHex("#45e994"), Offset = 1.0f });
+
+            var nextButtonFrame = new Frame()
+            {
+                HasShadow = false,
+                BackgroundColor = Color.Transparent,
+                Padding = new Thickness(20,0),
+                Margin = new Thickness(20,0),
+                CornerRadius = 25,
+                Background = new LinearGradientBrush(stops)
+            };
 
             var nextButton = new Button
             {
-                Style = Styles.PrimaryButtonStyle,
+                Style = Styles.NewPrimaryButtonStyle,
                 Text = "Next",
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                Margin = new Thickness(15,0),
+                HorizontalOptions = LayoutOptions.Fill
             };
             nextButton.SetBinding(Button.CommandProperty, nameof(OnboardingChildDOBPageViewModel.NextCommand));
-
+            nextButtonFrame.Content = nextButton;
             var buttonLayout = new StackLayout
             {
-                Children = { nextButton },
+                Children = { nextButtonFrame },
                 Margin = new Thickness(0, 0, 0, 20 + bottomOffset)
             };
 
