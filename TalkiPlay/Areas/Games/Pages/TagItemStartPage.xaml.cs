@@ -43,10 +43,10 @@ namespace TalkiPlay
                     .InvokeCommand(this, v => v.ViewModel.LoadDataCommand)
                     .DisposeWith(d);
                 
-                this.BindCommand(ViewModel, v => v.BackCommand, view => view.CancelButton.Button).DisposeWith(d);
+                this.BindCommand(ViewModel, v => v.BackCommand, view => view.CancelButton).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.Heading, view => view.Heading.Text).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.SubHeading, view => view.SubHeading.Text).DisposeWith(d);
-                this.BindCommand(ViewModel, v => v.BeginCommand, view => view.GoButton.Button).DisposeWith(d);
+                this.BindCommand(ViewModel, v => v.BeginCommand, view => view.GoButton).DisposeWith(d);
                 
                 this.OneWayBind(ViewModel, v => v.Title, view => view.NavigationView.Title).DisposeWith(d);
                 this.BindCommand(ViewModel, v => v.BackCommand, view => view.NavigationView.LeftButton).DisposeWith(d);

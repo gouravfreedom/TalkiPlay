@@ -88,16 +88,31 @@ namespace TalkiPlay
                 
             };
             collectionView.SetBinding(ItemsView.ItemsSourceProperty, nameof(ViewModelType.Items));
-            
+
+            var stops = new GradientStopCollection();
+            stops.Add(new GradientStop() { Color = Color.FromHex("#23bcba"), Offset = 0.1f });
+            stops.Add(new GradientStop() { Color = Color.FromHex("#45e994"), Offset = 1.0f });
+
+            var nextButtonFrame = new Frame()
+            {
+                HasShadow = false,
+                BackgroundColor = Color.Transparent,
+                Padding = new Thickness(20, 0),
+                Margin = new Thickness(20, 0),
+                CornerRadius = 25,
+                Background = new LinearGradientBrush(stops)
+            };
+
             var button = new Button
-            {                
-                Style = Styles.PrimaryButtonStyle,
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                Margin = new Thickness(Dimensions.DefaultHorizontalMargin,Dimensions.DefaultSpacing
-                    ,Dimensions.DefaultHorizontalMargin,Dimensions.DefaultSpacing + bottomOffset),
+            {
+                Style = Styles.NewPrimaryButtonStyle,
+                Margin = new Thickness(0,0,0,15),
+                HorizontalOptions = LayoutOptions.Fill
             };
             button.SetBinding(Button.CommandProperty, nameof(ViewModelType.NextCommand));
             button.SetBinding(Button.TextProperty, nameof(ViewModelType.NextButtonText));
+
+            nextButtonFrame.Content = button;
 
             var gradient = Styles.BuildMainGradient();
 
@@ -117,7 +132,7 @@ namespace TalkiPlay
             grid.Children.Add(navView);
             //grid.Children.Add(titleLabel,0,1);
             grid.Children.Add(collectionView,0,1);
-            grid.Children.Add(button,0,2);
+            grid.Children.Add(nextButtonFrame,0,2);
 
             Content = grid;
         }

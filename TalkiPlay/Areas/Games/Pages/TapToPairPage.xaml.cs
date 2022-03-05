@@ -49,7 +49,7 @@ namespace TalkiPlay
                     .InvokeCommand(this, v => v.ViewModel.LoadCommand)
                     .DisposeWith(d);
 
-                this.BindCommand(ViewModel, v => v.GoCommand, view => view.GoButton.Button).DisposeWith(d);
+                this.BindCommand(ViewModel, v => v.GoCommand, view => view.GoButton).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.NavigationTitle, view => view.NavigationView.Title).DisposeWith(d);
                 this.BindCommand(ViewModel, v => v.BackCommand, view => view.NavigationView.LeftButton).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.BackCommand, view => view.BackButtonPressed).DisposeWith(d);

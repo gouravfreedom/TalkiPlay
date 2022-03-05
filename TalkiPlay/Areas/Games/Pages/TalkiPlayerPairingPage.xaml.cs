@@ -36,7 +36,7 @@ namespace TalkiPlay
             this.WhenActivated(d =>
             {
                 this.OneWayBind(ViewModel, v => v.Message, view => view.ErrorMessage.Text).DisposeWith(d);
-                this.BindCommand(ViewModel, v => v.TryAgainCommand, view => view.TryAGainButton.Button).DisposeWith(d);
+                this.BindCommand(ViewModel, v => v.TryAgainCommand, view => view.TryAGainButton).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.HasError, view => view.TryAGainButton.IsVisible).DisposeWith(d);
                 
                 this.OneWayBind(ViewModel, v => v.Title, view => view.NavigationView.Title).DisposeWith(d);

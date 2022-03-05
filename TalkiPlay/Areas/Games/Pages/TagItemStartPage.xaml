@@ -23,12 +23,38 @@
                     <ui:ExtendedLabel x:Name="Heading" CustomFont="{x:Static talkiPlay:Fonts.BodyFont}" Text="{Binding Heading}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
                     <forms:SvgCachedImage x:Name="Image" Source="{Binding InstructionImage}" Aspect="AspectFit" HeightRequest="250" LoadingPlaceholder="{x:Static shared:Images.LoadingIndicator}" ErrorPlaceholder="{x:Static shared:Images.PlaceHolder}" />
                     <ui:ExtendedLabel x:Name="SubHeading" CustomFont="{x:Static talkiPlay:Fonts.BodyLinkFont}" Text="{Binding SubHeading}" HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
-                    <talkiPlay:AnimatedButton x:Name="GoButton" ButtonHeightRequest="60" Text="Let's begin" CornerRadius="5" AnimationHeightRequest="80" AnimationWidthRequest="80"
+                    <!--<talkiPlay:AnimatedButton x:Name="GoButton" ButtonHeightRequest="60" Text="Let's begin" CornerRadius="5" AnimationHeightRequest="80" AnimationWidthRequest="80"
                         Animation="{x:Static shared:Images.LoadingAnimation}" ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextFont}"
                         ButtonColor="{x:Static shared:Colors.TealColor}" BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
                     <talkiPlay:AnimatedButton x:Name="CancelButton" Margin="0,20,0,60" ButtonHeightRequest="60" Text="Cancel" CornerRadius="5" AnimationHeightRequest="80" AnimationWidthRequest="80"
                         Animation="{x:Static shared:Images.LoadingAnimation}" ButtonFont="{x:Static talkiPlay:Fonts.ButtonTextDarkGreyFont}"
-                        ButtonColor="{x:Static shared:Colors.WhiteColor}" BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />
+                        ButtonColor="{x:Static shared:Colors.WhiteColor}" BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />-->
+                    <Frame HasShadow="False" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25">
+                        <Frame.Background>
+                            <LinearGradientBrush StartPoint="0,0"
+                                                 EndPoint="1,0">
+                                <GradientStop Color="#23bcba"
+                                              Offset="0.1"/>
+                                <GradientStop Color="#45e994"
+                                              Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <Button x:Name="GoButton" FontSize="19" FontAttributes="Bold" TextColor="White" HorizontalOptions="Fill" VerticalOptions="Center" Text="Let's Begin"
+                                              BackgroundColor="Transparent" BorderColor="Transparent"/>
+                    </Frame>
+                    <Frame HasShadow="False" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25">
+                        <Frame.Background>
+                            <LinearGradientBrush StartPoint="0,0"
+                                                 EndPoint="1,0">
+                                <GradientStop Color="#23bcba"
+                                              Offset="0.1"/>
+                                <GradientStop Color="#45e994"
+                                              Offset="1.0"/>
+                            </LinearGradientBrush>
+                        </Frame.Background>
+                        <Button x:Name="CancelButton" FontSize="19" FontAttributes="Bold" TextColor="White" HorizontalOptions="Fill" VerticalOptions="Center" Text="Cancel"
+                                              BackgroundColor="Transparent" BorderColor="Transparent"/>
+                    </Frame>
                 </StackLayout>
             </ScrollView>
         </Grid>
