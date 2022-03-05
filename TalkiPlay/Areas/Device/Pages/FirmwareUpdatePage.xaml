@@ -54,7 +54,7 @@
                     <Grid Grid.Row="0" BackgroundColor="Transparent">
                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="20, 10">
                             <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="30" FontAttributes="Bold"
-                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="Software is up to date!!!"/>
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="Your Talkiplayer already has the latest Firmware"/>
                         </StackLayout>
                     </Grid>
                     <Grid Grid.Row="2" BackgroundColor="Transparent">
@@ -67,7 +67,7 @@
                             </StackLayout>
 
                             <Frame HasShadow="True" BackgroundColor="Transparent" Margin="0" Padding="0" HorizontalOptions="Fill">
-                                <tp:AnimatedButtonEx x:Name="btnNoUpdateRequire" Text="Cool, I'm happy"/>
+                                <tp:AnimatedButtonEx x:Name="btnNoUpdateRequire" Text="Okay"/>
                             </Frame>                              
                         </StackLayout>
                     </Grid>
@@ -108,17 +108,25 @@
                         <RowDefinition Height="200"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="150"/>
+                        <RowDefinition Height="150"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" BackgroundColor="Transparent">
                         <StackLayout HorizontalOptions="Center" VerticalOptions="End" Padding="20, 10">
                             <ui:ExtendedLabel FontFamily="{x:Static tp:Fonts.FontFamilyRoundedBold}" FontSize="30" FontAttributes="Bold"
-                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="Newer version of software available"/>
+                                  HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" TextColor="White" Text="New firmware version available"/>
                         </StackLayout>
                     </Grid>
                     <Grid Grid.Row="2" BackgroundColor="Transparent">
                         <StackLayout HorizontalOptions="Center" VerticalOptions="End" Padding="30, 0, 30, 60">
                             <Frame HasShadow="True" BackgroundColor="Transparent" Margin="0" Padding="0" HorizontalOptions="Fill" VerticalOptions="Center" >
-                                <tp:AnimatedButtonEx x:Name="btnUpdateAvailable" Text="Start the update"/>
+                                <tp:AnimatedButtonEx x:Name="btnUpdateAvailable" Text="Start update"/>
+                            </Frame>                            
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="3" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="End" Padding="30, 0, 30, 60">
+                            <Frame HasShadow="True" BackgroundColor="Transparent" Margin="0" Padding="0" HorizontalOptions="Fill" VerticalOptions="Center" >
+                                <tp:AnimatedButtonEx x:Name="btnUpdateCancel" Text="Cancel"/>
                             </Frame>                            
                         </StackLayout>
                     </Grid>
@@ -227,6 +235,7 @@
                         <RowDefinition Height="200"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="150"/>
+                        <RowDefinition Height="150"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0" BackgroundColor="Transparent">
                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="20, 10">
@@ -243,6 +252,13 @@
                             <Frame HasShadow="True" BackgroundColor="Transparent" Margin="0" Padding="0" HorizontalOptions="Fill">
                                 <tp:AnimatedButtonEx x:Name="btnUpdateFailed" Text="Retry"/>
                             </Frame>                               
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Row="3" BackgroundColor="Transparent">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="End" Padding="30, 0, 30, 60">
+                            <Frame HasShadow="True" BackgroundColor="Transparent" Margin="0" Padding="0" HorizontalOptions="Fill" VerticalOptions="Center" >
+                                <tp:AnimatedButtonEx x:Name="btnFailureCancel" Text="Cancel"/>
+                            </Frame>                            
                         </StackLayout>
                     </Grid>
                     <Grid Grid.Row="1" BackgroundColor="Transparent">

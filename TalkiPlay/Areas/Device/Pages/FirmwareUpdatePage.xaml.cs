@@ -54,13 +54,16 @@ namespace TalkiPlay
                 this.OneWayBind(ViewModel, v => v.IsUpdating, view => view.gridUpdating.IsVisible).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.IsUpdateSuccess, view => view.gridUpdateSuccess.IsVisible).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.IsUpdateFailed, view => view.gridUpdateFailed.IsVisible).DisposeWith(d);
-
+                
                 this.BindCommand(ViewModel, v => v.CommandNoUpdateRequire, view => view.btnNoUpdateRequire.Button).DisposeWith(d);
                 this.BindCommand(ViewModel, v => v.CommandDeviceNotReady, view => view.btnDeviceNotReady.Button).DisposeWith(d);
                 this.BindCommand(ViewModel, v => v.CommandUpdateAvailable, view => view.btnUpdateAvailable.Button).DisposeWith(d);
                 this.BindCommand(ViewModel, v => v.CommandReadyToUpdate, view => view.btnReadyToUpdate.Button).DisposeWith(d);
                 this.BindCommand(ViewModel, v => v.CommandUpdateFailed, view => view.btnUpdateFailed.Button).DisposeWith(d);
                 this.BindCommand(ViewModel, v => v.CommandUpdateSuccess, view => view.btnUpdateSuccess.Button).DisposeWith(d);
+                this.BindCommand(ViewModel, v => v.CommandCancel, view => view.btnUpdateCancel.Button).DisposeWith(d);
+                this.BindCommand(ViewModel, v => v.CommandCancel, view => view.btnFailureCancel.Button).DisposeWith(d);
+                
 
                 this.OneWayBind(ViewModel, v => v.CurrentVersion, view => view.lblVersionChecking.Text).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.CurrentVersion, view => view.lblVersionNoUpdate.Text).DisposeWith(d);

@@ -50,6 +50,7 @@ namespace TalkiPlay.Shared
         public ReactiveCommand<Unit, Unit> CommandReadyToUpdate { get; private set; }
         public ReactiveCommand<Unit, Unit> CommandUpdateSuccess { get; private set; }
         public ReactiveCommand<Unit, Unit> CommandUpdateFailed { get; private set; }
+        public ReactiveCommand<Unit, Unit> CommandCancel { get; private set; }
 
         [Reactive] public String CurrentVersion { get; private set; } = "v1.0.0";
         [Reactive] public String NewVersion { get; private set; } = "v2.0.0";
@@ -145,6 +146,7 @@ namespace TalkiPlay.Shared
             CommandNoUpdateRequire = BackCommand;
             CommandUpdateSuccess = BackCommand;
             CommandDeviceNotReady = BackCommand;
+            CommandCancel = BackCommand;
 
             CommandCheckUpdate = ReactiveCommand.CreateFromTask(async () =>
             {
