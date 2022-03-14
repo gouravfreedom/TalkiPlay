@@ -158,7 +158,7 @@ namespace TalkiPlay.Shared
 
             ParentCommand = ReactiveCommand.Create(() =>
             {
-                _userSettings.HasTalkiPlayerDevice = false;
+                //_userSettings.HasTalkiPlayerDevice = false;
                 HouseholdText.Value = "Household name";
                 HouseholdPlaceHolder.Value = "Household name...";
                 HouseholdColor.Value = Color.DarkGray;
@@ -167,7 +167,7 @@ namespace TalkiPlay.Shared
 
             CompanyCommand = ReactiveCommand.Create(() =>
             {
-                _userSettings.HasTalkiPlayerDevice = true;
+                //_userSettings.HasTalkiPlayerDevice = true;
                 HouseholdText.Value = "Company name";
                 HouseholdPlaceHolder.Value = "Company name...";
                 HouseholdColor.Value = Color.White;
