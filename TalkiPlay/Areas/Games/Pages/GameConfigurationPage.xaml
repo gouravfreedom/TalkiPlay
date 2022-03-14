@@ -63,7 +63,7 @@
                 </StackLayout>
 
                 <Grid  HeightRequest="80" Padding="60, 0">
-                    <Frame HasShadow="True" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25" >
+                    <Frame HasShadow="False" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25" >
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0,0"
                                                  EndPoint="1,0">

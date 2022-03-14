@@ -132,7 +132,7 @@ namespace TalkiPlay
             mainLayout.ConstrainLayout(() =>
                  image.Right() == mainLayout.Right() - Dimensions.DefaultHorizontalMargin &&
                  image.Left() == mainLayout.Left() + Dimensions.DefaultHorizontalMargin &&
-                 image.Top() == titleLabel.Bottom() + 20 && 
+                 image.Top() == titleLabel.Bottom() + 20 &&
                  //image.Bottom() == button.Top() - 20
                  image.Height() == mainLayout.Height() - imageHeightOffset.ToConst()                                 
              );

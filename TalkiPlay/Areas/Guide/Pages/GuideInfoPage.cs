@@ -76,15 +76,36 @@ namespace TalkiPlay
                 VerticalOptions = LayoutOptions.Center,
                 Children = { titleLabel, image, bodyLabel}
             };
-            
-            var button = new Button
-            {                
-                Style = Styles.PrimaryButtonStyle,
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                Margin = new Thickness(15,20,15,20 + bottomOffset)
+
+            //var button = new Button
+            //{                
+            //    Style = Styles.PrimaryButtonStyle,
+            //    HorizontalOptions = LayoutOptions.FillAndExpand,
+            //    Margin = new Thickness(15,20,15,20 + bottomOffset)
+            //};
+            var stops = new GradientStopCollection();
+            stops.Add(new GradientStop() { Color = Color.FromHex("#23bcba"), Offset = 0.1f });
+            stops.Add(new GradientStop() { Color = Color.FromHex("#45e994"), Offset = 1.0f });
+
+            var nextButtonFrame = new Frame()
+            {
+                HasShadow = false,
+                BackgroundColor = Color.Transparent,
+                Padding = new Thickness(20, 0),
+                Margin = new Thickness(20, 0,20,20),
+                CornerRadius = 25,
+                Background = new LinearGradientBrush(stops)
             };
+
+            var button = new Button
+            {
+                Style = Styles.NewPrimaryButtonStyle,
+                HorizontalOptions = LayoutOptions.Fill
+            };
+            nextButtonFrame.Content = button;
+
             button.SetBinding(Button.TextProperty, nameof(ViewModelType.NextButtonText));
-            button.SetBinding(Button.IsVisibleProperty, nameof(ViewModelType.ShowNextButton));
+            button.SetBinding(Frame.IsVisibleProperty, nameof(ViewModelType.ShowNextButton));
             button.SetBinding(Button.CommandProperty, nameof(ViewModelType.NextCommand));
 
             var imageButton = new ImageButtonView()
@@ -111,7 +132,7 @@ namespace TalkiPlay
             grid.Children.Add(navView);
             grid.Children.Add(titleLabel,0,1);
             grid.Children.Add(mainLayout,0,2);
-            grid.Children.Add(button,0,3);
+            grid.Children.Add(nextButtonFrame,0,3);
             grid.Children.Add(imageButton,0,3);
 
             Content = grid;

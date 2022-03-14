@@ -50,14 +50,14 @@ namespace TalkiPlay
 
             this.WhenActivated(d =>
             {
-                this.BindCommand(ViewModel, v => v.ResetPasswordCommand, view => view.ResetPasswordButton.Button).DisposeWith(d);
+                this.BindCommand(ViewModel, v => v.ResetPasswordCommand, view => view.ResetPasswordButton).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.Password.Errors, view => view.PasswordErrorView.ItemsSource).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.ConfirmPassword.Errors, view => view.ConfirmPasswordErrorView.ItemsSource).DisposeWith(d);
                 this.Bind(ViewModel, v => v.Password.Value, view => view.PasswordEntry.Text).DisposeWith(d);
                 this.Bind(ViewModel, v => v.ConfirmPassword.Value, view => view.ConfirmPasswordEntry.Text).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.Password.IsValid, view => view.PasswordEntry.IsValid).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.ConfirmPassword.IsValid, view => view.ConfirmPasswordEntry.IsValid).DisposeWith(d);
-                this.OneWayBind(ViewModel, v => v.IsBusy, view => view.ResetPasswordButton.IsBusy).DisposeWith(d);
+                //this.OneWayBind(ViewModel, v => v.IsBusy, view => view.ResetPasswordButton.IsBusy).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.ResetPasswordCommand, v => v.ConfirmPasswordEntry.ReturnCommand)
                     .DisposeWith(d);
                 

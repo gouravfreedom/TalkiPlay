@@ -64,7 +64,7 @@ namespace TalkiPlay
                 this.WhenAnyObservable(v => v.ViewModel.StartGameCommand.CanExecute)
                   .SubscribeSafe(isReady =>
                   {
-                      this.StartGameButton.BackgroundColor = isReady ? Colors.Blue5Color : Colors.DisableColor;
+                      //this.StartGameButton.BackgroundColor = isReady ? Colors.Blue5Color : Color.Transparent;
                       this.BtnConfigGame.IsEnabled = isReady;
                   })
                   .DisposeWith(d);

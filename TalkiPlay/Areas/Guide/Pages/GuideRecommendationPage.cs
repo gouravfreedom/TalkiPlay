@@ -98,7 +98,7 @@ namespace TalkiPlay
                 HasShadow = false,
                 BackgroundColor = Color.Transparent,
                 Padding = new Thickness(20, 0),
-                Margin = new Thickness(20, 0),
+                Margin = new Thickness(20, 0, 20 ,20),
                 CornerRadius = 25,
                 Background = new LinearGradientBrush(stops)
             };
