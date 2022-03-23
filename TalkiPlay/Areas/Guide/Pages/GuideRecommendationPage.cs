@@ -106,7 +106,7 @@ namespace TalkiPlay
             var button = new Button
             {
                 Style = Styles.NewPrimaryButtonStyle,
-                Margin = new Thickness(0,0,0,15),
+                Margin = new Thickness(0,0,0,0),
                 HorizontalOptions = LayoutOptions.Fill
             };
             button.SetBinding(Button.CommandProperty, nameof(ViewModelType.NextCommand));

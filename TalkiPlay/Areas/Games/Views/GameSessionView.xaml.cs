@@ -15,7 +15,7 @@ namespace TalkiPlay
             this.WhenActivated(d =>
             {
                 this.RewardImage.IsVisible = false;
-                this.DoneButton.IsVisible = false;
+                this.DoneButtonView.IsVisible = false;
 
                 this.BindCommand(ViewModel, v => v.DoneCommand, v => v.DoneButton).DisposeWith(d);
                 this.OneWayBind(ViewModel, v => v.StartPlayingAnim, v => v.StartPlayingEggWiggle).DisposeWith(d);
@@ -28,7 +28,7 @@ namespace TalkiPlay
             (BindingContext as GameSessionViewModel).Description = "";
             this.RewardAnim.IsVisible = false;
             this.RewardImage.IsVisible = true;
-            this.DoneButton.IsVisible = true;            
+            this.DoneButtonView.IsVisible = true;            
         }
 
         public readonly static BindableProperty StartPlayingEggWiggleProperty = BindableProperty.Create(nameof(StartPlayingEggWiggle), typeof(bool),

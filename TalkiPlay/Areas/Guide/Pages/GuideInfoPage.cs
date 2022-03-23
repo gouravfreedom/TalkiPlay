@@ -105,7 +105,7 @@ namespace TalkiPlay
             nextButtonFrame.Content = button;
 
             button.SetBinding(Button.TextProperty, nameof(ViewModelType.NextButtonText));
-            button.SetBinding(Frame.IsVisibleProperty, nameof(ViewModelType.ShowNextButton));
+            nextButtonFrame.SetBinding(Frame.IsVisibleProperty, nameof(ViewModelType.ShowNextButton));
             button.SetBinding(Button.CommandProperty, nameof(ViewModelType.NextCommand));
 
             var imageButton = new ImageButtonView()

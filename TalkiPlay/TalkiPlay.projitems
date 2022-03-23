@@ -61,7 +61,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\GameSessionPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\ReaderWarningPopupPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\ScanHomeTagPopupPageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TagItemSetupPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TagItemStartPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TalkiPlayerPairingPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Areas\Games\Pages\TapToPairPageViewModel.cs" />
@@ -665,6 +664,7 @@
       <DependentUpon>NewModeSelectionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Areas\Onboarding\Pages\NewModeSelectionPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Areas\TagItemSetupPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />

@@ -65,7 +65,7 @@
                                               AnimationHeightRequest="80"
                                               AnimationWidthRequest="80"
                                               BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />-->
-                    <Frame HasShadow="False" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25">
+                    <Frame x:Name="GoButtonView" HasShadow="False" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25">
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0,0"
                                                  EndPoint="1,0">
@@ -89,7 +89,7 @@
                                               AnimationHeightRequest="80"
                                               AnimationWidthRequest="80"
                                               BusyButtonColor="{x:Static shared:Colors.WarmGrey}" />-->
-                    <Frame HasShadow="False" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25">
+                    <Frame x:Name="SkipButtonView" HasShadow="False" BackgroundColor="Transparent" Padding="20,0" Margin="0" CornerRadius="25">
                         <Frame.Background>
                             <LinearGradientBrush StartPoint="0,0"
                                                  EndPoint="1,0">
